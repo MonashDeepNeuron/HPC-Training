@@ -1,0 +1,94 @@
+# Contributing
+
+Thank you for taking the time to contribute.
+Any and all contributions are always very much appreciated. However, to make sure the process of accepting patches goes for everyone (especially for the maintainer), you should try to follow these few simple guidelines when you contribute:
+
+## Prerequisites
+
+1. [rustup](https://www.rust-lang.org/tools/install) - for the Rust compiler and Cargo
+2. [mdBook](https://rust-lang.github.io/mdBook/) - Book generation tool
+
+## Steps to Contribute
+
+1. Fork the repository.
+2. Create a new branch based on the `dev` branch (`git checkout -b <your_branch> dev`).
+   If your contribution is a bug fix, you should name your branch `bugfix/xxx`;
+   for a feature, it should be `feature/xxx` etc. Otherwise, just use your good
+   judgment. Consistent naming of branches is appreciated since it makes the
+   output of `git branch` easier to understand with a single glance.
+3. Do your modifications on that branch.
+4. Make sure your modifications did not break anything by building and verifying the output using:
+
+   ```sh
+   mdbook serve --open
+   ```
+
+5. Commit your changes. Your commit message should start with a one line
+   short description of the modifications, with the details and explanations
+   of your modifications following in subsequent paragraphs or bullet points. If you address an issue, create a subtitle with the issues number and title followed by the changes involved in resolving the issue.
+   Please limit your lines to about 78 characters in commit messages, since
+   it makes the output easier to read in `git log`. Also, starting your commit
+   message with a tag describing the nature of the commit is nice, since it
+   makes the commit history easier to skim through. For commits that do not
+   change any functionality (e.g. refactoring or fixing typos), the `[NFC]`
+   tag (No Functionality Change) can be used. Here's an example of an
+   acceptable commit message:
+
+   ```txt
+   [TAG] Refactor the interface
+
+   - Rename elem to contains
+   - Rename subset to is_subset, and make is_subset applicable in infix notation
+
+   Issue (#12) - Add an at `at_key` method:
+   - Added the `at_key` method
+   - operator[] is now bound to at_key instead of find
+   ```
+
+   When applicable, please squash adjacent _wip_ commits into a single _logical_ commit.
+   If your contribution has several logical commits, it's fine.
+6. Push the changes to your fork (`git push origin <your_branch>`).
+7. Open a pull request against the package's `dev` branch (not against `main`).
+
+We will do my best to respond in a timely manner. I might discuss your patch and suggest some modifications, or I might amend your patch myself and ask you for feedback.
+You will always be given proper credit.
+
+## Style guide
+
+Markdown uses the CommonMark style guide for the most part however, certain exceptions are allowed for customizing the style. It is a guide for a reason.
+
+- Any code example should have a corresponding example link that is either a full file/project or a link to an external compiler (eg. Godbolt).
+- Any free standing or example links that are related should be put in a bullet-list and separate unrelated links by a empty line.
+- Reserve the use of quote blocks (lines beginning with `>` in Markdown) for side notes relating to content or examples
+
+For C content such as examples:
+
+- Indent using 4 spaces.
+- Do not leave trailing white spaces at the end of lines, and no more than a
+  single newline at the end of a source file.
+- A definition blocks' initial brace should start on a newline, not trail off the declaration.
+
+For C++ content such as examples:
+
+- Indent using 4 spaces.
+- Do not leave trailing white spaces at the end of lines, and no more than a
+  single newline at the end of a source file.
+- A definition blocks' initial brace should start on a newline, not trail off the declaration.
+- Prefer direct initialisation (`{}` over `=`) over assignment initialisation, especially for primitive types.
+- Prefer brace-based initialisation for invoking a types constructor.
+- Use spaces on either side of constructor arguments when using braces (eg. `int{ _ }`).
+- Use `auto` as variable introducer and declare type explicitly in the brace initialiser or on right-hand-side of the assignment.
+- Prefer trailing return types on functions over prefixed notation.
+- Prefer to separate functions declarations (eg. `constexpr auto`), signature, constant and reference qualifiers (classes), `noexcept` specification and return type on separate lines if function declaration gets too long. Indent the constant and references qualifiers, `noexcept` specification and return type if they are on a newline.
+
+```cxx
+constexpr auto
+really_long_function_signature(that_takes lots_of_arguments, with_really long_names, for_types and_arguments)
+    noexcept( noexcept(long_noexcept_specification) && noexcept(with_multiple_conditions) )
+    -> a_really_long_return_type<with_lots<of_nested>, template_type<parameters, and_metaprogramming>>
+{}
+```
+
+- Indent `requires` clauses and `requires` expressions.
+- `#include` should be sorted in alphabetical order.
+- Mostly use your own judgment and stick to the style of the existing and surrounding code.

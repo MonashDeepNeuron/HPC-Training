@@ -1,0 +1,15 @@
+[book]
+authors = [
+    "oraqlle (aka Tyler Swann)"
+]
+title = "HPC Training"
+description = "Monash DeepNeuron's HPC Training Content"
+
+language = "en"
+multilingual = false
+
+src = "src"
+
+[output.html]
+mathjax-support = true
+git-repository-url = "https://github.com/MonashDeepNeuron/HPC-Training"
