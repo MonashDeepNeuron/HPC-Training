@@ -24,10 +24,18 @@ For your training you will need a few tools. Namely:
 
 ~
 
-## Installing VSCode
+## VSCode Installation and Setup
 
-~
+Now that Homebrew, Xcode and GCC are installed and setup we will want to setup a text editor so we can easily edit and build our programs. For your training, I recommend using VSCode as it allows you to customize you developer environment to your needs. If you prefer another editor such as Neovim, feel free to use them as you please.
 
-## VSCode Setup
+First download VSCode for Mac [VSCode Download](https://code.visualstudio.com/download)
 
-~
+Once installed, open the app and navigate to the extensions tab (icon on the left size made of four boxes). Using the search bar, install the following extensions.
+
+- C/C++
+- GitLens
+- Git Graph
+- GitHub Pull Requests and Issues
+- Sonarlint
+
+And thats it, you are all setup.

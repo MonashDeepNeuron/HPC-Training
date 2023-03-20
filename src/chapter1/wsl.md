@@ -57,13 +57,22 @@ sudo apt install git curl wget ca-certificates build-essential
 
 And that's it. WSL is setup and installed.
 
+## Connect Git & GitHub
+
+Next we will link your GitHub account to you local Git install. Run the following commands, replacing the username and email section with your details (keeping the quotation marks).
+
+```sh
+git config --global user.name "<github-username>"
+git config --global user.email "<github-email>"
+```
+
 ## VSCode Installation and Setup
 
-Now that WSL is installed and setup we will want to setup a text editor so we can easily edit and build our programs. For usage with WSL ans your training in general I recommend using VSCode as it allows you to customize you developer environment to your needs. It also can access the WSL filesystem allowing you to work on projects in a native Linux environment on Windows. If you prefer another editor such as Vim, Emacs or Neovim, feel free to use them as you please.
+Now that WSL, Ubuntu and Git are installed and setup we will want to setup a text editor so we can easily edit and build our programs. For usage with WSL ans your training in general I recommend using VSCode as it allows you to customize you developer environment to your needs. It also can access the WSL filesystem allowing you to work on projects in a native Linux environment on Windows. If you prefer another editor such as Vim, Emacs or Neovim, feel free to use them as you please.
 
 First download VSCode for Windows [VSCode Download](https://code.visualstudio.com/download)
 
-Once installed, open (on the Windows side) and navigate to the extensions tab (icon on the left size made of four boxes). Using the search bar, install the following extensions.
+Once installed, open the app (on the Windows side) and navigate to the extensions tab (icon on the left size made of four boxes). Using the search bar, install the following extensions.
 
 - C/C++
 - GitLens
@@ -80,4 +89,4 @@ You can then navigate to the window with the Ubuntu shell from before and run:
 code .
 ```
 
-This will installed VSCode on the WSL from your Windows version and open it in the home directory. And thats it, you are done.
+This will installed VSCode on the WSL from your Windows version and open it in the home directory. And thats it, you are all setup.
