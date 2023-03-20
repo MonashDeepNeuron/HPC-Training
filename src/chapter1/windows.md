@@ -3,25 +3,35 @@
 For your training you will need a few tools. Namely:
 
 - Git
-- MingW
-- C compiler toolchain (GCC)
+- C compiler toolchain (MSVC)
 - A text editor (VSCode)
 
 ## Installing Git
 
-~
+First, you will need to install Git. This allows you to use Git from the terminal and also gives you access to a bash shell environment. While following the install wizard, make sure to select the option that adds Git to your `PATH`. This important as it allows you to use Git in 'PowerShell'. Keep the other default operations. Git may require you to restart you machine.
+
+[Git Download](https://git-scm.com/downloads)
 
 ### Connect GitHub
 
-~
+Once Git has installed, open a new 'Git Bash' that was installed. This can be found in the Windows 'Start' menu. Once it is open, run the following commands, replacing the username and email section with your details (keeping the quotation marks).
 
-## Installing MingW
+```sh
+git config --global user.name "<github-username>"
+git config --global user.email "<github-email>"
+```
 
-~
+## Installing MSVC
 
-## Installing GCC
+Next we will need to install a C compiler toolchain. There a many different environments such as CygWin, MinGW but the most ideal environment is Microsoft's official development environment, MSVC. Download the Community Edition of Visual Studio and launch the installer. Under the 'Workloads' tab of the installer select the 'C++ Build Tools' bundle and click install. This may take a while. Once installed (may require restart) open the 'Start' menu and navigate to the 'Visual Studio' folder. There should a variety of different terminal environment applications. This is because Windows has slightly different toolchains and environments for x86 (32-bit) and x86_64 (64-bit). Select the 'Developer Command Prompt for VS 2022' app. In the terminal that spawns, run the command.
 
-~
+```cmd
+cl
+```
+
+This will display the help options for `cl`, Window's C compiler.
+
+[Download MSVC](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019)
 
 ## VSCode Installation and Setup
 
