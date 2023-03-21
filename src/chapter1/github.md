@@ -16,7 +16,7 @@ It is also a good idea to install the GitHub mobile app. This allows you track a
 
 ## Joining Monash DeepNeuron's GitHub Organisation
 
-Once you have signed up for GitHub, you will need to provide your instructors with your GitHub username. This is so we can invite you as a member of the Monash DeepNeuron's organisation on GitHub. This will give you access to projects and allow you to communicate with other members. This will also allow you to gain specific privileges for your future projects at Monash DeepNeuron.
+Once you have signed up for GitHub, you will need to provide your instructors with your GitHub username. This is so we can invite you as a member of the Monash DeepNeuron's organisation on GitHub. This will give you access to projects and allow you to communicate with other members. This will also allow you to gain specific privileges for your future projects at Monash DeepNeuron. You're invitation to the organisation will be sent via the email used for your account.
 
 ## Watching Repositories
 
