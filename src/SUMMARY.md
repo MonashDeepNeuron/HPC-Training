@@ -2,7 +2,7 @@
 
 [Welcome](home.md)
 
-- [Getting Started](./chapter1/chapter1.md)
+- [Getting Started](./chapter1/getting-started.md)
   - [GitHub](./chapter1/github.md)
   - [Windows](./chapter1/windows.md)
   - [Mac](./chapter1/mac.md)
