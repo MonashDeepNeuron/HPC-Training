@@ -20,6 +20,10 @@ While many people will talk about the C family of languages, many of the executi
 
 ![Programming Language Family Tree](imgs/lang-family-tree.png)
 
+- Source [rigaux.org](http://rigaux.org/language-study/diagram.html)
+
 ### Simplified Programming Language Lineage
 
 ![Simplified Programming Language Family Tree](imgs/lang-family-tree-light.png)
+
+- Source [rigaux.org](http://rigaux.org/language-study/diagram.html)
