@@ -2,43 +2,31 @@
 
 For your training you will need a few tools. Namely:
 
-- Homebrew
 - Xcode
 - Git
 - C compiler toolchain (GCC)
 - A text editor (VSCode)
 
-## Installing Homebrew
+## Installing Xcode, Git & GCC
 
-Homebrew is a package manager for MacOS. It offers thousands of developer libraries that would be difficult to obtain on the Mac platform. To install open the Terminal app and run the following command:
-
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-[Homebrew](https://brew.sh/)
-
-## Installing Xcode
-
-Next we will need Xcode, Apple's compiler toolchain. Open the App Store and search for 'xcode' and press install.
-
-## Installing Git
-
-Git may already be installed with your copy of Xcode. To check run the following in the Terminal:
+First, we will need Xcode command line tool utilities, to do so, open the 'Terminal' app and run the following command:
 
 ```sh
-git --version
+xcode-select --install
 ```
 
-If it prompts you to install Git, follow the install wizard keeping the default options.
-
-## Installing GCC
-
-To install the GCC compiler, we'll use the Homebrew program we installed before.
+This will prompt you to accept the install and will download Git and GCC onto your device. To verify installation was successful, run:
 
 ```sh
-brew install gcc-12
+$ xcode-select -p
+
+# Should print this
+/Library/Developer/CommandLineTools
 ```
+
+> ### Note
+>
+> Here, `$` indicates the prompt of the terminal. Do not include it in the command. This may be a different symbol on your device.
 
 ## VSCode Installation and Setup
 
