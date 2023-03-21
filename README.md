@@ -27,8 +27,11 @@ $ mdbook serve --open
 
 - Tyler Swann
 - Ankita Gosavi
-- Nikhil Kannachel
 - Mitchell Mibus
+- Nikhil Kannachel
+- Jaspar Martin
+- Yuki Kume
+- Osman Haji
 
 ## Code of Conduct, License & Contributing
 
