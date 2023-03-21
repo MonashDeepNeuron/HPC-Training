@@ -15,3 +15,11 @@ C is a static and weakly typed language. What are types? Types are in essence a 
 ## Family History
 
 While many people will talk about the C family of languages, many of the execution techniques used in C were inspired by another language called ALGOL developed in the late 50's. Many of the principles in ALGOL were using in C. See is also the successor to the B programming language (also developed at Bell Labs by Ken Thompson and Dennis Ritchie). C has inspired almost every procedural language used today and has had a massive influence on other language families. Some of the descendants of the C language include C++, Swift, JavaScript, PHP, Rust, HolyC, Java, Go, C#, Perl and (depending who you ask) Python.
+
+### Entire (mostly) Programming Language Lineage
+
+![Programming Language Family Tree](imgs/lang-family-tree.png)
+
+### Simplified Programming Language Lineage
+
+![Simplified Programming Language Family Tree](imgs/lang-family-tree-light.png)
