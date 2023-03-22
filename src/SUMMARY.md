@@ -12,8 +12,7 @@
 
 - [Brief Introduction to C](./chapter2/intro-to-c.md)
   - [Hello World](./chapter2/helloworld.md)
-  - [Header & Source Files](./chapter2/files.md)
-  - [Compilers & Linkers](./chapter2/compiler.md)
+  - [Compilation](./chapter2/compilation.md)
   - [Types & Variables](./chapter2/vars.md)
   - [Control Flow](./chapter2/ctrl-flow.md)
   - [Loops](./chapter2/loops.md)
