@@ -15,8 +15,121 @@ In C there are six fundamental data types, `bool`, `char`, `int`, `float`, `doub
 - `long double` - Extended double precision (or quadruple precision) floating point type, represents decimal number values. Usually has a width of at least 64-bits (8 bytes) but sometimes has a width of 128-bits (16 bytes).
 - `void` - Incomplete data type. Indicates the absence of a type of value.
 
-> Note:
->
-> `bool`, `char` and `int` (and sized variants) are defined as integral types ie. they are all number types.
+> Note: `bool`, `char` and `int` (and sized variants) are defined as integral types ie. they are all number types.
 
 ## Variables
+
+Variables are integral to computer programming. Variables are objects that own a piece of data. What data or rather value of a variable can change throughout the lifetime of a program. To declare a variable in C, we first declare its type. The type predicates which operations are valid for that variable as well as tells the compiler the size of the variable. We then git it a name and assign it an initial value.
+
+```c
+/// General syntax: type name = value
+
+int a = 10;
+```
+
+In C variables have 'value semantics', this means that the data of a variable is always copied. For the example above, the data representing the literal `10` is copied into the location of `a` by the assignment operator (`=`).
+
+> Note: Often the compiler will likely try to construct variables (like `a`) directly to the evaluated value of the right-hand-side of the `=` ie. construct `a` directly from `10` rather than create `a` with a dummy value and then copy `10` to `a`'s location. This is called copy elision or return value optimization.
+
+You can also create new variables and initialize them to the value of an existing variables using the same syntax. Because C uses value semantics, `b` now has its own copy of the data owned by `a`. These can now be modified independently of each other.
+
+```c
+int a = 10;
+int b = a;
+```
+
+> Note: Literals are data with a constant value that are predefined. They are often used to initialise variables to a particular starting value.
+
+## Operators
+
+Operators are the most primitive way to manipulate data and variables in C. There are four major categories for operators these being arithmetic, bitwise, logical and assignment. Each operator is written in either infix (binary), prefix or prefix (unary) form. Most operators return the result of their evaluation meaning it can can be assigned to a new variable however, some modify the data in-place, this includes all assignment operators and the increment and decrement operators (which do both).
+
+> Note: Parenthesis are used to control the order of execution, separating sub-expressions.
+
+### Arithmetic Operators
+
+Arithmetic operators work for integral and floating point type. They are the most common type of operator used in C.
+
+| Operator |        Name       |                                     Description                                    | Example |
+|:--------:|:-----------------:|:----------------------------------------------------------------------------------:|:-------:|
+|    `+`   |      Addition     |                                   Adds two values                                  | `a + b` |
+|    `-`   |    Subtraction    |                                Subtracts two values                                | `a - b` |
+|    `*`   |   Multiplication  |                                Multiplies two values                               | `a * b` |
+|    `/`   |      Division     |                                 Divides two values                                 | `a / b` |
+|    `%`   |  Modulo Division  | Modulo divides two values ie. returns the remainder of the division of two numbers | `a % b` |
+|   `++`   |  Prefix Increment |                  Increment the value in-place and return new value                 |  `++a`  |
+|   `--`   |  Prefix Decrement |                  Decrement the value in-place and return new value                 |  `--a`  |
+|   `++`   | Postfix Increment |                  Increment the value in-place and return old value                 |  `a++`  |
+|   `--`   | Postfix Decrement |                  Decrement the value in-place and return old value                 |  `a--`  |
+|    `+`   |     Posigation    |                            Set sign of value to positive                           |   `+a`  |
+|    `-`   |      Negation     |                            Set sign of value to negative                           |   `-a`  |
+
+> Notes:
+>
+> - Binary arithmetic operators will a return value whose type is the larger of `a` or `b`.
+> - If `a` or `b` is smaller than its counterpart, the smaller will be implicitly promoted to a larger type.
+> - Division between two integral types performs integer division.
+> - Division between a floating point type and any other type (integral or floating point) performs floating point division by implicitly promoting the integral or smaller argument to an adequate type or size.
+> - Modulo division does not exist for floating point types.
+
+### Bitwise Operators
+
+Bitwise operators are used to manipulate the individual bits of an integral type allowing precise control of the most fundamental data type.
+
+|        Operator         |        Name        |                      Description                      |          Example        |
+|:-----------------------:|:------------------:|:-----------------------------------------------------:|:-----------------------:|
+|           `~`           |     Compliment     |              Inverts the bits of a values             |           `~a`          |
+|           `&`           |         And        |              Ands the bits of two values              |          `a & b`        |
+|   <code>&vert;</code>   |         Or         |               Ors the bits of two values              | <code>a &vert; b</code> |
+|           `^`           | Exclusive Or (Xor) |              Xors the bits of two values              |          `a ^ b`        |
+|           `<<`          |     Left Shift     |  Shifts the bits of `a` to the left by `b` positions. |          `a << b`       |
+|           `>>`          |     Right Shift    | Shifts the bits of `a` to the right by `b` positions. |          `a >> b`       |
+
+> Note:
+>
+> - Bitwise operators do not exist for floating point types.
+> - Bits are lost from shift operators.
+> - Left shift (`>>`) pads with zeros ie. adds a zero in the new empty position.
+> - Right shift (`<<`) pads with the most significant bit ie. the new empty position is filled with the same value as the previous occupant.
+> - Left and right shifts are formally described respectively as: $$a << b ≡ a * 2^{b} mod(2^{N})$$ and $$a >> b ≡ \frac{a}{2^{b}} mod(2^{N})$$ where `N` is the numbers bits in the resulting value.
+
+### Logical Operators
+
+Logical operators operate on Boolean expressions statements. They only evaluate to another Boolean expression (ie. type `bool`).
+
+|           Operator          |          Name         |              Description             |            Example            |
+|:---------------------------:|:---------------------:|:------------------------------------:|:-----------------------------:|
+|             `!`             |          Not          |         Negates the Boolean.         |            `!a`               |
+|             `&&`            |      Logical And      |    Both `a` and `b` must be true.    |           `a && b`            |
+|  <code>&vert;&vert;</code>  |       Logical Or      |    Either `a` or `b` must be true.   | <code>a &vert;&vert; b</code> |
+|             `==`            |         Equals        |         `a` is equal to `b`.         |           `a == b`            |
+|             `!=`            |       Not Equal       |       `a` is not equal to `b`.       |           `a != b`            |
+|             `<`             |          Less         |         `a` is less than `b`.        |           `a < b`             |
+|             `>`             |        Greater        |       `a` is greater than `b`.       |           `a > b`             |
+|             `<=`            |   Less than or equal  |   `a` is less than or equal to `b`.  |           `a <= b`            |
+|             `>=`            | Greater than or equal | `a` is greater than or equal to `b`. |           `a >= b`            |
+
+### Assignment Operators
+
+Assignment operators will perform a binary operation between two values and assign the result to the left argument (excluding `=`).
+
+|       Operator       |         Name         |                     Description                     |          Example         |
+|:--------------------:|:--------------------:|:---------------------------------------------------:|:------------------------:|
+|          `=`         |        Assign        |           Assigns the value of `b` to `a`           |          `a = b`         |
+|         `+=`         |      Add Assign      |         Assigns the value of `a + b` to `a`         |         `a += b`         |
+|         `-=`         |    Subtract Assign   |         Assigns the value of `a - b` to `a`         |         `a -= b`         |
+|         `*=`         |    Multiply Assign   |         Assigns the value of `a * b` to `a`         |         `a *= b`         |
+|         `/=`         |     Divide Assign    |         Assigns the value of `a / b` to `a`         |         `a /= b`         |
+|         `%=`         | Modulo Divide Assign |         Assigns the value of `a % b` to `a`         |         `a %= b`         |
+|         `&=`         |      And Assign      |         Assigns the value of `a & b` to `a`         |         `a &= b`         |
+| <code>&vert;=</code> |       Or Assign      | Assigns the value of <code>a &vert; b</code> to `a` | <code>a &vert;= b</code> |
+|         `^=`         |      Xor Assign      |         Assigns the value of `a ^ b` to `a`         |         `a ^= b`         |
+|         `<<=`        |   Left Shift Assign  |         Assigns the value of `a << b` to `a`        |         `a <<= b`        |
+|         `>>=`        |  Right Shift Assign  |         Assigns the value of `a >> b` to `a`        |         `a >>= b`        |
+
+The result of any expression containing operators can be assigned to a new or existing variable by simply using the expression as the right argument of `=`.
+
+```c
+/// The value of a is the result of the expression.
+double a = (6 + 7) / (5.0 * 4);  ///< a == 0.650000
+```
