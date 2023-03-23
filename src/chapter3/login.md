@@ -74,4 +74,4 @@ a ticket for your issue.
 [jasparm@m3-login2 ~]$
 ```
 
-Once you are here, you are ready to move on.
+Once you are done and want to logout, just type `exit`. This will close the connection.
