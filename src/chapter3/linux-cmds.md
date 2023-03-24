@@ -1,6 +1,6 @@
 # Linux Commands
 
-If you are already familiar with linux, feel free to skip this one. If you aren't, then here is crash course in linux commands.
+Even if you are already familiar with linux, please read through all of these commands, as some are specific to M3.
 
 ## Basic Linux Commands
 
@@ -18,7 +18,6 @@ If you are already familiar with linux, feel free to skip this one. If you aren'
 | `cp` | copy a file or directory|
 | `mv <filename>` | move or rename file or directory |
 
-
 ## Cluster Specific Commands
 
 | Command | Function | Flags
@@ -30,7 +29,6 @@ If you are already familiar with linux, feel free to skip this one. If you aren'
 | `sbatch <slurm_script_file>` | submit a job to the cluster |
 | `scontrol show job <JOBID>` | prints information about a specific job |
 | `scancel <JOBID>` | cancel a job |
-
 
 ## M3 Specific Commands
 
