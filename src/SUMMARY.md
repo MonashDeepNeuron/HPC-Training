@@ -28,7 +28,7 @@
 - [M3](./chapter3/chapter3.md)
   - [Logging In](./chapter3/login.md)
   - [Linux Commands](./chapter3/linux-cmds.md)
-  - [Compiling](./chapter3/compiling.md)
+  - [Software and Tooling](./chapter3/software-tooling.md)
   - [M3's Shared Filesystem](./chapter3/shared-fs.md)
   - [Bash Scripts](./chapter3/bash.md)
   - [Job batching & SLURM](./chapter3/slurm.md)

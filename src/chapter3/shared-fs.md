@@ -21,8 +21,6 @@ This is also shared with all users in MDN, and has more allocation (~3TB). You m
 - In general, it is good practice to make a directory in the shared directory for yourself. Name this your username or name, to make it easily identifiable. This is where you should store your files for small projects or personal use.
 - The project directory is not for personal use. Do not store files in the project directory that are not related to MDN. Use the scratch directory instead.
 
----
-
 ## Copying files to and from M3
 
 ### Using scp
