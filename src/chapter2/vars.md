@@ -40,6 +40,14 @@ int b = a;
 
 > Note: Literals are data with a constant value that are predefined. They are often used to initialise variables to a particular starting value.
 
+### Constant Data
+
+Sometimes you want data to be constant or immutable. This is data that does not and cannot change during its lifetime. To do this in C we use the `const` qualifier before the type of a variable. This marks some variable as constant. Constant data must be given an initialiser or the program will not compile. `const` can be applied to any variable of any type but a constant variable cannot be modified to be mutable however, you can create a copy of a constant variable that is mutable.
+
+```c
+const int a = 4;
+```
+
 ## Operators
 
 Operators are the most primitive way to manipulate data and variables in C. There are four major categories for operators these being arithmetic, bitwise, logical and assignment. Each operator is written in either infix (binary), prefix or prefix (unary) form. Most operators return the result of their evaluation meaning it can can be assigned to a new variable however, some modify the data in-place, this includes all assignment operators and the increment and decrement operators (which do both).
@@ -133,3 +141,13 @@ The result of any expression containing operators can be assigned to a new or ex
 /// The value of a is the result of the expression.
 double a = (6 + 7) / (5.0 * 4);  ///< a == 0.650000
 ```
+
+## Enumerations
+
+The last data type we will look at is the enum. Enums are another integral data type however, they have a limited number of possible states where each state is named by the user. For example consider a Boolean type `Bool`; although a builtin type can be represented by a enum with its possibles states being `False` and `True`. The states or enumerators of an enum are integral constants ie. each name has a particular integer value associated with it. Using the `Bool` example again, the value of `False` could be 0 and the value of `true` could be 1. This would restrict a `Bool` to only being `True` or `False` (1 or 0).
+
+```c
+enum Bool { False = 0, True = 1 };
+```
+
+Enums in C can be named (like `Bool`) or unnamed where the variants are simply generated as named integral constants (similar to just creating constant variables for each variants). Enum variants are accessible as long as the enum is in scope meaning I could use say `False` anywhere in the program that `Bool` is in scope without having to express in the language directly that `False` comes from `Bool`. The enumerators of an enum always have an underlying type of `int` meaning they can be used like constant integer value due to C's weak type system. Enumerators will always start with a value of 0 if no value is specified and increase for each subsequent variant however, it is possible to specify any value for variants as long as they are unique.
