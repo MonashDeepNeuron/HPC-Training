@@ -38,7 +38,10 @@ int a = 10;
 int b = a;
 ```
 
-> Note: Literals are data with a constant value that are predefined. They are often used to initialise variables to a particular starting value.
+> Note:
+>
+> - Literals are data with a constant value that are predefined. They are often used to initialise variables to a particular starting value.
+> - A `char` literal is a single letter surrounded in single quotes eg. `'a'` is a literal for the letter 'a'.
 
 ### Constant Data
 
