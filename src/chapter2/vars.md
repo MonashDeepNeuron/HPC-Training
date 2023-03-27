@@ -145,6 +145,18 @@ The result of any expression containing operators can be assigned to a new or ex
 double a = (6 + 7) / (5.0 * 4);  ///< a == 0.650000
 ```
 
+### `sizeof`
+
+There is also one final operator called the `sizeof` operator which returns the number of bytes a particular piece of data occupies in memory. The `sizeof` operator uses a function call syntax with the argument being the data to be queried.
+
+```c
+int a = 4;
+double b = 3.154;
+
+int sz_a = sizeof(a);   //< 4
+int sz_b = sizeof(b);   //< 8
+```
+
 ## Enumerations
 
 The last data type we will look at is the enum. Enums are another integral data type however, they have a limited number of possible states where each state is named by the user. For example consider a Boolean type `Bool`; although a builtin type can be represented by a enum with its possibles states being `False` and `True`. The states or enumerators of an enum are integral constants ie. each name has a particular integer value associated with it. Using the `Bool` example again, the value of `False` could be 0 and the value of `true` could be 1. This would restrict a `Bool` to only being `True` or `False` (1 or 0).
