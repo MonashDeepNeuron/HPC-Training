@@ -24,9 +24,7 @@ Along the way you will learn how to effectively use developer tools like Git and
 
 ### How to use this book
 
-Using the book is pretty self explanatory. The content is split up into chapters which covers a particular topic which can be further broken down sections. You navigate through the book mostly chronologically using the arrow buttons on either side of the page (can't miss them). You can also look through the chapters and sections to find particular topics or using the search bar, which can be activated by pressing <kbd>S</kbd>.
-
-Each chapter has a challenges section. These contain quizzes and tasks to complete related to the content of each chapter.
+Using the book is pretty self explanatory. The content is split up into chapters which covers a particular topic which can be further broken down sections. You navigate through the book mostly chronologically using the arrow buttons on either side of the page (can't miss them). You can also look through the chapters and sections to find particular topics or using the search bar, which can be activated by pressing <kbd>S</kbd>. Each chapter has a challenges section. These contain various tasks to complete related to the content of each chapter.
 
 ### Contributing
 

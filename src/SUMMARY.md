@@ -8,6 +8,7 @@
   - [Mac](./chapter1/mac.md)
   - [Linux](./chapter1/linux.md)
   - [WSL](./chapter1/wsl.md)
+  - [Challenges](./chapter1/challenges.md)
 
 - [Brief Introduction to C](./chapter2/intro-to-c.md)
   - [Hello World](./chapter2/helloworld.md)
