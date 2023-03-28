@@ -4,10 +4,10 @@ There are two vital data types we haven't formally looked at yet. These are the 
 
 ## Strings
 
-What are strings? Strings are a sequence bytes represented as a collection of characters (`char`s) that (typically) end in a null-string-terminator. Strings are the primary type used to interact with any form of IO with all forms of data being serialized to and from strings. C doesn't have a dedicated type for strings. This is because strings are just a collection of `char` and this can simply be represented as a contiguous block of memory interpreted as `char`. To create a block of `char` using the `[]` initialiser. This will create a block that is the same size as its initialiser string. String literals are introduced using double quotes. eg.:
+What are strings? Strings are a sequence bytes represented as a collection of characters (`char`s) that (typically) end in a null-string-terminator. Strings are the primary type used to interact with any form of IO with all forms of data being serialized to and from strings. C doesn't have a dedicated type for strings. This is because strings are just a collection of `char` and this can simply be represented as a contiguous block of memory interpreted as `char`. To create a block of `char`, use the `[]` initialiser after the variable name. This will create a block that is the same size as its initialiser string. String literals are introduced using double quotes. eg.:
 
 ```c
-char[] str = "Hello";
+char str[] = "Hello";
 ```
 
 > Note:
@@ -17,7 +17,7 @@ char[] str = "Hello";
 
 ## Arrays
 
-Strings are not the only collection type; in fact, they are a specialisation of a more generic structure in C called arrays. Arrays represent a contiguous sequence of elements, all of which must be of the same type. Arrays also must have a known size at compile time meaning they cannot be dynamically resized. Elements of an array are accessed using the subscript operator `[]` which takes a 0-based index. Arrays in C are very primitive and are designed to be a close analogy to a machine memory. Array types are any type name (eg. `int`) suffixed with `[]` with the size of the array is passed to the square brackets in the type however, if the initial size is known then the size can be elided. Arrays are initialised using an initialiser list which are a comma separated list of values surrounded in braces (`{}`) with strings being the only exception.
+Strings are not the only collection type; in fact, they are a specialisation of a more generic structure in C called arrays. Arrays represent a contiguous sequence of elements, all of which must be of the same type. Arrays also must have a known size at compile time meaning they cannot be dynamically resized. Elements of an array are accessed using the subscript operator `[]` which takes a 0-based index. Arrays in C are very primitive and are designed to be a close analogy to a machine memory. Array types are any variable name suffixed with `[]`. The size of the array can be explicitly set by passed an unsigned integral constant to the square brackets however, if the initial size is known then the size can be elided. Arrays are initialised using an initialiser list which are a comma separated list of values surrounded in braces (`{}`) with strings being the only exception.
 
 > Note: Because there are no complex types in C, strings are just an array of `char`.
 
@@ -26,8 +26,8 @@ Strings are not the only collection type; in fact, they are a specialisation of 
 
 int main()
 {
-    int[] a = { 1, 2, 3, 4 };
-    char[5] b = { 'H', 'e', 'l', 'l', 'o' };
+    int a[] = { 1, 2, 3, 4 };
+    char b[5] = { 'H', 'e', 'l', 'l', 'o' };
 
     printf("{ %d, ", a[0]);
     printf("%d, ", a[1]);
