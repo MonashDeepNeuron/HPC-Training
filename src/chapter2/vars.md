@@ -102,7 +102,7 @@ Bitwise operators are used to manipulate the individual bits of an integral type
 > - Bits are lost from shift operators.
 > - Left shift (`>>`) pads with zeros ie. adds a zero in the new empty position.
 > - Right shift (`<<`) pads with the most significant bit ie. the new empty position is filled with the same value as the previous occupant.
-> - Left and right shifts are formally described respectively as: $$a << b ≡ a * 2^{b} mod(2^{N})$$ and $$a >> b ≡ \frac{a}{2^{b}} mod(2^{N})$$ where `N` is the numbers bits in the resulting value.
+> - Left and right shifts are formally described respectively as: \\(a << b ≡ a * 2^{b} mod(2^{N})\\) and \\(a >> b ≡ \frac{a}{2^{b}} mod(2^{N})\\) where \\(N\\) is the numbers bits in the resulting value.
 
 ### Logical Operators
 
