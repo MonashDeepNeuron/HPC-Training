@@ -109,7 +109,24 @@ int main()
 
 ### Strings & Arrays as Pointers
 
-~
+Earlier, we kind of lied to you. We said that C supports array types. This is not entirely true. In reality arrays are just a pointer to a contiguous block of memory. In particular, the pointer points to the first memory location (element) of the array. The one difference is that arrays support the use of the subscript operator `[]` which performs a jump of `n` elements from the first element and automatic dereference of the pointer value giving you efficient access to the desired element. And because strings are just character arrays they are really just a pointer to the first element in the string literal ie. a `char*`. Almost always an array will decay into a pointer to the first element, particular when passing it to a function.
+
+> Note: Pointers still technically support `[]` but unless it points to a contiguous block of data, the operation is mostly useless.
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    char greeting[] = "Hello";
+    char* farewell = "Goodbye";
+
+    puts(greeting);
+    puts(farewell);
+
+    return 0;
+}
+```
 
 ## Dynamic Memory
 
