@@ -166,3 +166,22 @@ enum Bool { False = 0, True = 1 };
 ```
 
 Enums in C can be named (like `Bool`) or unnamed where the variants are simply generated as named integral constants (similar to just creating constant variables for each variants). Enum variants are accessible as long as the enum is in scope meaning I could use say `False` anywhere in the program that `Bool` is in scope without having to express in the language directly that `False` comes from `Bool`. The enumerators of an enum always have an underlying type of `int` meaning they can be used like constant integer value due to C's weak type system. Enumerators will always start with a value of 0 if no value is specified and increase for each subsequent variant however, it is possible to specify any value for variants as long as they are unique.
+
+## Type Casting
+
+Often it is useful to be able to convert data of one type to another. This can be done via type casting. This involve prefixing a variable (or function call return) with the desired type you want to cast to surrounded in parenthesis. This will cast the bits of the current variable to the new type which can then be save to a variable of the appropriate type or passed to a functions expecting that type.
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i = 97;
+    printf("i = %d\n", i);
+
+    char ic = (char)i;  //< Cast to char
+    printf("i = ic = '%c'\n", ic);
+
+    return 0;
+}
+```
