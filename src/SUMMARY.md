@@ -23,7 +23,6 @@
   - [Dynamic Memory](./chapter2/memory.md)
   - [Structures](./chapter2/structs.md)
   - [Macros & The Preprocessor](./chapter2/macros.md)
-  - [The Standard Library](./chapter2/stdlib.md)
   - [Challenges](./chapter2/challenges.md)
 
 - [M3](./chapter3/chapter3.md)
