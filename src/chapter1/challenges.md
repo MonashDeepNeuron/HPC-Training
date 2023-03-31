@@ -6,7 +6,7 @@ As you progress through each chapter you will be given a small set of challenges
 
 To get setup:
 
-- Click the link above to got to the repository on GitHub.
+- Click the link above to go to the repository on GitHub.
 - Click 'Use this template' button (green) and select 'Create a new repository'.
 - Give it a name and make sure it is private.
 - Click 'Create repository from template'.
@@ -25,6 +25,8 @@ And thats it, you can now edit any of the files and complete the challenges. Whe
 git add .  # Add any untracked or modified files
 git push origin  # Push to GitHub
 ```
+
+> Note: Look at the README.md of the repo for the for more instructions.
 
 ## Challenges Repository
 
