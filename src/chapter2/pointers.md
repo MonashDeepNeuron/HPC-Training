@@ -127,3 +127,7 @@ int main()
     return 0;
 }
 ```
+
+<!-- ## Function Pointers
+
+~ -->
