@@ -8,13 +8,13 @@ If you are using windows, the best way to ssh into m3 is by using [puTTY](https:
 
 Once installed and opened, you will see a page like this:
 
-![puTTY config page](putty_start.png)
+![puTTY config page](./images/putty_start.png)
 
 Type in your m3 username followed by `@m3.massive.org.au` and press enter or the Open button.
 
-If it the first time accessing M3 from this client then you may see something like this: 
+If it the first time accessing M3 from this client then you may see something like this:
 
-![puTTY auth page](putty_key_not_cached.png)
+![puTTY auth page](./images/putty_key_not_cached.png)
 
 Just click Accept, and puTTY will add the cluster's ssh fingerprint to cache.
 
