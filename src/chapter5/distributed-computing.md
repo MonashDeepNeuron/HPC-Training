@@ -4,7 +4,7 @@
 
 This essentially means it is a form of parallel computing, where the processing power is spread across multiple machines in a network rather than being contained within a single system. In this memory architecture, the problems are broken down into smaller parts, and each machine is assigned to work on a specific part.
 
-![distributed memory architecture](/src/imgs/distributed_memory_architecture.png)
+![distributed memory architecture](../imgs/distributed_memory_architecture.png)
 
 ## Distributed Memory Architecture
 
@@ -29,7 +29,7 @@ There are number of benefits to distributed computing in particular it addresses
 - Highly scalable as we can add more machines and are not limited by RAM.
 - Effectively resulting in being able to handle large-scale problems
 
-The benefits above do not come without some drawbacks including memory overhead.
+The benefits above do not come without some drawbacks including network overhead.
 
 ## Disadvantages of distributed computing
 
