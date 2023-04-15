@@ -18,9 +18,9 @@ Think back to the example below which was provided in the last chapter. We will 
 
 ![Parallel computing example](../imgs/parallel_computing_arrays_eg.png)
 
-The speed up achieved from parallelism is dictated by your algorithm. Notably the serial bits of your algorithm can not be sped up by increasing the number of processors. The diagram below looks at the benefits we can achieve from writing parallel code as the number of processes increases.
-
 ## Parallel Scalability
+
+The speed up achieved from parallelism is dictated by your algorithm. Notably the serial bits of your algorithm can not be sped up by increasing the number of processors. The diagram below looks at the benefits we can achieve from writing parallel code as the number of processes increases.
 
 ![Parallel scalability](../imgs/parallel_scalability.jpg)
 
