@@ -22,7 +22,7 @@ int MPI_Comm_rank(MPI_Comm comm, int \* rank);
 // rank contains the value for that process- the function return value is an error code
 ```
 
-![MPI routines](../imgs/mpi_routines.png)
+![MPI routines](imgs/mpi_routines.png)
 
 ### Point-to-Point communication
 
@@ -242,7 +242,7 @@ mpirun -np 4 ./my-awesome-program
 There are some useful commands to check the parallelism of the code.
 The command top or htop looks into a process. As you can see from the image below, it shows the CPU usages
 
-![htop](../imgs/htop.png)
+![htop](imgs/htop.png)
 
 - The command ```time``` checks the overall performance of the code
   - By running this command, you get real time, user time and system time.
@@ -251,4 +251,4 @@ The command top or htop looks into a process. As you can see from the image belo
 - Sys is the amount of CPU time spent in the kernel within the process.
   - User time +Sys time will tell you how much actual CPU time your process used.
 
-![time](../imgs/time.png)
+![time](imgs/time.png)

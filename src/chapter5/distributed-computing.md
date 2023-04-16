@@ -4,7 +4,7 @@
 
 This essentially means it is a form of parallel computing, where the processing power is spread across multiple machines in a network rather than being contained within a single system. In this memory architecture, the problems are broken down into smaller parts, and each machine is assigned to work on a specific part.
 
-![distributed memory architecture](../imgs/distributed_memory_architecture.png)
+![distributed memory architecture](imgs/distributed_memory_architecture.png)
 
 ## Distributed Memory Architecture
 
@@ -13,13 +13,13 @@ Lets have a look at the distributed memory architecture in more details.
 - Each processor has its own local memory, with its own address space
 - Data is shared via a communications network using a network protocol, e.g Transmission Control Protocol (TCP), Infiniband etc..
 
-![Distributed Memory Architecture](../imgs/distributed_memory_architecture_2.png)
+![Distributed Memory Architecture](imgs/distributed_memory_architecture_2.png)
 
 ## Distributed vs Shared program execution
 
 The following diagram provides another way of looking at the differences between distributed and shared memory architecture and their program execution.
 
-![Distributed vs Shared](../imgs/distributed_vs_shared.png)
+![Distributed vs Shared](imgs/distributed_vs_shared.png)
 
 ## Advantages of distributed computing
 
