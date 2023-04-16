@@ -22,10 +22,34 @@ In parallel region, multiple threads are spawned and utilises the cores on CPU
 
 ## OpenMP Compiler Directives
 
-Recall compiler directives in C; particularly the `#pragma` directive. These can be used to create custom functionality for a compiler and enable specialized features in-code. OpenMP provides a set of `#pragma` directives that can be used to specify the parallelization of a particular loop or section of code. For example, the `#pragma omp parallel` directive is used to start a parallel region, where multiple threads can execute the code concurrently. The `#pragma omp for` directive is used to parallelize a loop, with each iteration of the loop being executed by a different thread.
+Recall compiler directives in C; particularly the `#pragma` directive. These can be used to create custom functionality for a compiler and enable specialized features in-code. 
+
+The `#pragma` directive is followed by a keyword that specifies the type of pragma and any additional parameters or options that are needed. For example, the `#pragma omp` directive is used in OpenMP parallel programming to provide hints to the compiler about how to parallelize code. Here are some examples of `#pragma` directives:
+-   `#pragma once`: This is a commonly used pragma in C and C++ header files to ensure that the header file is included only once in a compilation unit. This can help to prevent errors that can occur when the same header file is included multiple times.
+-   `#pragma message`: This pragma is used to emit a compiler message during compilation. This can be useful for providing additional information to the programmer or for debugging purposes.
+-   `#pragma warning`: This pragma is used to control compiler warnings. It can be used to turn specific warnings on or off, or to change the severity of warnings.
+-   `#pragma pack`: This pragma is used to control structure packing in C and C++. It can be used to specify the alignment of structure members, which can affect the size and layout of structures in memory.
+-   `#pragma optimize`: This pragma is used to control code optimization. It can be used to specify the level of optimization, or to turn off specific optimizations that may be causing problems.
+
+It is important to note that `#pragma` directives are compiler-specific, meaning that different compilers may interpret them differently or may not support certain directives at all. It is important to check the documentation for a specific compiler to understand how it interprets `#pragma` directives.
+
+OpenMP provides a set of `#pragma` directives that can be used to specify the parallelization of a particular loop or section of code. For example, the `#pragma omp parallel` directive is used to start a parallel region, where multiple threads can execute the code concurrently. The `#pragma omp for` directive is used to parallelize a loop, with each iteration of the loop being executed by a different thread.
 
 Here's an example of how `#pragma` directives can be used with OpenMP to parallelize a simple loop:
-  
+
+```c
+#include <omp.h>
+#include <stdio.h>
+
+int main() {
+    int i;
+    #pragma omp parallel for
+    for (i = 0; i < 10; i++) {
+        printf("Thread %d executing iteration %d\n", omp_get_thread_num(), i);
+    }
+    return 0;
+}
+```
   
 Use `gcc -fopenmp` to compile your code when you use `#pragma`
 
