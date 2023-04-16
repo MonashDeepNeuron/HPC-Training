@@ -5,11 +5,11 @@ This book is part of Monash DeepNeurons collection information and training reso
 ## Authors
 
 - [Tyler Swann](https://github.com/oraqlle)
-- [Osman Haji](https://github.com)
-- [Yuki Kume](https://github.com)
-- [Jasper Martin](https://github.com)
+- [Osman Haji](https://github.com/Ozzywap)
+- [Yuki Kume](https://github.com/UnciaBit)
+- [Jasper Martin](https://github.com/jasparm)
 
 ## Contributors
 
-- [Mitchell Mibus](https://github.com)
-- [Ankita Gosavi](https://github.com)
+- [Mitchell Mibus](https://github.com/mmib0001)
+- [Ankita Gosavi](https://github.com/ankitaagosavi)
