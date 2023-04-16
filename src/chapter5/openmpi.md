@@ -5,8 +5,8 @@
 ``` C
 int MPI_Init(int * argc, char ** argv);
 // initializes the MPI environment.
-//Argc argv are the parameters come
-//from main(argc,argv). The return value is an
+// Argc argv are the parameters come
+// from main(argc,argv). The return value is an
 // error code. 0 is OK. Non-zero is an error code
 ```
 
