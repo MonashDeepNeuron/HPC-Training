@@ -2,7 +2,7 @@
 
 If you have ever programmed before you may be familiar with 'Hello World'. If not, a 'Hello World' program is often the first program you write in a programming language. It serves a brief introduction to the languages syntax, a simple workflow in that language and also as a sanity check to ensure the developer tools for the project were installed and setup correctly.
 
-> Fun Fact:
+> **Fun Fact:**
 >
 > The 'Hello World' test program was popularized by Brian Kernighan's _Programming in C: A Tutorial_.
 
@@ -24,7 +24,7 @@ cd hello
 code . 
 ```
 
-> Note:
+> **Note:**
 >
 > Windows users will have to use the Developer Command Prompt used in the Windows section of the last chapter. You will then need to navigate to a different directory. Ideally use your 'Home' directory.
 >

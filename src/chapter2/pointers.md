@@ -22,7 +22,7 @@ double* pd;     //< Pointer to a double
 void* pd;       //< Pointer to a void
 ```
 
-> Note:
+> **Note:**
 >
 > - `void*` represents a **polymorphic** pointer type meaning it can point to data of any type and must be cast to the correct type on usage.
 <!-- > - Usage in  function signatures -->

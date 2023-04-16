@@ -23,7 +23,7 @@ int main()
 }
 ```
 
-> Note:
+> **Note:**
 >
 > - Structures do not support methods.
 > - Elements in a structure a layed out contiguously ie. each element is right next to each other.

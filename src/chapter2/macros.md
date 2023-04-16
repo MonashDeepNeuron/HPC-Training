@@ -6,7 +6,7 @@ Sometimes we need to control how source code is compiled, enable certain parts o
 
 Macros are expressions that are evaluated and removed from the final source code. They are created using a `#` followed by a macro identifier. One macro we have used consistently throughout this book is the `#include` macro which is used to copy the source code from header files into other source and header files. Macros in C mostly perform in-source text replacement.
 
-> Note: Conventionally, macro symbols (names) are written in all uppercase to prevent conflation with regular source code.
+> **Note:** Conventionally, macro symbols (names) are written in all uppercase to prevent conflation with regular source code.
 
 ### `#define` & `#undef`
 
@@ -82,7 +82,7 @@ int main()
 }
 ```
 
-> Try it yourself. Write up the following code and using the `-D` flag when you compile it see how the outcome changes.
+> Try it yourself. Write up the following code and see how using the `-D` flag when compiling it changes the outcome.
 
 ### `#pragma`
 

@@ -61,7 +61,7 @@ int main()
 }
 ```
 
-> Note:
+> **Note:**
 >
 > - Any loop can be exited early using a `break` statement.
 > - C doesn't have a function to retrieve the size of an array. However, we can use the `sizeof` operator to retrieve the total number of bytes the entire array occupies and then divide it by the size of one of the elements. This works because each element in an array are contiguous and aligned and thus it is easy to determine the number of bytes to jump for each element and because each element is the same size (type) then the total number of bytes is the array size types the size of each element.

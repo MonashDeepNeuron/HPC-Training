@@ -24,7 +24,7 @@ $ xcode-select -p
 /Library/Developer/CommandLineTools
 ```
 
-> ### Note
+> **Note:**
 >
 > Here, `$` indicates the prompt of the terminal. Do not include it in the command. This may be a different symbol on your device.
 

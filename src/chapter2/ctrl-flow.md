@@ -24,7 +24,7 @@ int main()
 }
 ```
 
-> What is the output if the above code.
+> What do you think the output of the above code is?
 
 ### `else` Statements
 
@@ -50,7 +50,7 @@ int main()
 }
 ```
 
-> #### Note:
+> **Note:**
 >
 > The placement of braces in C is not strict ie. the above can be written as:
 >
@@ -98,7 +98,9 @@ int main()
 }
 ```
 
-> Note: Inefficient usage of branching constructs can cause massive slow downs of many systems at large scales due to a CPU level optimisation called branch prediction which tries to 'predict' which branch is most likely to occur and load the instructions corresponding to its code block into the cache ahead of time. However, a large number of branches increases the chance of these algorithms being incorrect which can lead to a cache miss which involves the CPU having to wipe the cache of the prefetched instructions and then lookup and load the correct instructions which can be expensive if the branching code runs a lot.
+> **Note:**
+>
+> Inefficient usage of branching constructs can cause massive slow downs of many systems at large scales due to a CPU level optimisation called branch prediction which tries to 'predict' which branch is most likely to occur and load the instructions corresponding to its code block into the cache ahead of time. However, a large number of branches increases the chance of these algorithms being incorrect which can lead to a cache miss which involves the CPU having to wipe the cache of the prefetched instructions and then lookup and load the correct instructions which can be expensive if the branching code runs a lot.
 
 ## `switch` Statements
 

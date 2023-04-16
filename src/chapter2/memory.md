@@ -22,7 +22,7 @@ int main()
 }
 ```
 
-> Note:
+> **Note:**
 >
 > - Memory allocated by `malloc()` is left in an uninitialised stake meaning whatever values that were left in that memory block remain ie. the junk that is help by the memory doesn't get cleared.
 > - Because `malloc()` just takes the number of bytes we want to allocate as a parameter we must calculate the total size of memory we need which depends on the size of an individual element ie. \\(n × s\\) where \\(n\\) is the number of elements we desire and \\(s\\) is the size of an individual element. We can use the `sizeof` operator on a type name to get the size of that type.
@@ -78,10 +78,9 @@ int main()
 }
 ```
 
-> Note:
+> **Note:**
 >
 > - Any memory allocated by `malloc()`, `calloc()` or `realloc()` must be returned to the OS by a call to `free()`.
-> - 
 
 ## General Memory Utilities
 
@@ -194,7 +193,7 @@ int main()
 }
 ```
 
-> Note: If you access more bytes than what is allocated to a pointer using any of these algorithms or even directly will cause undefined behaviour which might (hopefull) crash the program or lead to consequences that are very hard to trace. Don't do it.
+> **Note:** If you access more bytes than what is allocated to a pointer using any of these algorithms or even directly will cause undefined behaviour which might (hopefull) crash the program or lead to consequences that are very hard to trace. Don't do it.
 
 ## Dynamic String Utilities
 

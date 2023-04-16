@@ -15,7 +15,7 @@ In C there are six fundamental data types, `bool`, `char`, `int`, `float`, `doub
 - `long double` - Extended double precision (or quadruple precision) floating point type, represents decimal number values. Usually has a width of at least 64-bits (8 bytes) but sometimes has a width of 128-bits (16 bytes).
 - `void` - Incomplete data type. Indicates the absence of a type of value.
 
-> Note: `bool`, `char` and `int` (and sized variants) are defined as integral types ie. they are all number types.
+> **Note:** `bool`, `char` and `int` (and sized variants) are defined as integral types ie. they are all number types.
 
 ## Variables
 
@@ -29,7 +29,7 @@ int a = 10;
 
 In C variables have 'value semantics', this means that the data of a variable is always copied. For the example above, the data representing the literal `10` is copied into the location of `a` by the assignment operator (`=`).
 
-> Note: Often the compiler will likely try to construct variables (like `a`) directly to the evaluated value of the right-hand-side of the `=` ie. construct `a` directly from `10` rather than create `a` with a dummy value and then copy `10` to `a`'s location. This is called copy elision or return value optimization.
+> **Note:** Often the compiler will likely try to construct variables (like `a`) directly to the evaluated value of the right-hand-side of the `=` ie. construct `a` directly from `10` rather than create `a` with a dummy value and then copy `10` to `a`'s location. This is called copy elision or return value optimization.
 
 You can also create new variables and initialize them to the value of an existing variables using the same syntax. Because C uses value semantics, `b` now has its own copy of the data owned by `a`. These can now be modified independently of each other.
 
@@ -38,7 +38,7 @@ int a = 10;
 int b = a;
 ```
 
-> Note:
+> **Note:**
 >
 > - Literals are data with a constant value that are predefined. They are often used to initialise variables to a particular starting value.
 > - A `char` literal is a single letter surrounded in single quotes eg. `'a'` is a literal for the letter 'a'.
@@ -55,7 +55,7 @@ const int a = 4;
 
 Operators are the most primitive way to manipulate data and variables in C. There are four major categories for operators these being arithmetic, bitwise, logical and assignment. Each operator is written in either infix (binary), prefix or prefix (unary) form. Most operators return the result of their evaluation meaning it can can be assigned to a new variable however, some modify the data in-place, this includes all assignment operators and the increment and decrement operators (which do both).
 
-> Note: Parenthesis are used to control the order of execution, separating sub-expressions.
+> **Note:** Parenthesis are used to control the order of execution, separating sub-expressions.
 
 ### Arithmetic Operators
 
@@ -75,7 +75,7 @@ Arithmetic operators work for integral and floating point type. They are the mos
 |    `+`   |     Posigation    |                            Set sign of value to positive                           |   `+a`  |
 |    `-`   |      Negation     |                            Set sign of value to negative                           |   `-a`  |
 
-> Notes:
+> **Notes:**
 >
 > - Binary arithmetic operators will a return value whose type is the larger of `a` or `b`.
 > - If `a` or `b` is smaller than its counterpart, the smaller will be implicitly promoted to a larger type.
@@ -96,7 +96,7 @@ Bitwise operators are used to manipulate the individual bits of an integral type
 |           `<<`          |     Left Shift     |  Shifts the bits of `a` to the left by `b` positions. |          `a << b`       |
 |           `>>`          |     Right Shift    | Shifts the bits of `a` to the right by `b` positions. |          `a >> b`       |
 
-> Note:
+> **Note:**
 >
 > - Bitwise operators do not exist for floating point types.
 > - Bits are lost from shift operators.

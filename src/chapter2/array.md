@@ -10,7 +10,7 @@ What are strings? Strings are a sequence bytes represented as a collection of ch
 char str[] = "Hello";
 ```
 
-> Note:
+> **Note:**
 >
 > - Unlike some languages; like Python, there is a big difference between single quotes (`''`) and double quotes (`""`). Single quotes are exclusive to character types while strings are always double quotes, even if they only store a single character.
 > - If you have intellisense and hover over a string literal you might notice it states its size as one more then the number of characters actually in the string. This is because all string literals have an invisible character `'\0'` called the null-terminator which is used to denote the end.
@@ -19,7 +19,7 @@ char str[] = "Hello";
 
 Strings are not the only collection type; in fact, they are a specialisation of a more generic structure in C called arrays. Arrays represent a contiguous sequence of elements, all of which must be of the same type. Arrays also must have a known size at compile time meaning they cannot be dynamically resized. Elements of an array are accessed using the subscript operator `[]` which takes a 0-based index. Arrays in C are very primitive and are designed to be a close analogy to a machine memory. Array types are any variable name suffixed with `[]`. The size of the array can be explicitly set by passed an unsigned integral constant to the square brackets however, if the initial size is known then the size can be elided. Arrays are initialised using an initialiser list which are a comma separated list of values surrounded in braces (`{}`) with strings being the only exception.
 
-> Note: Because there are no complex types in C, strings are just an array of `char`.
+> **Note:** Because there are no complex types in C, strings are just an array of `char`.
 
 ```c
 #include <stdio.h>

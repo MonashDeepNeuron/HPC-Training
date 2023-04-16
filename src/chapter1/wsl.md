@@ -17,7 +17,7 @@ The first thing you will need is the new Windows Terminal app. This makes it eas
 
 [Windows Terminal Download](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701)
 
-> Note:
+> **Note:**
 >
 > Shells are an environments that allow access to the operating system (OS), hardware and other system processes through simple shell commands, usually a shell language like Bash or Powershell.
 

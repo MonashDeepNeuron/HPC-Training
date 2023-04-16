@@ -26,7 +26,7 @@ git add .  # Add any untracked or modified files
 git push origin  # Push to GitHub
 ```
 
-> Note: Look at the README.md of the repo for the for more instructions.
+> **Note:** Look at the README.md of the repo for the for more instructions.
 
 ## Challenges Repository
 

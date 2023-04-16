@@ -14,7 +14,7 @@ The general signature of `printf()` is quite unique in C and how it achieves it 
 printf(char* fmtstring, ...);
 ```
 
-> Note:
+> **Note:**
 >
 > - Ignore the use of `char*` for now.
 > - `printf()` is that it doesn't pad the end if the output string with a newline so you will have to manually provide it. The newline character is `'\n'`. The backslash is a special character that indicates the proceeding character is "escaped". Escaped characters have special meanings for string and character data.
@@ -50,7 +50,7 @@ You'll notice we used a different character after the `%` for each argument. Thi
 
 C has a concise language for `printf()` format arguments with the general format for a positional argument specifier being:
 
-_%\[flag\]\[width\]\[.precision\]\[length\]type-specifier_
+`_%\[flag\]\[width\]\[.precision\]\[length\]type-specifier_`
 
 There are a variety of different options for each part of the specification. Below is a series of tables breaking down the various options for each sub-specifier but note that only _type-specifier_ is needed, the others are optional.
 

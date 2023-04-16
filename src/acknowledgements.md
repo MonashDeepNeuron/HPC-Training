@@ -7,7 +7,7 @@ This book is part of Monash DeepNeurons collection information and training reso
 - [Tyler Swann](https://github.com/oraqlle)
 - [Osman Haji](https://github.com/Ozzywap)
 - [Yuki Kume](https://github.com/UnciaBit)
-- [Jasper Martin](https://github.com/jasparm)
+- [Jaspar Martin](https://github.com/jasparm)
 
 ## Contributors
 
