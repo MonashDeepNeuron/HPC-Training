@@ -25,7 +25,7 @@
 
 Output should be similar to this. May be slightly different due to process scheduling
 
-![Ping pong](../imgs/ping_pong.png)
+![Ping pong](imgs/ping_pong.png)
 
 ## Task 3: Monte Carlo
 
