@@ -20,14 +20,9 @@ In parallel region, multiple threads are spawned and utilises the cores on CPU
 
 > Only one thread exists in a serial region
 
-## Compiler Directive \# pragma
+## OpenMP Compiler Directives
 
--   Source codes with “#” provide additional information to compiler
--   `#define X 10`
--   `#include <omp.h>`
--   `#pragma omp parallel`
-  
-OpenMP provides a set of `#pragma` directives that can be used to specify the parallelization of a particular loop or section of code. For example, the `#pragma omp parallel` directive is used to start a parallel region, where multiple threads can execute the code concurrently. The `#pragma omp for` directive is used to parallelize a loop, with each iteration of the loop being executed by a different thread.
+Recall compiler directives in C; particularly the `#pragma` directive. These can be used to create custom functionality for a compiler and enable specialized features in-code. OpenMP provides a set of `#pragma` directives that can be used to specify the parallelization of a particular loop or section of code. For example, the `#pragma omp parallel` directive is used to start a parallel region, where multiple threads can execute the code concurrently. The `#pragma omp for` directive is used to parallelize a loop, with each iteration of the loop being executed by a different thread.
 
 Here's an example of how `#pragma` directives can be used with OpenMP to parallelize a simple loop:
   
