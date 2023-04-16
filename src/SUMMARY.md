@@ -26,10 +26,11 @@
   - [Challenges](./chapter2/challenges.md)
 
 - [M3](./chapter3/chapter3.md)
+  - [Getting Started](./chapter3/start.md)
   - [Logging In](./chapter3/login.md)
   - [Linux Commands](./chapter3/linux-cmds.md)
-  - [Compiling](./chapter3/compiling.md)
   - [M3's Shared Filesystem](./chapter3/shared-fs.md)
+  - [Software and Tooling](./chapter3/software-tooling.md)
   - [Bash Scripts](./chapter3/bash.md)
   - [Job batching & SLURM](./chapter3/slurm.md)
   - [Challenges](./chapter3/challenges.md)
