@@ -1,6 +1,8 @@
 # M3's Shared Filesystem
 
-When we talk about a shared filesystem, what we mean is that the filesystem that M3 uses allows multiple users or systems to access, manage, and share files and directories over a network, concurrently. It enables users to collaborate on projects, share resources, and maintain a unified file structure across different machines and platforms.
+When we talk about a shared filesystem, what we mean is that the filesystem that M3 uses allows multiple users or systems to access, manage, and share files and directories over a network, concurrently. It enables users to collaborate on projects, share resources, and maintain a unified file structure across different machines and platforms. In addition to this, it enables the many different compute nodes in M3 to access data from a single source which users also have access to, simplifying the process of running jobs on M3.
+
+Very simply, the way it works is that the home, project and scratch directories are mounted on every node in the cluster, so they are accessible from any node.
 
 M3 has a unique filesystem consisting of three main important parts (for you).
 
