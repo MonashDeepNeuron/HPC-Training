@@ -6,7 +6,7 @@ Something simple to start off. Create a bash script called `hello.sh` that print
 
 ## Challenge 2
 
-Something a bit more involved. Create a submission script that will install python 3.10 using anaconda, create a virtual environment, install the necessary dependencies, and clone and run [this]() script. Remember, don't directly load python using module, follow the instructions in the [software tooling](./software-tooling.md#python) chapter.
+Something a bit more involved. Create a submission script that will install python 3.10 using miniconda, create a virtual environment, install the necessary dependencies, and clone and run [this](https://github.com/MonashDeepNeuron/HPC-Training-Challenges/blob/main/challenges/m3/dl_on_m3/alexnet_stl10.py) script. Remember, don't directly load python using module, follow the instructions in the [software tooling](./software-tooling.md#python) chapter.
 
 ## Challenge 3
 
