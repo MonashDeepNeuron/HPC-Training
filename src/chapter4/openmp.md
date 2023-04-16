@@ -20,13 +20,10 @@ In parallel region, multiple threads are spawned and utilises the cores on CPU
 
 > Only one thread exists in a serial region
 
-## Compiler Directive \# pragma
+## OpenMP Compiler Directives
 
--   Source codes with “#” provide additional information to compiler
--   `#define X 10`
--   `#include <omp.h>`
--   `#pragma omp parallel`
-  
+Recall compiler directives in C; particularly the `#pragma` directive. These can be used to create custom functionality for a compiler and enable specialized features in-code. 
+
 `#pragma` is a preprocessor directive that is used to provide additional information to the compiler beyond the standard language syntax. It allows programmers to give hints or directives to the compiler, which the compiler can use to optimize the code or to use specific compiler features or extensions.
 
 The `#pragma` directive is followed by a keyword that specifies the type of pragma and any additional parameters or options that are needed. For example, the `#pragma omp` directive is used in OpenMP parallel programming to provide hints to the compiler about how to parallelize code. Here are some examples of `#pragma` directives:

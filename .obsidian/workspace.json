@@ -1,0 +1,246 @@
+{
+  "main": {
+    "id": "4ea31140053f117f",
+    "type": "split",
+    "children": [
+      {
+        "id": "8cee0f5611e2d1c6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "82f74f2085bc3248",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "src/chapter4/openmp.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "375188b5b2d628e8",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "423417d6e847a438",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "7dc928c983990448",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "ab8113c8b698842b",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a58e6c398e4ea35b",
+    "type": "split",
+    "children": [
+      {
+        "id": "4fffa78809f3d8a1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "291133dd7b3bd61e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c6e8d9f4858d18fe",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 297.5
+  },
+  "right": {
+    "id": "4e294bbbfeed5317",
+    "type": "split",
+    "children": [
+      {
+        "id": "70a8713e488cb779",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dbb5ab33b897ee50",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "b45536fa498bd620",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "src/chapter4/openmp.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d0533082e689157f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "51dc3a2690e00519",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "1a4a1415ad951c8b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "src/chapter4/openmp.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "23e9ceb18127bbc9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "src/chapter4/openmp.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 296.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "zk-prefixer:Create new unique note": false,
+      "workspaces:Manage workspace layouts": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "obsidian-statusbar-pomo:Start pomodoro": false,
+      "periodic-notes:Open today": false
+    }
+  },
+  "active": "82f74f2085bc3248",
+  "lastOpenFiles": [
+    "src/chapter4/challenges.md",
+    "src/chapter4/openmp.md~",
+    "src/chapter4/4913",
+    "src/imgs/time.png",
+    "src/imgs/task_parallelism.jpg",
+    "src/imgs/ping_pong.png",
+    "src/imgs/parallel_scalability.jpg",
+    "src/imgs/parallel_computing_arrays_eg.png",
+    "src/imgs/mpi_routines.png",
+    "src/imgs/mpi_datatypes.png",
+    "src/imgs/memory_architectures.jpg",
+    "src/imgs/htop.png",
+    "src/imgs/distributed_vs_shared.png",
+    "src/imgs",
+    "src/chapter5/parallel-refresher.md",
+    "src/chapter5/distributed-computing.md",
+    "src/chapter4/shared-memory.md",
+    "src/chapter3/start.md",
+    "src/chapter3/software-tooling.md",
+    "src/chapter3/imgs",
+    "src/chapter2/printing.md",
+    "src/chapter2/pointers.md",
+    "src/chapter2/imgs",
+    "src/chapter2/compilation.md",
+    "src/chapter1/getting-started.md",
+    "src/chapter1/challenges.md",
+    "src/chapter4/multithreading.md",
+    "src/chapter4/openmp.md",
+    "src/chapter4/chapter4.md",
+    "src/chapter4/parallel-computing.md",
+    "src/chapter5/openmpi.md",
+    "src/acknowledgements.md",
+    "src/home.md",
+    "src/chapter1/m3.md",
+    "src/chapter1/linux.md",
+    "src/chapter4/imgs",
+    "src/chapter2/array.md",
+    "src/chapter5/challenges.md",
+    "src/chapter3/bash.md",
+    "notes/leetcode/two-sum.md",
+    "notes/moc-leetcode.md",
+    "notes/images",
+    "notes/leetcode/_attachments",
+    "private/HTB/Heist/_attachments",
+    "private/HTB/Heist"
+  ]
+}

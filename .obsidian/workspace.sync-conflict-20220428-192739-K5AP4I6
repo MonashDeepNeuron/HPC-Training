@@ -1,0 +1,121 @@
+{
+  "main": {
+    "id": "4ea31140053f117f",
+    "type": "split",
+    "children": [
+      {
+        "id": "2804b91853a20834",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "_index.md",
+            "mode": "source",
+            "backlinks": false,
+            "source": true
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a58e6c398e4ea35b",
+    "type": "split",
+    "children": [
+      {
+        "id": "4fffa78809f3d8a1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "291133dd7b3bd61e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "c6e8d9f4858d18fe",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 240
+  },
+  "right": {
+    "id": "4e294bbbfeed5317",
+    "type": "split",
+    "children": [
+      {
+        "id": "70a8713e488cb779",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b45536fa498bd620",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "75ea1248c48c24c7",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "d7ea06df99f4b146",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 241.83334350585938,
+    "collapsed": true
+  },
+  "active": "2804b91853a20834",
+  "lastOpenFiles": [
+    "_index.md",
+    "notepad.md",
+    "todo.md",
+    "_local/_essay.md",
+    "_local/_protected.md",
+    "_local/testmd.md",
+    "_local/intern/mercari.md",
+    "projects/_projectIdeas.md",
+    "research/repairOS.md",
+    "research/software.md"
+  ]
+}
