@@ -2,12 +2,13 @@
 
 [Welcome](home.md)
 
-- [Getting Started](./chapter1/chapter1.md)
+- [Getting Started](./chapter1/getting-started.md)
+  - [GitHub](./chapter1/github.md)
   - [Windows](./chapter1/windows.md)
   - [Mac](./chapter1/mac.md)
   - [Linux](./chapter1/linux.md)
   - [WSL](./chapter1/wsl.md)
-  - [GitHub](./chapter1/github.md)
+  - [Challenges](./chapter1/challenges.md)
 
 - [Brief Introduction to C](./chapter2/intro-to-c.md)
   - [Hello World](./chapter2/helloworld.md)
