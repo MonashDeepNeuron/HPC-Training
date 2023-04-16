@@ -36,7 +36,7 @@ The benefits above do not come without some drawbacks including network overhead
 - Network overload. Network can be overloaded by:
   - Multiple small messages
   - Very large data throughput
-  - Multiple all-to-all messages (N^2 growth of messages)
+  - Multiple all-to-all messages ($N^2$ growth of messages)
 - Synchronization failures
   - Deadlock (processes waiting for an input from another process that never comes)
   - Livelock (even worse as it’s harder to detect. All processes shuffling data around but not progressing in the algorithm )

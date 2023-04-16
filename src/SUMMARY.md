@@ -44,8 +44,8 @@
 - [Distributed Computing](./chapter5/chapter5.md)
   - [Refresher on Parallelism](./chapter5/parallel-refresher.md)
   - [What is Distributed Computing](./chapter5/distributed-computing.md)
-  - [OpenMPI](./chapter5/openmpi.md)
   - [Message Passing](./chapter5/message-passing.md)
+  - [OpenMPI](./chapter5/openmpi.md)
   - [Challenges](./chapter5/challenges.md)
 
 [Acknowledgements](./acknowledgements.md)
