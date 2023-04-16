@@ -52,10 +52,10 @@ Here is an example of `#pragma`
 
 ## Running "Hello World" on Multi-threads
 
->If you're unsure about the difference between **multi-threading** and **multi-processing**, check the page [here](src/chapter4/multithreading.md)
+>If you're unsure about the difference between **multi-threading** and **multi-processing**, check the page [here](multithreading.md)
 
 **Drawing in Serial (Left) vs Parallel (Right)**
-![](src/chapter4/imgs/4%20Parallel%20Computing%20OpenMP.gif)
+![](imgs/4%20Parallel%20Computing%20OpenMP.gif)
 
 Drawing in serial versus drawing in parallel, you can see how we can place one pixel at a time and take a long time to make the drawing, but on the right hand side if we choose to load and place four pixels down simultaneously we can get the picture faster, however during the execution it can be hard to make out what the final image will be, given we don’t know what pixel will be placed where in each execution step.
 
@@ -96,6 +96,6 @@ By running this command, you get real time, user time and system time.
 
 ## More Features of OpenMP
 
-- [Introduction to OpenMP](https://www.youtube.com/watch?v=iPb6OLhDEmM&list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG&index=11 )
-- [\#pragma omp parallel private](https://www.youtube.com/watch?v=dlrbD0mMMcQ&list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG&index=17)
-- [\#omp parallel for reduction()](https://www.youtube.com/watch?v=iPb6OLhDEmM&list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG&index=11 )
+- [YouTube Video: Introduction to OpenMP](https://www.youtube.com/watch?v=iPb6OLhDEmM&list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG&index=11 )
+- [YouTube Video: Data environment -\#pragma omp parallel private](https://www.youtube.com/watch?v=dlrbD0mMMcQ&list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG&index=17)
+- [YouTube Video: Parallel Loops - \#omp parallel for reduction()](https://www.youtube.com/watch?v=iPb6OLhDEmM&list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG&index=11 )

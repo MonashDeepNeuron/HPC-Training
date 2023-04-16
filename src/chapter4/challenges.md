@@ -4,7 +4,7 @@
 
 Goal: To to create an array `[0,1,2………...19]`
 
-1. Git clone https://github.com/MonashDeepNeuron/HPC-Training-Challenges
+1. Git clone [HPC-Training-Challenges](https://github.com/MonashDeepNeuron/HPC-Training-Challenges)
 2. Go to the directory “challenges/parallel-computing”. Compile array.c and execute it. Check the run time of the serial code
 3. Add `#pragma<>` 
 4. Compile the code again
@@ -17,7 +17,7 @@ Goal: To to create an array `[0,1,2………...19]`
 3.  `sbatch RunHello.sh`
 4.  `cat slurm<>.out` and check the run time
 
->You can also use strudel web to run the script without sbatch: https://beta.desktop.cvl.org.au/login  
+>You can also use [strudel web](https://beta.desktop.cvl.org.au/login) to run the script without sbatch
 
 ## Task 3 - Reduction Clause
 
@@ -47,7 +47,7 @@ Goal:  To estimate the value of pi from simulation
 
 Short explanation of Monte Carlo algorithm:
 
-[https://www.youtube.com/watch?v=7ESK5SaP-bc&ab_channel=MarbleScience](https://www.youtube.com/watch?v=7ESK5SaP-bc&ab_channel=MarbleScience)
+[YouTube Video:  Monte Carlo Simulation](https://www.youtube.com/watch?v=7ESK5SaP-bc&ab_channel=MarbleScience)
 
 ![Monte Carlo](imgs/Monte%20Carlo.png)
 
