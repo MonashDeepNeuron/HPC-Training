@@ -1,5 +1,7 @@
 # M3's Shared Filesystem
 
+When we talk about a shared filesystem, what we mean is that the filesystem that M3 uses allows multiple users or systems to access, manage, and share files and directories over a network, concurrently. It enables users to collaborate on projects, share resources, and maintain a unified file structure across different machines and platforms.
+
 M3 has a unique filesystem consisting of three main important parts (for you).
 
 ## Home Directory

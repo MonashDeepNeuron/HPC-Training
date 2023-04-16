@@ -8,7 +8,6 @@
   - [Linux](./chapter1/linux.md)
   - [WSL](./chapter1/wsl.md)
   - [GitHub](./chapter1/github.md)
-  - [M3](./chapter1/m3.md)
 
 - [Brief Introduction to C](./chapter2/intro-to-c.md)
   - [Hello World](./chapter2/helloworld.md)
@@ -26,6 +25,7 @@
   - [Challenges](./chapter2/challenges.md)
 
 - [M3](./chapter3/chapter3.md)
+  - [Getting Started](./chapter3/start.md)
   - [Logging In](./chapter3/login.md)
   - [Linux Commands](./chapter3/linux-cmds.md)
   - [Software and Tooling](./chapter3/software-tooling.md)

@@ -1,6 +1,8 @@
 # Bash Scripts
 
-Bash is both a command line interface and a scripting language. Bash scripts are a series of commands that are executed in order. Bash scripts are useful for automating tasks that you do often, or for running a series of commands that you don't want to type out every time. In our case, Bash scripts are used for running jobs on M3.
+Bash is both a command line interface and a scripting language. Linux commands are generally using Bash. Bash scripts are a series of commands that are executed in order. Bash scripts are useful for automating tasks that you do often, or for running a series of commands that you don't want to type out every time. In our case, Bash scripts are used for running jobs on M3.
+
+In terms of use, Bash can encapsulate any command you would normally run in the terminal into a script that can be easily reused. For example you could have a script that automatically navigates to a directory and activates a virtual environment, or a script that compiles and runs a C program.
 
 The basic syntax of a bash file is as follows:
 

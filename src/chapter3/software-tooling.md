@@ -10,11 +10,11 @@ In general, however, you will only really need to use `module load` and `module 
 
 For most of the more popular software packages, like gcc, there are multiple different versions available. You will need to specify which version you want to load based on your needs.
 
-## C / C++
+## C
 
 ### GCC
 
-GCC is the GNU Compiler Collection, and is the most popular C/C++ compiler. It is available in multiple different versions on M3, and you can load them using the `module` command. For example, to load GCC 10.2.0, you would run the following command:
+To load GCC, you can run the following command:
 
 ```bash
 module load gcc/10.2.0

@@ -40,6 +40,8 @@ You might have noticed the `#SBATCH` lines in the bash script. These are called 
 - `mail-user`: The email address to send job status emails to.
 - `mail-type`: The types of emails to send.
 
+> Note: In the case of M3, a task is essentially the same as a process. This is **not** the same as a cpu core. You can have a task that uses one or multiple cores. You can also have multiple tasks comprising the same job, each with one or multiple cores being utilised. It can get quite confusing, so if you are unsure about what you need, just ask. There is also more information in the M3 docs.
+
 There are a lot more options that you can use, and you can find a more complete list [here](https://docs.massive.org.au/M3/slurm/simple-batch-jobs.html).
 
 In particular, if you want to run multithreading or multiprocessing jobs, or you need a gpu, there are more options you need to configure.
