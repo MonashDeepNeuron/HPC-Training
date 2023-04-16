@@ -36,7 +36,6 @@
 
 - [Parallel Computing](./chapter4/chapter4.md)
   - [What is Parallel Computing?](./chapter4/parallel-computing.md)
-  - [Shared Memory Resources](./chapter4/shared-memory.md)
   - [Multithreading](./chapter4/multithreading.md)
   - [OpenMP](./chapter4/openmp.md)
   - [Challenges](./chapter4/challenges.md)
@@ -45,5 +44,6 @@
   - [What is Distributed Computing](./chapter5/distrubuted-computing.md)
   - [Message Passing](./chapter5/message-passing.md)
   - [OpenMPI](./chapter5/openmpi.md)
+  - [Challenges](./chapter5/challenges.md)
 
 [Acknowledgements](./acknowledgements.md)
