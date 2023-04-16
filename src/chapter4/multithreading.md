@@ -38,7 +38,7 @@ Before you run your job, it’s important to check the available resources.
 
 Command: 
 ```bash
-#SBATCH`--flag=value
+#SBATCH --flag=value
 ```
 
 ![sbatch Command](imgs/sbatch%20Command.png)
