@@ -2,7 +2,7 @@
 
 ## Thread vs Process
 
-![](src/chapter4/_attachments/Pasted%20image%2020230325112805.png)
+![Thread vs Processes](imgs/Thread%20vs%20Processes.png)
 
 When computer runs a program, your source code is loaded into RAM and process is started.
 A **process** is a collection of code, memory, data and other resources.
@@ -15,7 +15,7 @@ A **multiprocessing** system has more than two processors, whereas **multithread
 
 ## Architecture of a HPC Cluster (Massive)
 
-![](src/chapter4/_attachments/Pasted%20image%2020230326141219.png)
+![Slurm Architecture](imgs/Slurm%20Architecture.png)
 
 The key in HPC is to write a parallel computing code that utilise multiple nodes at the same time. essentially, more computers faster your application
 
@@ -23,9 +23,12 @@ The key in HPC is to write a parallel computing code that utilise multiple nodes
 
 ### Find Available Partition
 
-command: `show_cluster`
+Command: 
+```bash
+show_cluster
+```
 
-![](src/chapter4/_attachments/Pasted%20image%2020230326141406.png)
+![show_cluster Command](imgs/show_cluster%20Command.png)
 
 Before you run your job, it’s important to check the available resources.
 
@@ -33,9 +36,12 @@ Before you run your job, it’s important to check the available resources.
 
 ### Sending Jobs
 
-command: `#SBATCH`
+Command: 
+```bash
+#SBATCH`--flag=value
+```
 
-![](src/chapter4/_attachments/Pasted%20image%2020230326141618.png)
+![sbatch Command](imgs/sbatch%20Command.png)
 
 Here is the example of shell script for running multi-threading job
 `#sbatch` specifies resources and then it runs the executable named hello.
@@ -46,9 +52,14 @@ And make sure to specify which partition you are using
 
 ### Monitor Jobs
 
-command: `squeue` or `squeue -u <username>`
+Command: 
+```bash
+squeue
+# or
+squeue -u <username>
+```
 
-![](src/chapter4/_attachments/Pasted%20image%2020230326141710.png)
+![squeue Command](imgs/squeue%20Command.png)
 
 After you submitted your job, you can use the command squeue to monitor your job 
 you can see the status of your job to check whether it’s pending or running and also how long has it been since the job has started. 

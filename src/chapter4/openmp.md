@@ -12,13 +12,12 @@ OpenMP uses shared memory architecture. It assumes all code runs on a single ser
 
 ## Threads
 
-![](src/chapter4/_attachments/Pasted%20image%2020230325111415.png)
+![Threads Visualisation](imgs/Threads%20Visualisation.png)
 
 A thread of execution is the smallest instruction that can be managed independently by an operating system.
 
 In parallel region, multiple threads are spawned and utilises the cores on CPU
 
-> [!note]
 > Only one thread exists in a serial region
 
 ## Compiler Directive \# pragma
@@ -28,8 +27,12 @@ In parallel region, multiple threads are spawned and utilises the cores on CPU
 -   `#include <omp.h>`
 -   `#pragma omp parallel`
   
-Use `gcc -fopenmp` to compile your code when you use `#pragma`
+OpenMP provides a set of `#pragma` directives that can be used to specify the parallelization of a particular loop or section of code. For example, the `#pragma omp parallel` directive is used to start a parallel region, where multiple threads can execute the code concurrently. The `#pragma omp for` directive is used to parallelize a loop, with each iteration of the loop being executed by a different thread.
 
+Here's an example of how `#pragma` directives can be used with OpenMP to parallelize a simple loop:
+  
+  
+Use `gcc -fopenmp` to compile your code when you use `#pragma`
 
 ## Compile OpenMP
 
@@ -38,7 +41,7 @@ Use `gcc -fopenmp` to compile your code when you use `#pragma`
 
 ## How it works
 
-![](src/chapter4/_attachments/Pasted%20image%2020230325112426.png)
+![OpenMP and Directive](imgs/OpenMP%20and%20Directive.png)
 [Source](https://www.researchgate.net/figure/OpenMP-API-The-master-thread-is-indicated-with-T-0-while-inside-the-parallel-region_fig3_329536624 
 )
 
@@ -49,11 +52,10 @@ Here is an example of `#pragma`
 
 ## Running "Hello World" on Multi-threads
 
->[!info]
 >If you're unsure about the difference between **multi-threading** and **multi-processing**, check the page [here](src/chapter4/multithreading.md)
 
 **Drawing in Serial (Left) vs Parallel (Right)**
-![](src/chapter4/_attachments/4%20Parallel%20Computing%20OpenMP.gif)
+![](src/chapter4/imgs/4%20Parallel%20Computing%20OpenMP.gif)
 
 Drawing in serial versus drawing in parallel, you can see how we can place one pixel at a time and take a long time to make the drawing, but on the right hand side if we choose to load and place four pixels down simultaneously we can get the picture faster, however during the execution it can be hard to make out what the final image will be, given we don’t know what pixel will be placed where in each execution step.
 
@@ -77,11 +79,11 @@ The operating system maps the threads to available hardware. You would not norma
 
 The command `top` or `htop` looks into a process. As you can see from the image on right, it shows the CPU usages.
 
-![](src/chapter4/_attachments/Pasted%20image%2020230325114732.png)
+![Top Command](imgs/Top%20Command.png)
 
 The command `time` checks the overall performance of the code.
 
-![](src/chapter4/_attachments/Pasted%20image%2020230325114751.png)
+![Time Command](imgs/Time%20Command.png)
 
 By running this command, you get real time, user time and system time.
 
