@@ -21,3 +21,7 @@ Once you have signed up for GitHub, you will need to provide your instructors wi
 ## Watching Repositories
 
 GitHub allows you 'watch' repositories. This means you'll be notified of changes to the repository so that you can keep on top of is happening with various projects. You'll be using this later in your training.
+
+## Download GitHub Mobile
+
+We would also request you install the GitHub mobile app. This can make it easier to login to your account (2FA), interact in discussions, reply to mentions and manage repositories and projects when you aren't at your computer.
