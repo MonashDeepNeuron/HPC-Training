@@ -9,6 +9,7 @@ To get setup:
 - Click the link above to go to the repository on GitHub.
 - Click 'Use this template' button (green) and select 'Create a new repository'.
 - Give it a name and make sure it is private.
+- Ensure you are copying it to your personal account and not the Monash DeepNeuron organisation. There will be a dropdown next to where you give the repo a name from which you can select your account.
 - Click 'Create repository from template'.
 - This will open the page for the repository. Click the '<> Code' button (green), make sure you are in the HTTPS tab and copy the link.
 - Open a terminal in your dev directory.
