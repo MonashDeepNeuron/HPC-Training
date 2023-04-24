@@ -96,6 +96,8 @@ VIM is a terminal based text editor. You may have heard about it, or even tried 
 
 I will attemt to give a brief overview of VIM commands, however you should really check out the [VIM documentation](https://vimhelp.org/) if you want to learn more.
 
+VIM also has a built in tutorial that you can access by running `:help` while in VIM.
+
 To use VIM to edit a file, just type `vim <filename>` into the terminal. This will open the file in VIM. If the file does not exist, it will create a new file with that name.
 
 VIM has three different modes. The first is the command mode, which is the default mode when you open a file. In this mode, you can navigate around the file, and perform other commands. The second is the insert mode, which is used to insert text into the file. The third is the visual mode, which is used to select text.
