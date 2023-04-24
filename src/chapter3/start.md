@@ -18,14 +18,4 @@ To request to join the MDN project, again from the Home page click on Join Exiti
 
 In the text box type `vf38` and click search. This is the project code for MDN. Then select the project and click submit. You will now have to wait for the project admins to approve your request. Once they have done this, you will be able to access the project. This should not take longer than a few days, and you will get an email telling you when you have access.
 
-## Access gurobi
-
-As part of the work that we do, you will need access to [Gurobi](https://www.gurobi.com). M3 has an agreement with Gurobi, however you need to specifically request access to use it.
-
-To do this, in HPC ID, click on Software Agreements on the left. Then Add Software. This will bring up a list of all available software on M3. Scroll down until you find gurobi, and click on it. This will bring up a page like this: ![Gurobi](./imgs/gurobi.png)
-
-Except instead of saying accepted at the bottom it will ask you to tick a box saying that you agree to TOS ![TOS](./imgs/gurobi2.png)
-
-Click I accept, and follow the steps. It should tell you that you will have to wait for approval to access gurobi. This should not take longer than a few days, and you will get an email telling you when you have access.
-
 Once you have access to everything, you are ready to get started with M3. Good job!!

@@ -28,6 +28,9 @@ ssh username@m3.massive.org.au
 
 You may get a similar warning to the above image about the server identity, just type `yes` or `Y` to accept it and add the ssh key to cache.
 
+> **Note**:
+> It is possible to use VSCode's built in terminal to ssh into M3, but it is not recommended. It puts unnecessary strain on the login nodes. M3 have a [guide](https://docs.massive.org.au/M3/connecting/strudel2/connecting-to-vscode.html) on how to correctly connect to M3 using VSCode, however it is quite involved and not particularly necessary unless you want to do proper development on M3 and want to use VSCode to program in.
+
 Everything from now on will be the same across whatever computer you are using to access the cluster.
 
 The first thing to pop up will be a request for a password. Don't worry when you don't see your cursor moving when typing, this is just for security. Your password is still being recorded.
