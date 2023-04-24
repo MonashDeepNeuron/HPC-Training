@@ -89,3 +89,23 @@ conda remove package-name
 #### Deactivating Miniconda
 
 To deactivate the conda environment you are in, run `conda deactivate`. To exit conda entirely run `conda deactivate` again. You will know you have fully exited conda when `(base)` is no longer in the prompt.
+
+### VIM
+
+VIM is a terminal based text editor. You may have heard about it, or even tried using it before. If so, you might recognise the common meme of "how do I exit VIM???". This is because VIM uses a very different key binding system to other text editors, and it can be a little confusing to get used to. However, once you get used to it, it is actually a very powerful and efficient text editor.
+
+I will attemt to give a brief overview of VIM commands, however you should really check out the [VIM documentation](https://vimhelp.org/) if you want to learn more.
+
+To use VIM to edit a file, just type `vim <filename>` into the terminal. This will open the file in VIM. If the file does not exist, it will create a new file with that name.
+
+VIM has three different modes. The first is the command mode, which is the default mode when you open a file. In this mode, you can navigate around the file, and perform other commands. The second is the insert mode, which is used to insert text into the file. The third is the visual mode, which is used to select text.
+
+To enter the insert mode, press `i`. To exit the insert mode, press `esc`. To enter the visual mode, press `v`. To exit the visual mode, press `esc`.
+
+In command mode, you move around using `h`, `j`, `k`, `l`. To move along words, press `w` or `b`. To move to the start or end of the line, press `0` or `$`. You can delete a line using `dd`, or delete a word using `dw`. You might be noticing some patterns here. In VIM, commands are made up of single or multiple characters that represent different things. For example, if I wanted to delete a word, I would press `d` to delete, and then `w` to delete a word. If I wanted to delete 3 words, I would press `d3w`. If I just wanted to change a word, I would press `c` instead of `d`. If I wanted to change 3 words, I would press `c3w`. If I wanted to change a line, I would press `cc`. Some other useful command mode commands are `u` to undo, `o` to insert a new line and go into insert mode, and `?` to search for a string.
+
+To get to insert mode, there are a lots of different ways, but the most common are `i` to insert text before the cursor, `a` to insert text after the cursor, and `o` to insert a new line. The capital versions of these also do things. `I` inserts text at the start of the line, `A` inserts text at the end of the line, and `O` inserts a new line above the current line. To exit insert mode, press `esc`.
+
+To get to visual mode, press `v`. In visual mode, you can select text using the same commands as in command mode. To delete the selected text, press `d`. To change the selected text, press `c`. To copy the selected text, press `y`. To paste press `p`. To exit visual mode, press `esc`.
+
+To exit VIM itself, enter command mode, and then press `:q!`. This will exit VIM without saving any changes. To save and exit, press `:wq`. To save without exiting, press `:w`.
