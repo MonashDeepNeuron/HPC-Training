@@ -17,17 +17,33 @@ To get setup:
 
 ```sh
 git clone <repo-link>
-code <repo-name>
+cd <repo-name>
+git remote add upstream <repo-link>
+git remote set-url --push upstream DISABLE
+code .
 ```
 
-And thats it, you can now edit any of the files and complete the challenges. When you want to save your changes to GitHub simply add them and push to them to GitHub.
+This will clone the repository into you current working directory maintaining its link to its `origin` (your remote copy on GitHub) allowing you to sync changes between you local and remote copies. This also sets up a link called `upstream` to the original template directory with pushing disabled. This allows you to sync the base of the repository with your copy, similar to a fork but prevents changes from being pushed to the template.
+
+Once you completed a challenge or made some changes you want to save to your remote repository you can simply add to a commit stage, combine the changes in a commit and then push the commit to `origin`.
 
 ```sh
-git add .  # Add any untracked or modified files
-git push origin  # Push to GitHub
+git add .               # Add any untracked or modified files
+git commit -m "msg"     # Commit changes locally with a message
+git push origin         # Push to GitHub
 ```
 
-> **Note:** Look at the README.md of the repo for the for more instructions.
+If you need to sync your local repository with the remote version you can either fetch the changes to add them to the logs without modifying the codebase or pull them to integrate the changes into your version.
+
+```sh
+git fetch origin    # Sync changes with remote without integrating (downloading) them
+git pull origin     # Sync and integrate remote changes locally
+```
+
+> Note:
+>
+> - If you need to sync changes from the template repository use the same commands but replace `origin` with `upstream`.
+> - Look at the README.md of the repo for the for more instructions.
 
 ## Challenges Repository
 
