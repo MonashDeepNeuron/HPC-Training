@@ -51,6 +51,16 @@ Sometimes you want data to be constant or immutable. This is data that does not 
 const int a = 4;
 ```
 
+### Static Data
+
+In C you can also allows you to create data that will exist for the entire lifetime of the program and is declared with the `static` keyword before the type initialiser. This kind of data is said to have static storage duration which means that it remains 'alive' or valid for the entire duration of the program and will not automatically get cleaned up when the it has left scope. This has some interesting implications but the most useful is its usage in function blocks. Static variables allow data to persist between function calls, meaning that if you invoke a function that owns a static variable; say an `int`, was left with the value `9` once the called had completed, if you were to recall the function and inspect the value the static variable it would still contain the value `9` at the start of the call. This allows you to keep data between function calls.
+
+```c
+static int a = 9;
+```
+
+There are other more advanced usages of `static` that allow you to control the linkage of different translation units (source and object files) but they are beyond the scope of this book.
+
 ## Operators
 
 Operators are the most primitive way to manipulate data and variables in C. There are four major categories for operators these being arithmetic, bitwise, logical and assignment. Each operator is written in either infix (binary), prefix or prefix (unary) form. Most operators return the result of their evaluation meaning it can can be assigned to a new variable however, some modify the data in-place, this includes all assignment operators and the increment and decrement operators (which do both).
@@ -89,7 +99,7 @@ Bitwise operators are used to manipulate the individual bits of an integral type
 
 |        Operator         |        Name        |                      Description                      |          Example        |
 |:-----------------------:|:------------------:|:-----------------------------------------------------:|:-----------------------:|
-|           `~`           |     Compliment     |              Inverts the bits of a values             |           `~a`          |
+|           `~`           |     Complement     |              Inverts the bits of a values             |           `~a`          |
 |           `&`           |         And        |              Ands the bits of two values              |          `a & b`        |
 |   <code>&vert;</code>   |         Or         |               Ors the bits of two values              | <code>a &vert; b</code> |
 |           `^`           | Exclusive Or (Xor) |              Xors the bits of two values              |          `a ^ b`        |
@@ -100,8 +110,8 @@ Bitwise operators are used to manipulate the individual bits of an integral type
 >
 > - Bitwise operators do not exist for floating point types.
 > - Bits are lost from shift operators.
-> - Left shift (`>>`) pads with zeros ie. adds a zero in the new empty position.
-> - Right shift (`<<`) pads with the most significant bit ie. the new empty position is filled with the same value as the previous occupant.
+> - Left shift (`<<`) pads with zeros ie. adds a zero in the new empty position.
+> - Right shift (`>>`) pads with the most significant bit ie. the new empty position is filled with the same value as the previous occupant.
 > - Left and right shifts are formally described respectively as: \\(a << b ≡ a * 2^{b} mod(2^{N})\\) and \\(a >> b ≡ \frac{a}{2^{b}} mod(2^{N})\\) where \\(N\\) is the numbers bits in the resulting value.
 
 ### Logical Operators
