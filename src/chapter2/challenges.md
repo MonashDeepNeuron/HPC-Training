@@ -51,4 +51,6 @@ This challenge involves implementing the sum and product reductions on an array 
 
 ## Challenge 8 - Array Concatenation
 
-In this challenge you have to implement a general array concatenation function. This should join two arrays of the same type into a single array similar to `strcat()`. As an extra challenge, implement this concatenation algorithm so that if the destination buffer is not large enough, a new buffer of the required size is created and returns the pointer to the new buffer.
+In this challenge you have to implement an array concatenation function. This should join two arrays of the same type into a single array, similar to `strcat()`. You will need to allocate a new block of memory and in order to store the concatenated arrays which will requires the sizes of the two input arrays to be known by the function. This function should return a pointer to the resulting array.
+
+> Note: The type of the array this function concatenates can be any type except `char`.

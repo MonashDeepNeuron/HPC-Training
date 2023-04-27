@@ -16,12 +16,25 @@ To get setup:
 - Run:
 
 ```sh
-git clone <repo-link>                                   # Clone to your machine
-cd <repo-name>                                          # Enter clone's directory
-git remote add upstream <repo-link>                     # Create link to template called 'upstream' 
-git remote set-url --push upstream DISABLE              # Disable pushing to template
-git fetch upstream                                      # Sync with 'upstream'
-git merge upstream/main --allow-unrelated-histories     # Merge 'upstream' main branch with your main
+# Clone to your machine
+git clone <repo-link>
+
+# Enter clone's directory
+cd <repo-name>
+
+# Create link to template called 'upstream' 
+git remote add upstream https://github.com/MonashDeepNeuron/HPC-Training-Challenges.git
+
+# Disable pushing to template
+git remote set-url --push upstream DISABLE
+
+# Sync with 'upstream'
+git fetch upstream
+
+# Merge 'upstream' main branch with your main
+git merge upstream/main --allow-unrelated-histories
+
+# Open repository in VSCode
 code .
 ```
 
@@ -60,7 +73,7 @@ When you want to attempt a challenge it is good practice to create a branch. Thi
 git branch <branch-name>        # Create new branch
 git checkout <branch-name>      # Checkout to the new branch
 # or
-git checkout -b <branch-name    # Checkout to a new branch
+git checkout -b <branch-name>   # Checkout to a new branch
 ```
 
 For your training. I would recommend creating a new branch for every challenge you attempt and merging them with the `main` (default) branch once you are done. This allows you to make modifications to each of your attempts independent of each other as well as make it easier to resync with the template repository should anything change at its base. it also allows you to get some meaningful practice with Git which is one of the most used developer tools in the world.
