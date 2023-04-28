@@ -34,8 +34,6 @@ You can contribute to the book by accessing its GitHub repository (GitHub log in
 
 <div style="font-size: 0.75em;">
   <center>
-    <code>
-      {{ #include ./version.md }}
-    </code>
+    <img src="https://img.shields.io/github/v/release/MonashDeepNeuron/HPC-Training?include_prereleases" alt="Current Release">
   </center>
 </div>
