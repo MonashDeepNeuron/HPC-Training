@@ -22,4 +22,27 @@ Once you have access to everything, you are ready to get started with M3. Good j
 
 ## Git SSH setup
 
+In order to reliably clone git repos in M3, in particular private ones, it is best practice to use SSH cloning. This is a bit more complicated to set up, but once it is done, it is much more streamlined. There are few steps involved. First, you will need to generate an SSH key on M3. Login to M3, and run the following command:
 
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+This will then prompt you to enter a file location. Just press enter to use the default location. It will then ask you to enter a passphrase. This is optional, but recommended.
+
+Once you have generated your key, you need to add it to the ssh agent. Do this by running:
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+You will then need to copy the public key to your clipboard. You can do this by running:
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+Then, go to your github account, go to settings, and click on the SSH and GPG keys tab. Click on New SSH key, and paste the key into the box. Give it a name, and click Add SSH key.
+
+You should now be able to clone repos using SSH. To do this, go to the repo you want to clone, but instead of copying the HTTP link, copy the SSH link, and then its regular git cloning. 
