@@ -19,3 +19,7 @@ To request to join the MDN project, again from the Home page click on Join Exiti
 In the text box type `vf38` and click search. This is the project code for MDN. Then select the project and click submit. You will now have to wait for the project admins to approve your request. Once they have done this, you will be able to access the project. This should not take longer than a few days, and you will get an email telling you when you have access.
 
 Once you have access to everything, you are ready to get started with M3. Good job!!
+
+## Git SSH setup
+
+
