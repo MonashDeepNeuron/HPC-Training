@@ -7,7 +7,7 @@
 Goal: To to create an array `[0,1,2...100000]`
 
 1. Git clone [HPC-Training-Challenges](https://github.com/MonashDeepNeuron/HPC-Training-Challenges)
-2. Go to the directory “challenges/parallel-computing” and open `array.c` file
+2. Go to the directory `challenges/parallel-computing` and open `array.c` file
 3. Implement the code to create an array `[0,1,2...100000]` without parallelisation
 4. Measure the run time of the code
 5. Use `#pragma<>` and potentially other clauses to parallelise the code
