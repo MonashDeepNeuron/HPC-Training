@@ -34,4 +34,5 @@
 # mdBook Output
 book
 
+# MacOS Meta Files
 .DS_Store
