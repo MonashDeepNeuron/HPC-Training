@@ -63,7 +63,7 @@ To create and activate Python environments within Miniconda, follow these steps:
 ```bash
 # Create a new environment
 # Change env-name to whatever you want to call your environment
-conda create --name env-name python=<version>
+conda create --name env-name python=3.10
 
 # Activate the environment
 conda activate env-name

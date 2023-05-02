@@ -33,7 +33,6 @@
   - [Software and Tooling](./chapter3/software-tooling.md)
   - [Bash Scripts](./chapter3/bash.md)
   - [Job batching & SLURM](./chapter3/slurm.md)
-  - [Strudel](./chapter3/strudel.md)
   - [Challenges](./chapter3/challenges.md)
 
 - [Parallel Computing](./chapter4/chapter4.md)
