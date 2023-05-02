@@ -2,7 +2,9 @@
 
 ## Request an account
 
-In order to access M3, you will need to request an account. To do this, follow this link: [HPC ID](https://hpc.erc.monash.edu.au/karaage/aafbootstrap). This should take you to a page this this: ![HPC ID](./imgs/aaf.png) 
+In order to access M3, you will need to request an account. To do this, follow this link: [HPC ID](https://hpc.erc.monash.edu.au/karaage/aafbootstrap). This should take you to a page this this: 
+
+![HPC ID](./imgs/aaf.png)
 
 Type in Monash, as you can see here. Select Monash University, and tick the Remember my organisation box down the bottom. Once you continue to your organisation, it will take you to the Monash Uni SSO login page. You will need to login with your Monash credentials.
 
@@ -45,4 +47,4 @@ cat ~/.ssh/id_ed25519.pub
 
 Then, go to your github account, go to settings, and click on the SSH and GPG keys tab. Click on New SSH key, and paste the key into the box. Give it a name, and click Add SSH key.
 
-You should now be able to clone repos using SSH. To do this, go to the repo you want to clone, but instead of copying the HTTP link, copy the SSH link, and then its regular git cloning. 
+You should now be able to clone repos using SSH. To do this, go to the repo you want to clone, but instead of copying the HTTP link, copy the SSH link, and then its regular git cloning.
