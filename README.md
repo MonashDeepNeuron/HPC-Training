@@ -1,5 +1,7 @@
 # The HPC Training Book
 
+![Build Status](https://github.com/MonashDeepNeuron/HPC-Training/workflows/CI/badge.svg)
+
 This repository contains the source code for the HPC Training content and challenges for new HPC recruits. This book is available online or can be built locally.
 
 ## Building
