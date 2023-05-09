@@ -7,14 +7,14 @@ This repository contains the source code for the HPC Training content and challe
 To build this book you need [mdBook](https://rust-lang.github.io/mdBook/index.html) a tool for creating books with Markdown. mdBook can be installed using Cargo - Rust's package manager.
 
 ```sh
-$ cargo install mdbook
+cargo install mdbook
 ```
 
 You can build this book you must clone this repository using Git. You can then build it and even serve it to localhost to view in your browser. The serve command will produce a localhost you can view.
 
 ```sh
-$ git clone https://github.com/MonashDeepNeuron/HPP.git
-$ cd HPP
+$ git clone https://github.com/MonashDeepNeuron/HPC-Training.git
+$ cd HPC-Training
 
 # Build ...
 $ mdbook build
