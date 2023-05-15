@@ -4,16 +4,18 @@
 
 - [Parallel Computing Challenges](#parallel-computing-challenges)
   - [Overview](#overview)
-  - [Notice](#notice)
+  - [Pre-Tasks](#pre-tasks)
   - [Task 1 - Single Cluster Job using OpenMP](#task-1---single-cluster-job-using-openmp)
   - [Task 2 - Parallel `for` Loop](#task-2---parallel-for-loop)
   - [Task 3 - Parallel Reductions](#task-3---parallel-reductions)
   - [Task 4 - Laplace Equation for Calculating the Temperature of a Square Plane](#task-4---laplace-equation-for-calculating-the-temperature-of-a-square-plane)
   - [Task 5 - Calculate Pi using "Monte Carlo Algorithm"](#task-5---calculate-pi-using-monte-carlo-algorithm)
 
-## Notice
+## Pre-Tasks
 
-For every challenge you will be running the programs as SLURM jobs. This is so we don't overload the login nodes. A template [SLURM job script](./job.slurm) is provided at the root of this directory which you can use to submit your own jobs to SLURM by copying it to each challenges sub-directory and filling in the missing details. You may need more than one for some challenges. This template will put the would-be-printed output in a file named `slurm-<job-name>.out`.
+Make sure to clone a copy of **your** challenges repo onto M3, ideally in a personal folder on vf38_scratch.
+
+> Note: For every challenge you will be running the programs as SLURM jobs. This is so we don't overload the login nodes. A template [SLURM job script](./job.slurm) is provided at the root of this directory which you can use to submit your own jobs to SLURM by copying it to each challenges sub-directory and filling in the missing details. You may need more than one for some challenges. This template will put the would-be-printed output in a file named `slurm-<job-name>.out`.
 
 ## Task 1 - Single Cluster Job using OpenMP
 
