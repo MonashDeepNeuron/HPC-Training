@@ -1,72 +1,49 @@
-# Challenges
+# Parallel Computing Challenges
 
-🚧 Under Construction 🏗️
+## Overview
 
-## Task 1 - Parallise `for` Loop
+- [Parallel Computing Challenges](#parallel-computing-challenges)
+  - [Overview](#overview)
+  - [Notice](#notice)
+  - [Task 1 - Single Cluster Job using OpenMP](#task-1---single-cluster-job-using-openmp)
+  - [Task 2 - Parallel `for` Loop](#task-2---parallel-for-loop)
+  - [Task 3 - Parallel Reductions](#task-3---parallel-reductions)
+  - [Task 4 - Laplace Equation for Calculating the Temperature of a Square Plane](#task-4---laplace-equation-for-calculating-the-temperature-of-a-square-plane)
+  - [Task 5 - Calculate Pi using "Monte Carlo Algorithm"](#task-5---calculate-pi-using-monte-carlo-algorithm)
 
-Goal: To to create an array `[0,1,2...100000]`
+## Notice
 
-1. Git clone [HPC-Training-Challenges](https://github.com/MonashDeepNeuron/HPC-Training-Challenges)
-2. Go to the directory `challenges/parallel-computing` and open `array.c` file
-3. Implement the code to create an array `[0,1,2...100000]` without parallelisation
-4. Measure the run time of the code
-5. Use `#pragma<>` and potentially other clauses to parallelise the code
-6. Compile the code again and check the run time and observe the result
+For every challenge you will be running the programs as SLURM jobs. This is so we don't overload the login nodes. A template [SLURM job script](./job.slurm) is provided at the root of this directory which you can use to submit your own jobs to SLURM by copying it to each challenges sub-directory and filling in the missing details. You may need more than one for some challenges. This template will put the would-be-printed output in a file named `slurm-<job-name>.out`.
 
-## Task 2 - Run task 1 on HPC cluster
+## Task 1 - Single Cluster Job using OpenMP
 
-1. Log into M3
-2. Check the available partitions with `show_cluster`
-3. Modify `RunHello.sh` to you can run `array.c` on HPC cluster
-4. Submit the job to M3
-5. Check the slurm output file
+Create a program in `hello.c` that prints 'Hello, world from thread: <thread-number>' to the output. Launch the job to a node SLURM.
 
->You can also use [strudel web](https://beta.desktop.cvl.org.au/login) to run the script without sbatch
+> Note:
+>
+> - The output of a job is put in a slurm-<job-id>.out file by default.
+> - The template slurm job scripts will output the results to a `slurm-<job-name>.out` file.
 
-## Task 3 - Reduction Clause
+## Task 2 - Parallel `for` Loop
 
-Goal: To find the sum of the array elements
+In `array-gen.c` implement a program that generates an array containing the numbers 0..10'000 elements (inclusive) using a `for` loop. Measure the execution time using the `time` Linux command. Now reimplement the program to utilise OpenMP's parallel `for` loop macros, measuring the execution time again. Is there any performance improvement? Are the elements still in the correct order and if not how can you fix this. Try experimenting with different sized arrays and element types.
 
-1. Implement the code in `reduction.c` to find the sum of the array elements without parallelisation 
-2. Measure the run time of the code
-3. Add `#pragma<>` and potentially other clauses to parallelise the code
-4. Compile and run `reduction.c` again
-5. Check the run time and observe the result 
+> Hint: You will likely need to allocate memory from the heap.
 
->`module load gcc` to use newer version of gcc if you have error with something like `-std=c99`
+## Task 3 - Parallel Reductions
 
-## Task 4 - Private clause
+In the C chapter we created a sum program that summed the elements of an array together. Using this as a base, create a new program that again computes the sum of the elements of an array but using OpenMP, comparing the execution time between the sequential and parallel versions. Is there any performance improvement? How would using a different binary operator change our ability to parallelize the the reduction?
 
-The goal of this task is to square each value in array and find the sum of them
+If you have time, implement the sum but at each iteration, raise the current value to the power of the current accumulation divide by 100, adding this to the accumulation. Test a serial and parallel version. Is the parallel any faster?
 
-1.  Implement the code in `private.c` to square each value in array and find the sum of them without parallelisation
-2. Measure the run time of the code. (You may need to link the math library with `-lm`)
-3.  Add `#pragma<>` and potentially other clauses to parallelise the code
-4.  Compile `private.c` again and check the run time and observe the result
+> Note: `module load gcc` to use newer version of gcc if you have error with something like `-std=c99`.
+
+## Task 4 - Laplace Equation for Calculating the Temperature of a Square Plane
+
+For this challenge you will attempt to parallelize an existing implementation of the Laplace Equation. Throughout the source files of this project there are various loops you can try and make faster by utilizing OpenMP macros. See if you can make a faster version in the `laplace2d-parallel.c`. To build these files make sure you're in that directory and use the command `make`. The executables will be in the same directory.
 
 ## Task 5 - Calculate Pi using "Monte Carlo Algorithm"
 
-Goal:  To estimate the value of pi from simulation
+For this challenge you will have to try and implement the Monte Carlo algorithm with no framework or template and using everything you've learnt so far. Good luck.
 
-1. Implement Monte Carlo in `MonteCarlo.c` without parallelisation
-2. Measure the run time of the code
-3. Parallelise the code 
-4. Compile and run `MonteCarlo.c` again
-5. Check the run time and observe the result
-
-> You should get a result close to pi(3.1415…….)
-
-Short explanation of Monte Carlo algorithm:
-
-[YouTube Video:  Monte Carlo Simulation](https://www.youtube.com/watch?v=7ESK5SaP-bc&ab_channel=MarbleScience)
-
-![Monte Carlo](imgs/Monte%20Carlo.png)
-
-## Bonus - Laplace equation to calculate the temperature of a square plane
-
-1. Modify `laplace2d.c` and implement the laplace algorithm
-2. Use Makefile to compile the code
-3. Make the program as fast as you can
-
-Brief Algorithm of Laplace equation:
-![](imgs/Pasted%20image%2020230326142826.png)
+[Short explanation of Monte Carlo algorithm](https://www.youtube.com/watch?v=7ESK5SaP-bc&ab_channel=MarbleScience)
