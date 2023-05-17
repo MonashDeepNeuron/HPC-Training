@@ -34,6 +34,8 @@ bin/generate 1000000000
 > - You do not have to worry about how to read the numbers from the file, this is handled for you already but it is recommended to look at the read function in `read.h` and understand what it is doing.
 > - The expected output of the 'sum' challenge is found in the generated `output.txt` file within the challenges directory.
 > The expected output of the 'mergesort' challenge is found in the generated `sorted.txt` file within the challenges directory however this will contain a lot of values so a check function is provided that compares a resorted version of your input to your sorted output.
+> The sum and mergesort programs you will develop take a number as input. This is the size of the input data that you are performing your programs on. This should be the same number as the one used with the generator program. In the template programs for this challenge they are maked as an pointer to data called `input`.
+> Given the above setup and configuration, the input data will contain ~8GB of data or ~8.0e9 bytes so make sure to allocate enough resources both in the programs an in the SLURM job scripts.
 
 ## Task 1 - Multinode 'Hello, world!'
 
