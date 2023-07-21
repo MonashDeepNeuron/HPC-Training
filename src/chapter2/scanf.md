@@ -1,22 +1,24 @@
-# Scanf()
-In C programming language, scanf is a function that stands for Scan Formatted String. It is used to read data from stdin (standard input stream i.e. usually keyboard) and then writes the result into the given arguments.
+# Scanf
 
-It accepts character, string, and numeric data from the user using standard input.
-scanf also uses format specifiers like printf.
-## scanf Syntax
-The syntax of scanf() in C is similar to the syntax of printf().
+scanf() is a function in the C programming language that stands for "Scan Formatted String." It is part of the standard input/output library (stdio.h) and is used to read data from the standard input stream (usually the keyboard) and store it into specified variables based on format specifiers.
 
-int scanf( const char *format, ... );
-Here,
+The general syntax of scanf() is:
 
-int is the return type.
-format is a string that contains the format specifiers(s).
-“…” indicates that the function accepts a variable number of arguments.
+
+int scanf(const char *format, ...);
+Here's a brief explanation of the parameters:
+
+format: A string that contains format specifiers to specify the types of data to be read from the input. The format specifiers are preceded by a percent sign %. For example, %d is used to read an integer, %f for a floating-point number, %c for a character, %s for a string, etc.
+
+...: The ellipsis ... indicates that scanf() can accept a variable number of arguments. This means you can pass multiple variables to scanf() to store the data read from the input.
+
+To use scanf(), you need to pass the address of the variables where the input data should be stored. This is achieved by using the address-of operator & before the variable name. For example, if you want to read an integer and store it in the variable num, you would write scanf("%d", &num);.
+
 ## Example format specifiers recognized by scanf:
 
 %d to accept input of integers.
 
-%ld to  accept input of long integers
+%ld to  accept input of long integersgi
 
 %lld to accept input of long long integers
 
@@ -26,14 +28,7 @@ format is a string that contains the format specifiers(s).
 
 %s to accept input of a string.
 
-To know more about format specifiers, refer to this article – Format Specifiers in C
 
-## Example:
-
-int var;
-scanf(“%d”, &var);
-
-The scanf will write the value input by the user into the integer variable var.
 
 Return Value of scanf
 The scanf in C returns three types of values:
@@ -47,31 +42,23 @@ While scanning the input, scanf needs to store that input data somewhere. To sto
 
 & is also called as address of the operator.
 For example, &var is the address of var.
-## Example of scanf
-Below is the C program to implement scanf:
+
+Here's a simple example to illustrate how scanf() works:
 
 
-// C program to implement
-// scanf
 #include <stdio.h>
 
-int main()
-{
-    int a, b, c;
-    printf("Enter the first value:");
-    scanf("%d", &a);
-    printf("Enter the second value:");
-    scanf("%d", &b);
-    c = a + b;
-    printf("%d + %d = %d\n", a, b, c);
+int main() {
+    int age;
+    char name[50];
+
+    printf("Enter your name: ");
+    scanf("%s", name);
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("Hello, %s! You are %d years old.\n", name, age);
     return 0;
 }
-
-//Output:
-Enter the first value:58
-Enter the second value:12
-58 + 12 = 70
-
-
-...Program finished with exit code 0
-
+In this example, the program prompts the user to enter their name and age. The data is read using scanf() with appropriate format specifiers, and then the information is displayed using printf(). Remember that scanf() stops reading as soon as it encounters whitespace characters, so it's not suitable for reading strings with spaces.

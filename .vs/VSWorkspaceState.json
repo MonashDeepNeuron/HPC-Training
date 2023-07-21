@@ -5,8 +5,9 @@
     "\\.github\\workflows",
     "\\src",
     "\\src\\chapter2",
+    "\\src\\chapter3",
     "\\src\\chapter5"
   ],
-  "SelectedNode": "\\src\\chapter2\\stdlib.md",
+  "SelectedNode": "\\src\\chapter2\\scanf.md",
   "PreviewInSolutionExplorer": false
 }
