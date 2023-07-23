@@ -7,6 +7,7 @@ is true:
 2. You have added an appropriate title to the PR.
 3. Requested a review from the HPC Training team.
 4. Delete any Markdown comments, instructions or anything else outside the below divider section once you have finished your PR.
+5. Ensure that you are merging into the `dev` and not `main`.
 
 Any questions should be directed to @MonashDeepNeuron/hpc-training.
 
