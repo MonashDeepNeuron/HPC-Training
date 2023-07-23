@@ -4,10 +4,10 @@ Thank you for submitting a pull request! To speed up the review process, please 
 is true:
 
 1. You have followed the [contributing guidelines][1]
-2. The repositories you have linked are owned by you or you have permission to link them.
-3. The PRs title is followed by your name eg. "Added solutions for {YYYY} - {First} {Last}"
+2. You have added an appropriate title to the PR.
+3. Requested a review from the HPC Training team.
 
-Any questions should be directed to @MonashDeepNeuron/executives.
+Any questions should be directed to @MonashDeepNeuron/hpc-training.
 
 > Note: Ensure to delete the instructions once you have finished your PR.
 
