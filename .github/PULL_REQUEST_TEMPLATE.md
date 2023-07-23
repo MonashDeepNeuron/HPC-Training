@@ -6,10 +6,9 @@ is true:
 1. You have followed the [contributing guidelines][1]
 2. You have added an appropriate title to the PR.
 3. Requested a review from the HPC Training team.
+4. Delete any Markdown comments, instructions or anything else outside the below divider section once you have finished your PR.
 
 Any questions should be directed to @MonashDeepNeuron/hpc-training.
-
-> Note: Ensure to delete the instructions once you have finished your PR.
 
 ---
 
@@ -31,5 +30,7 @@ eg.
 - MonashDeepNeuron/EXAMPLE-REPO@<commit-hash> -->
 
 - X
+
+---
 
 [1]: https://github.com/MonashDeepNeuron/HPC-Training/blob/main/CONTRIBUTING.md
