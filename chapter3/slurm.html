@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Job batching &amp; SLURM - HPC Training</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Monash DeepNeuron&#x27;s HPC Training Content">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../home.html">Welcome</a></li><li class="chapter-item expanded "><a href="../chapter1/getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter1/github.html"><strong aria-hidden="true">1.1.</strong> GitHub</a></li><li class="chapter-item expanded "><a href="../chapter1/windows.html"><strong aria-hidden="true">1.2.</strong> Windows</a></li><li class="chapter-item expanded "><a href="../chapter1/mac.html"><strong aria-hidden="true">1.3.</strong> Mac</a></li><li class="chapter-item expanded "><a href="../chapter1/linux.html"><strong aria-hidden="true">1.4.</strong> Linux</a></li><li class="chapter-item expanded "><a href="../chapter1/wsl.html"><strong aria-hidden="true">1.5.</strong> WSL</a></li><li class="chapter-item expanded "><a href="../chapter1/challenges.html"><strong aria-hidden="true">1.6.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter2/intro-to-c.html"><strong aria-hidden="true">2.</strong> Brief Introduction to C</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter2/helloworld.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li><li class="chapter-item expanded "><a href="../chapter2/compilation.html"><strong aria-hidden="true">2.2.</strong> Compilation</a></li><li class="chapter-item expanded "><a href="../chapter2/vars.html"><strong aria-hidden="true">2.3.</strong> Types &amp; Variables</a></li><li class="chapter-item expanded "><a href="../chapter2/printing.html"><strong aria-hidden="true">2.4.</strong> Printing</a></li><li class="chapter-item expanded "><a href="../chapter2/array.html"><strong aria-hidden="true">2.5.</strong> Arrays &amp; Strings</a></li><li class="chapter-item expanded "><a href="../chapter2/ctrl-flow.html"><strong aria-hidden="true">2.6.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="../chapter2/loops.html"><strong aria-hidden="true">2.7.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../chapter2/functions.html"><strong aria-hidden="true">2.8.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../chapter2/pointers.html"><strong aria-hidden="true">2.9.</strong> Pointers</a></li><li class="chapter-item expanded "><a href="../chapter2/memory.html"><strong aria-hidden="true">2.10.</strong> Dynamic Memory</a></li><li class="chapter-item expanded "><a href="../chapter2/structs.html"><strong aria-hidden="true">2.11.</strong> Structures</a></li><li class="chapter-item expanded "><a href="../chapter2/macros.html"><strong aria-hidden="true">2.12.</strong> Macros &amp; The Preprocessor</a></li><li class="chapter-item expanded "><a href="../chapter2/challenges.html"><strong aria-hidden="true">2.13.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter3/chapter3.html"><strong aria-hidden="true">3.</strong> M3</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter3/start.html"><strong aria-hidden="true">3.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../chapter3/login.html"><strong aria-hidden="true">3.2.</strong> Logging In</a></li><li class="chapter-item expanded "><a href="../chapter3/linux-cmds.html"><strong aria-hidden="true">3.3.</strong> Linux Commands</a></li><li class="chapter-item expanded "><a href="../chapter3/shared-fs.html"><strong aria-hidden="true">3.4.</strong> M3's Shared Filesystem</a></li><li class="chapter-item expanded "><a href="../chapter3/software-tooling.html"><strong aria-hidden="true">3.5.</strong> Software and Tooling</a></li><li class="chapter-item expanded "><a href="../chapter3/bash.html"><strong aria-hidden="true">3.6.</strong> Bash Scripts</a></li><li class="chapter-item expanded "><a href="../chapter3/slurm.html" class="active"><strong aria-hidden="true">3.7.</strong> Job batching &amp; SLURM</a></li><li class="chapter-item expanded "><a href="../chapter3/strudel.html"><strong aria-hidden="true">3.8.</strong> Strudel</a></li><li class="chapter-item expanded "><a href="../chapter3/challenges.html"><strong aria-hidden="true">3.9.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter4/chapter4.html"><strong aria-hidden="true">4.</strong> Parallel Computing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter4/parallel-computing.html"><strong aria-hidden="true">4.1.</strong> What is Parallel Computing?</a></li><li class="chapter-item expanded "><a href="../chapter4/multithreading.html"><strong aria-hidden="true">4.2.</strong> Multithreading</a></li><li class="chapter-item expanded "><a href="../chapter4/openmp.html"><strong aria-hidden="true">4.3.</strong> OpenMP</a></li><li class="chapter-item expanded "><a href="../chapter4/challenges.html"><strong aria-hidden="true">4.4.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter5/chapter5.html"><strong aria-hidden="true">5.</strong> Distributed Computing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter5/parallel-refresher.html"><strong aria-hidden="true">5.1.</strong> Refresher on Parallelism</a></li><li class="chapter-item expanded "><a href="../chapter5/distributed-computing.html"><strong aria-hidden="true">5.2.</strong> What is Distributed Computing</a></li><li class="chapter-item expanded "><a href="../chapter5/message-passing.html"><strong aria-hidden="true">5.3.</strong> Message Passing</a></li><li class="chapter-item expanded "><a href="../chapter5/openmpi.html"><strong aria-hidden="true">5.4.</strong> OpenMPI</a></li><li class="chapter-item expanded "><a href="../chapter5/challenges.html"><strong aria-hidden="true">5.5.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../acknowledgements.html">Acknowledgements</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HPC Training</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/MonashDeepNeuron/HPC-Training" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="job-batching--slurm"><a class="header" href="#job-batching--slurm">Job batching &amp; SLURM</a></h1>
+<p>Launching and running jobs on M3 is controlled by <a href="https://slurm.schedmd.com/">SLURM</a>. You don't really need to know a lot about it in order to use it, so this section will take you through the basics of what you will need for what we are doing.</p>
+<p>If you want a complete guide on SLURM in M3, you can find it <a href="https://docs.massive.org.au/M3/slurm/slurm-overview.html">here</a>.</p>
+<h2 id="submitting-simple-jobs"><a class="header" href="#submitting-simple-jobs">Submitting simple jobs</a></h2>
+<p>As we discussed in the previous section we use bash scripts to run jobs on M3. We can submit these jobs using the <code>sbatch</code> command. For example, if we have a bash script called <code>hello.sh</code> that contains the following:</p>
+<pre><code class="language-bash">#!/bin/bash
+
+#SBATCH --ntasks=1
+#SBATCH --mem=1MB
+#SBATCH --time=0-00:01:00
+#SBATCH --job-name=hello
+#SBATCH --partition=m3i
+#SBATCH --mail-user=jmar0066@student.monash.edu
+#SBATCH --mail-type=BEGIN,END,FAIL
+
+echo &quot;Hello World&quot;
+</code></pre>
+<p>We can submit this job using the following command:</p>
+<p><code>sbatch hello.sh</code></p>
+<p>This will submit the job to the queue, and you will get an email when the job starts, finishes, or fails. You can also check the status of your job using the <code>squeue</code> command.</p>
+<h2 id="options"><a class="header" href="#options">Options</a></h2>
+<p>You might have noticed the <code>#SBATCH</code> lines in the bash script. These are called options, and they tell SLURM how to run the job. The options we used in the example above are:</p>
+<ul>
+<li><code>ntasks</code>: The number of tasks or processes to run.</li>
+<li><code>mem</code>: The amount of memory to allocate to the job.</li>
+<li><code>time</code>: The maximum amount of time the job can run for.</li>
+<li><code>job-name</code>: The name of the job. Up to 15 characters.</li>
+<li><code>partition</code>: The partition to run the job on.</li>
+<li><code>mail-user</code>: The email address to send job status emails to.</li>
+<li><code>mail-type</code>: The types of emails to send.</li>
+</ul>
+<blockquote>
+<p>Note: In the case of M3, a task is essentially the same as a process. This is <strong>not</strong> the same as a cpu core. You can have a task that uses one or multiple cores. You can also have multiple tasks comprising the same job, each with one or multiple cores being utilised. It can get quite confusing, so if you are unsure about what you need, just ask. There is also more information in the M3 docs.</p>
+</blockquote>
+<p>There are a lot more options that you can use, and you can find a more complete list <a href="https://docs.massive.org.au/M3/slurm/simple-batch-jobs.html">here</a>.</p>
+<p>In particular, if you want to run multithreading or multiprocessing jobs, or you need a gpu, there are more options you need to configure.</p>
+<h2 id="interactive-jobs"><a class="header" href="#interactive-jobs">Interactive jobs</a></h2>
+<p>Sometimes you might want to actually connect to the node that you are running your job on, in order to see what is happening or to set it up before running the job. You can do this using the <code>smux</code> command. Similar to regular batch jobs, you can set options when you start the interactive session. An example of this is:</p>
+<p><code>smux new-session --ntasks=1 --time=0-00:01:00 --partition=m3i --mem=4GB</code></p>
+<p>This will start an interactive session on a node with 1 cpu, 1 minute of time, and 4GB of memory. There are again other options available, and you can find a more complete explanation <a href="https://docs.massive.org.au/M3/slurm/interactive-jobs.html">here</a>.</p>
+<h3 id="connecting-to-interactive-jobs"><a class="header" href="#connecting-to-interactive-jobs">Connecting to interactive jobs</a></h3>
+<p>Typically when you start an interactive job it will not start immediately. Instead, it will be queued up once it has started you will need to connect to it. You can do this by running <code>smux a</code>, which will reconnect you to the session. If you want to disconnect from the session but leave it running, you can press <code>Ctrl + b</code> followed by <code>d</code>. This will disconnect you from the session, but leave it running. You can reconnect to it later using <code>smux a</code>. If you want to kill the session, if you are connected just run <code>exit</code>, otherwise if you are in a login node run <code>scancel &lt;jobid&gt;</code>. You can find the job id using <code>show_job</code>.</p>
+<h2 id="checking-the-status-of-jobs-finding-out-job-ids-and-killing-jobs"><a class="header" href="#checking-the-status-of-jobs-finding-out-job-ids-and-killing-jobs">Checking the status of jobs, finding out job IDs, and killing jobs</a></h2>
+<p>A couple of useful commands for general housekeeping are:</p>
+<ul>
+<li><code>squeue</code>: This will show you the status of all jobs currently running on M3.</li>
+<li><code>show_job</code>: This will show you the status of all jobs you have submitted.</li>
+<li><code>squeue -u &lt;username&gt;</code>: This will show you the status of all jobs submitted by a particular user currently running.</li>
+<li><code>scancel &lt;jobid&gt;</code>: This will kill a job with a particular job id.</li>
+<li><code>scancel -u &lt;username&gt;</code>: This will kill all jobs submitted by a particular user.</li>
+<li><code>show_cluster</code>: This will show you the status of the cluster, including any nodes that are offline or in maintenance.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../chapter3/bash.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../chapter3/strudel.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../chapter3/bash.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../chapter3/strudel.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

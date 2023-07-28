@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Challenges - HPC Training</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Monash DeepNeuron&#x27;s HPC Training Content">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../home.html">Welcome</a></li><li class="chapter-item expanded "><a href="../chapter1/getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter1/github.html"><strong aria-hidden="true">1.1.</strong> GitHub</a></li><li class="chapter-item expanded "><a href="../chapter1/windows.html"><strong aria-hidden="true">1.2.</strong> Windows</a></li><li class="chapter-item expanded "><a href="../chapter1/mac.html"><strong aria-hidden="true">1.3.</strong> Mac</a></li><li class="chapter-item expanded "><a href="../chapter1/linux.html"><strong aria-hidden="true">1.4.</strong> Linux</a></li><li class="chapter-item expanded "><a href="../chapter1/wsl.html"><strong aria-hidden="true">1.5.</strong> WSL</a></li><li class="chapter-item expanded "><a href="../chapter1/challenges.html"><strong aria-hidden="true">1.6.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter2/intro-to-c.html"><strong aria-hidden="true">2.</strong> Brief Introduction to C</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter2/helloworld.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li><li class="chapter-item expanded "><a href="../chapter2/compilation.html"><strong aria-hidden="true">2.2.</strong> Compilation</a></li><li class="chapter-item expanded "><a href="../chapter2/vars.html"><strong aria-hidden="true">2.3.</strong> Types &amp; Variables</a></li><li class="chapter-item expanded "><a href="../chapter2/printing.html"><strong aria-hidden="true">2.4.</strong> Printing</a></li><li class="chapter-item expanded "><a href="../chapter2/array.html"><strong aria-hidden="true">2.5.</strong> Arrays &amp; Strings</a></li><li class="chapter-item expanded "><a href="../chapter2/ctrl-flow.html"><strong aria-hidden="true">2.6.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="../chapter2/loops.html"><strong aria-hidden="true">2.7.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../chapter2/functions.html"><strong aria-hidden="true">2.8.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../chapter2/pointers.html"><strong aria-hidden="true">2.9.</strong> Pointers</a></li><li class="chapter-item expanded "><a href="../chapter2/memory.html"><strong aria-hidden="true">2.10.</strong> Dynamic Memory</a></li><li class="chapter-item expanded "><a href="../chapter2/structs.html"><strong aria-hidden="true">2.11.</strong> Structures</a></li><li class="chapter-item expanded "><a href="../chapter2/macros.html"><strong aria-hidden="true">2.12.</strong> Macros &amp; The Preprocessor</a></li><li class="chapter-item expanded "><a href="../chapter2/challenges.html"><strong aria-hidden="true">2.13.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter3/chapter3.html"><strong aria-hidden="true">3.</strong> M3</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter3/start.html"><strong aria-hidden="true">3.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../chapter3/login.html"><strong aria-hidden="true">3.2.</strong> Logging In</a></li><li class="chapter-item expanded "><a href="../chapter3/linux-cmds.html"><strong aria-hidden="true">3.3.</strong> Linux Commands</a></li><li class="chapter-item expanded "><a href="../chapter3/shared-fs.html"><strong aria-hidden="true">3.4.</strong> M3's Shared Filesystem</a></li><li class="chapter-item expanded "><a href="../chapter3/software-tooling.html"><strong aria-hidden="true">3.5.</strong> Software and Tooling</a></li><li class="chapter-item expanded "><a href="../chapter3/bash.html"><strong aria-hidden="true">3.6.</strong> Bash Scripts</a></li><li class="chapter-item expanded "><a href="../chapter3/slurm.html"><strong aria-hidden="true">3.7.</strong> Job batching &amp; SLURM</a></li><li class="chapter-item expanded "><a href="../chapter3/strudel.html"><strong aria-hidden="true">3.8.</strong> Strudel</a></li><li class="chapter-item expanded "><a href="../chapter3/challenges.html"><strong aria-hidden="true">3.9.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter4/chapter4.html"><strong aria-hidden="true">4.</strong> Parallel Computing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter4/parallel-computing.html"><strong aria-hidden="true">4.1.</strong> What is Parallel Computing?</a></li><li class="chapter-item expanded "><a href="../chapter4/multithreading.html"><strong aria-hidden="true">4.2.</strong> Multithreading</a></li><li class="chapter-item expanded "><a href="../chapter4/openmp.html"><strong aria-hidden="true">4.3.</strong> OpenMP</a></li><li class="chapter-item expanded "><a href="../chapter4/challenges.html" class="active"><strong aria-hidden="true">4.4.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter5/chapter5.html"><strong aria-hidden="true">5.</strong> Distributed Computing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter5/parallel-refresher.html"><strong aria-hidden="true">5.1.</strong> Refresher on Parallelism</a></li><li class="chapter-item expanded "><a href="../chapter5/distributed-computing.html"><strong aria-hidden="true">5.2.</strong> What is Distributed Computing</a></li><li class="chapter-item expanded "><a href="../chapter5/message-passing.html"><strong aria-hidden="true">5.3.</strong> Message Passing</a></li><li class="chapter-item expanded "><a href="../chapter5/openmpi.html"><strong aria-hidden="true">5.4.</strong> OpenMPI</a></li><li class="chapter-item expanded "><a href="../chapter5/challenges.html"><strong aria-hidden="true">5.5.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../acknowledgements.html">Acknowledgements</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HPC Training</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/MonashDeepNeuron/HPC-Training" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="parallel-computing-challenges"><a class="header" href="#parallel-computing-challenges">Parallel Computing Challenges</a></h1>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<ul>
+<li><a href="#parallel-computing-challenges">Parallel Computing Challenges</a>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#pre-tasks">Pre-Tasks</a></li>
+<li><a href="#task-1---single-cluster-job-using-openmp">Task 1 - Single Cluster Job using OpenMP</a></li>
+<li><a href="#task-2---parallel-for-loop">Task 2 - Parallel <code>for</code> Loop</a></li>
+<li><a href="#task-3---parallel-reductions">Task 3 - Parallel Reductions</a></li>
+<li><a href="#task-4---laplace-equation-for-calculating-the-temperature-of-a-square-plane">Task 4 - Laplace Equation for Calculating the Temperature of a Square Plane</a></li>
+<li><a href="#task-5---calculate-pi-using-monte-carlo-algorithm">Task 5 - Calculate Pi using &quot;Monte Carlo Algorithm&quot;</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="pre-tasks"><a class="header" href="#pre-tasks">Pre-Tasks</a></h2>
+<p>Make sure to clone a copy of <strong>your</strong> challenges repo onto M3, ideally in a personal folder on vf38_scratch.</p>
+<blockquote>
+<p>Note: For every challenge you will be running the programs as SLURM jobs. This is so we don't overload the login nodes. A template <a href="./job.slurm">SLURM job script</a> is provided at the root of this directory which you can use to submit your own jobs to SLURM by copying it to each challenges sub-directory and filling in the missing details. You may need more than one for some challenges. This template will put the would-be-printed output in a file named <code>slurm-&lt;job-name&gt;.out</code>.</p>
+</blockquote>
+<h2 id="task-1---single-cluster-job-using-openmp"><a class="header" href="#task-1---single-cluster-job-using-openmp">Task 1 - Single Cluster Job using OpenMP</a></h2>
+<p>Create a program in <code>hello.c</code> that prints 'Hello, world from thread: <thread-number>' to the output. Launch the job to a node SLURM.</p>
+<blockquote>
+<p>Note:</p>
+<ul>
+<li>The output of a job is put in a slurm-<job-id>.out file by default.</li>
+<li>The template slurm job scripts will output the results to a <code>slurm-&lt;job-name&gt;.out</code> file.</li>
+</ul>
+</blockquote>
+<h2 id="task-2---parallel-for-loop"><a class="header" href="#task-2---parallel-for-loop">Task 2 - Parallel <code>for</code> Loop</a></h2>
+<p>In <code>array-gen.c</code> implement a program that generates an array containing the numbers 0..10'000 elements (inclusive) using a <code>for</code> loop. Measure the execution time using the <code>time</code> Linux command. Now reimplement the program to utilise OpenMP's parallel <code>for</code> loop macros, measuring the execution time again. Is there any performance improvement? Are the elements still in the correct order and if not how can you fix this. Try experimenting with different sized arrays and element types.</p>
+<blockquote>
+<p>Hint: You will likely need to allocate memory from the heap.</p>
+</blockquote>
+<h2 id="task-3---parallel-reductions"><a class="header" href="#task-3---parallel-reductions">Task 3 - Parallel Reductions</a></h2>
+<p>In the C chapter we created a sum program that summed the elements of an array together. Using this as a base, create a new program that again computes the sum of the elements of an array but using OpenMP, comparing the execution time between the sequential and parallel versions. Is there any performance improvement? How would using a different binary operator change our ability to parallelize the the reduction?</p>
+<p>If you have time, implement the sum but at each iteration, raise the current value to the power of the current accumulation divide by 100, adding this to the accumulation. Test a serial and parallel version. Is the parallel any faster?</p>
+<blockquote>
+<p>Note: <code>module load gcc</code> to use newer version of gcc if you have error with something like <code>-std=c99</code>.</p>
+</blockquote>
+<h2 id="task-4---laplace-equation-for-calculating-the-temperature-of-a-square-plane"><a class="header" href="#task-4---laplace-equation-for-calculating-the-temperature-of-a-square-plane">Task 4 - Laplace Equation for Calculating the Temperature of a Square Plane</a></h2>
+<p>For this challenge you will attempt to parallelize an existing implementation of the Laplace Equation. Throughout the source files of this project there are various loops you can try and make faster by utilizing OpenMP macros. See if you can make a faster version in the <code>laplace2d-parallel.c</code>. To build these files make sure you're in that directory and use the command <code>make</code>. The executables will be in the same directory.</p>
+<h2 id="task-5---calculate-pi-using-monte-carlo-algorithm"><a class="header" href="#task-5---calculate-pi-using-monte-carlo-algorithm">Task 5 - Calculate Pi using &quot;Monte Carlo Algorithm&quot;</a></h2>
+<p>For this challenge you will have to try and implement the Monte Carlo algorithm with no framework or template and using everything you've learnt so far. Good luck.</p>
+<p><a href="https://www.youtube.com/watch?v=7ESK5SaP-bc&amp;ab_channel=MarbleScience">Short explanation of Monte Carlo algorithm</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../chapter4/openmp.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../chapter5/chapter5.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../chapter4/openmp.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../chapter5/chapter5.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

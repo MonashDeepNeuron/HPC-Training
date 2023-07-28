@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Types &amp; Variables - HPC Training</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Monash DeepNeuron&#x27;s HPC Training Content">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../home.html">Welcome</a></li><li class="chapter-item expanded "><a href="../chapter1/getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter1/github.html"><strong aria-hidden="true">1.1.</strong> GitHub</a></li><li class="chapter-item expanded "><a href="../chapter1/windows.html"><strong aria-hidden="true">1.2.</strong> Windows</a></li><li class="chapter-item expanded "><a href="../chapter1/mac.html"><strong aria-hidden="true">1.3.</strong> Mac</a></li><li class="chapter-item expanded "><a href="../chapter1/linux.html"><strong aria-hidden="true">1.4.</strong> Linux</a></li><li class="chapter-item expanded "><a href="../chapter1/wsl.html"><strong aria-hidden="true">1.5.</strong> WSL</a></li><li class="chapter-item expanded "><a href="../chapter1/challenges.html"><strong aria-hidden="true">1.6.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter2/intro-to-c.html"><strong aria-hidden="true">2.</strong> Brief Introduction to C</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter2/helloworld.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li><li class="chapter-item expanded "><a href="../chapter2/compilation.html"><strong aria-hidden="true">2.2.</strong> Compilation</a></li><li class="chapter-item expanded "><a href="../chapter2/vars.html" class="active"><strong aria-hidden="true">2.3.</strong> Types &amp; Variables</a></li><li class="chapter-item expanded "><a href="../chapter2/printing.html"><strong aria-hidden="true">2.4.</strong> Printing</a></li><li class="chapter-item expanded "><a href="../chapter2/array.html"><strong aria-hidden="true">2.5.</strong> Arrays &amp; Strings</a></li><li class="chapter-item expanded "><a href="../chapter2/ctrl-flow.html"><strong aria-hidden="true">2.6.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="../chapter2/loops.html"><strong aria-hidden="true">2.7.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../chapter2/functions.html"><strong aria-hidden="true">2.8.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../chapter2/pointers.html"><strong aria-hidden="true">2.9.</strong> Pointers</a></li><li class="chapter-item expanded "><a href="../chapter2/memory.html"><strong aria-hidden="true">2.10.</strong> Dynamic Memory</a></li><li class="chapter-item expanded "><a href="../chapter2/structs.html"><strong aria-hidden="true">2.11.</strong> Structures</a></li><li class="chapter-item expanded "><a href="../chapter2/macros.html"><strong aria-hidden="true">2.12.</strong> Macros &amp; The Preprocessor</a></li><li class="chapter-item expanded "><a href="../chapter2/challenges.html"><strong aria-hidden="true">2.13.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter3/chapter3.html"><strong aria-hidden="true">3.</strong> M3</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter3/start.html"><strong aria-hidden="true">3.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../chapter3/login.html"><strong aria-hidden="true">3.2.</strong> Logging In</a></li><li class="chapter-item expanded "><a href="../chapter3/linux-cmds.html"><strong aria-hidden="true">3.3.</strong> Linux Commands</a></li><li class="chapter-item expanded "><a href="../chapter3/shared-fs.html"><strong aria-hidden="true">3.4.</strong> M3's Shared Filesystem</a></li><li class="chapter-item expanded "><a href="../chapter3/software-tooling.html"><strong aria-hidden="true">3.5.</strong> Software and Tooling</a></li><li class="chapter-item expanded "><a href="../chapter3/bash.html"><strong aria-hidden="true">3.6.</strong> Bash Scripts</a></li><li class="chapter-item expanded "><a href="../chapter3/slurm.html"><strong aria-hidden="true">3.7.</strong> Job batching &amp; SLURM</a></li><li class="chapter-item expanded "><a href="../chapter3/strudel.html"><strong aria-hidden="true">3.8.</strong> Strudel</a></li><li class="chapter-item expanded "><a href="../chapter3/challenges.html"><strong aria-hidden="true">3.9.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter4/chapter4.html"><strong aria-hidden="true">4.</strong> Parallel Computing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter4/parallel-computing.html"><strong aria-hidden="true">4.1.</strong> What is Parallel Computing?</a></li><li class="chapter-item expanded "><a href="../chapter4/multithreading.html"><strong aria-hidden="true">4.2.</strong> Multithreading</a></li><li class="chapter-item expanded "><a href="../chapter4/openmp.html"><strong aria-hidden="true">4.3.</strong> OpenMP</a></li><li class="chapter-item expanded "><a href="../chapter4/challenges.html"><strong aria-hidden="true">4.4.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter5/chapter5.html"><strong aria-hidden="true">5.</strong> Distributed Computing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter5/parallel-refresher.html"><strong aria-hidden="true">5.1.</strong> Refresher on Parallelism</a></li><li class="chapter-item expanded "><a href="../chapter5/distributed-computing.html"><strong aria-hidden="true">5.2.</strong> What is Distributed Computing</a></li><li class="chapter-item expanded "><a href="../chapter5/message-passing.html"><strong aria-hidden="true">5.3.</strong> Message Passing</a></li><li class="chapter-item expanded "><a href="../chapter5/openmpi.html"><strong aria-hidden="true">5.4.</strong> OpenMPI</a></li><li class="chapter-item expanded "><a href="../chapter5/challenges.html"><strong aria-hidden="true">5.5.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../acknowledgements.html">Acknowledgements</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HPC Training</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/MonashDeepNeuron/HPC-Training" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="types--variables"><a class="header" href="#types--variables">Types &amp; Variables</a></h1>
+<h2 id="fundamental-data-types"><a class="header" href="#fundamental-data-types">Fundamental Data Types</a></h2>
+<p>In C there are six fundamental data types, <code>bool</code>, <code>char</code>, <code>int</code>, <code>float</code>, <code>double</code> and <code>void</code>. There are also a variety of modified integral and floating point types to allow for different sizes.</p>
+<ul>
+<li><code>bool</code> - Boolean type, can either be <code>true</code> or <code>false</code>. It's width is 8-bits (1 byte).</li>
+<li><code>char</code> - Character type. Can be unsigned or signed. Represents any ASCII character value. Usually has a width of 8-bits (1 byte).</li>
+<li><code>short int</code> or <code>short</code> - Number type, can be signed or unsigned. Only represents whole number values. Usually has a width of 16-bits (2 bytes).</li>
+<li><code>int</code> - Number type, can be signed or unsigned. Only represents whole number values. Usually has a width of 32-bits (4 bytes).</li>
+<li><code>long int</code> or <code>long</code> - Number type, can be signed or unsigned. Only represents whole number values. Sometimes has a width of 32-bits (4 bytes) or 64-bits (8 bytes).</li>
+<li><code>long long int</code> or <code>long long</code> - Number type, can be signed or unsigned. Only represents whole number values. Has a width of 64-bits (8 bytes).</li>
+<li><code>float</code> - Single precision floating point type, represents decimal number values. Usually has a width of 32-bits (4 bytes).</li>
+<li><code>double</code> - Double precision floating point type, represents decimal number values. Usually has a width of 64-bits (8 bytes).</li>
+<li><code>long double</code> - Extended double precision (or quadruple precision) floating point type, represents decimal number values. Usually has a width of at least 64-bits (8 bytes) but sometimes has a width of 128-bits (16 bytes).</li>
+<li><code>void</code> - Incomplete data type. Indicates the absence of a type of value.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> <code>bool</code>, <code>char</code> and <code>int</code> (and sized variants) are defined as integral types ie. they are all number types.</p>
+</blockquote>
+<h2 id="variables"><a class="header" href="#variables">Variables</a></h2>
+<p>Variables are integral to computer programming. Variables are objects that own a piece of data. What data or rather value of a variable can change throughout the lifetime of a program. To declare a variable in C, we first declare its type. The type predicates which operations are valid for that variable as well as tells the compiler the size of the variable. We then git it a name and assign it an initial value.</p>
+<pre><code class="language-c">/// General syntax: type name = value
+
+int a = 10;
+</code></pre>
+<p>In C variables have 'value semantics', this means that the data of a variable is always copied. For the example above, the data representing the literal <code>10</code> is copied into the location of <code>a</code> by the assignment operator (<code>=</code>).</p>
+<blockquote>
+<p><strong>Note:</strong> Often the compiler will likely try to construct variables (like <code>a</code>) directly to the evaluated value of the right-hand-side of the <code>=</code> ie. construct <code>a</code> directly from <code>10</code> rather than create <code>a</code> with a dummy value and then copy <code>10</code> to <code>a</code>'s location. This is called copy elision or return value optimization.</p>
+</blockquote>
+<p>You can also create new variables and initialize them to the value of an existing variables using the same syntax. Because C uses value semantics, <code>b</code> now has its own copy of the data owned by <code>a</code>. These can now be modified independently of each other.</p>
+<pre><code class="language-c">int a = 10;
+int b = a;
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Literals are data with a constant value that are predefined. They are often used to initialise variables to a particular starting value.</li>
+<li>A <code>char</code> literal is a single letter surrounded in single quotes eg. <code>'a'</code> is a literal for the letter 'a'.</li>
+</ul>
+</blockquote>
+<h3 id="constant-data"><a class="header" href="#constant-data">Constant Data</a></h3>
+<p>Sometimes you want data to be constant or immutable. This is data that does not and cannot change during its lifetime. To do this in C we use the <code>const</code> qualifier before the type of a variable. This marks some variable as constant. Constant data must be given an initialiser or the program will not compile. <code>const</code> can be applied to any variable of any type but a constant variable cannot be modified to be mutable however, you can create a copy of a constant variable that is mutable.</p>
+<pre><code class="language-c">const int a = 4;
+</code></pre>
+<h3 id="static-data"><a class="header" href="#static-data">Static Data</a></h3>
+<p>In C you can also allows you to create data that will exist for the entire lifetime of the program and is declared with the <code>static</code> keyword before the type initialiser. This kind of data is said to have static storage duration which means that it remains 'alive' or valid for the entire duration of the program and will not automatically get cleaned up when the it has left scope. This has some interesting implications but the most useful is its usage in function blocks. Static variables allow data to persist between function calls, meaning that if you invoke a function that owns a static variable; say an <code>int</code>, was left with the value <code>9</code> once the called had completed, if you were to recall the function and inspect the value the static variable it would still contain the value <code>9</code> at the start of the call. This allows you to keep data between function calls.</p>
+<pre><code class="language-c">static int a = 9;
+</code></pre>
+<p>There are other more advanced usages of <code>static</code> that allow you to control the linkage of different translation units (source and object files) but they are beyond the scope of this book.</p>
+<h2 id="operators"><a class="header" href="#operators">Operators</a></h2>
+<p>Operators are the most primitive way to manipulate data and variables in C. There are four major categories for operators these being arithmetic, bitwise, logical and assignment. Each operator is written in either infix (binary), prefix or prefix (unary) form. Most operators return the result of their evaluation meaning it can can be assigned to a new variable however, some modify the data in-place, this includes all assignment operators and the increment and decrement operators (which do both).</p>
+<blockquote>
+<p><strong>Note:</strong> Parenthesis are used to control the order of execution, separating sub-expressions.</p>
+</blockquote>
+<h3 id="arithmetic-operators"><a class="header" href="#arithmetic-operators">Arithmetic Operators</a></h3>
+<p>Arithmetic operators work for integral and floating point type. They are the most common type of operator used in C.</p>
+<table><thead><tr><th align="center">Operator</th><th align="center">Name</th><th align="center">Description</th><th align="center">Example</th></tr></thead><tbody>
+<tr><td align="center"><code>+</code></td><td align="center">Addition</td><td align="center">Adds two values</td><td align="center"><code>a + b</code></td></tr>
+<tr><td align="center"><code>-</code></td><td align="center">Subtraction</td><td align="center">Subtracts two values</td><td align="center"><code>a - b</code></td></tr>
+<tr><td align="center"><code>*</code></td><td align="center">Multiplication</td><td align="center">Multiplies two values</td><td align="center"><code>a * b</code></td></tr>
+<tr><td align="center"><code>/</code></td><td align="center">Division</td><td align="center">Divides two values</td><td align="center"><code>a / b</code></td></tr>
+<tr><td align="center"><code>%</code></td><td align="center">Modulo Division</td><td align="center">Modulo divides two values ie. returns the remainder of the division of two numbers</td><td align="center"><code>a % b</code></td></tr>
+<tr><td align="center"><code>++</code></td><td align="center">Prefix Increment</td><td align="center">Increment the value in-place and return new value</td><td align="center"><code>++a</code></td></tr>
+<tr><td align="center"><code>--</code></td><td align="center">Prefix Decrement</td><td align="center">Decrement the value in-place and return new value</td><td align="center"><code>--a</code></td></tr>
+<tr><td align="center"><code>++</code></td><td align="center">Postfix Increment</td><td align="center">Increment the value in-place and return old value</td><td align="center"><code>a++</code></td></tr>
+<tr><td align="center"><code>--</code></td><td align="center">Postfix Decrement</td><td align="center">Decrement the value in-place and return old value</td><td align="center"><code>a--</code></td></tr>
+<tr><td align="center"><code>+</code></td><td align="center">Posigation</td><td align="center">Set sign of value to positive</td><td align="center"><code>+a</code></td></tr>
+<tr><td align="center"><code>-</code></td><td align="center">Negation</td><td align="center">Set sign of value to negative</td><td align="center"><code>-a</code></td></tr>
+</tbody></table>
+<blockquote>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Binary arithmetic operators will a return value whose type is the larger of <code>a</code> or <code>b</code>.</li>
+<li>If <code>a</code> or <code>b</code> is smaller than its counterpart, the smaller will be implicitly promoted to a larger type.</li>
+<li>Division between two integral types performs integer division.</li>
+<li>Division between a floating point type and any other type (integral or floating point) performs floating point division by implicitly promoting the integral or smaller argument to an adequate type or size.</li>
+<li>Modulo division does not exist for floating point types.</li>
+</ul>
+</blockquote>
+<h3 id="bitwise-operators"><a class="header" href="#bitwise-operators">Bitwise Operators</a></h3>
+<p>Bitwise operators are used to manipulate the individual bits of an integral type allowing precise control of the most fundamental data type.</p>
+<table><thead><tr><th align="center">Operator</th><th align="center">Name</th><th align="center">Description</th><th align="center">Example</th></tr></thead><tbody>
+<tr><td align="center"><code>~</code></td><td align="center">Complement</td><td align="center">Inverts the bits of a values</td><td align="center"><code>~a</code></td></tr>
+<tr><td align="center"><code>&amp;</code></td><td align="center">And</td><td align="center">Ands the bits of two values</td><td align="center"><code>a &amp; b</code></td></tr>
+<tr><td align="center"><code>|</code></td><td align="center">Or</td><td align="center">Ors the bits of two values</td><td align="center"><code>a | b</code></td></tr>
+<tr><td align="center"><code>^</code></td><td align="center">Exclusive Or (Xor)</td><td align="center">Xors the bits of two values</td><td align="center"><code>a ^ b</code></td></tr>
+<tr><td align="center"><code>&lt;&lt;</code></td><td align="center">Left Shift</td><td align="center">Shifts the bits of <code>a</code> to the left by <code>b</code> positions.</td><td align="center"><code>a &lt;&lt; b</code></td></tr>
+<tr><td align="center"><code>&gt;&gt;</code></td><td align="center">Right Shift</td><td align="center">Shifts the bits of <code>a</code> to the right by <code>b</code> positions.</td><td align="center"><code>a &gt;&gt; b</code></td></tr>
+</tbody></table>
+<blockquote>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Bitwise operators do not exist for floating point types.</li>
+<li>Bits are lost from shift operators.</li>
+<li>Left shift (<code>&lt;&lt;</code>) pads with zeros ie. adds a zero in the new empty position.</li>
+<li>Right shift (<code>&gt;&gt;</code>) pads with the most significant bit ie. the new empty position is filled with the same value as the previous occupant.</li>
+<li>Left and right shifts are formally described respectively as: \(a &lt;&lt; b ≡ a * 2^{b} mod(2^{N})\) and \(a &gt;&gt; b ≡ \frac{a}{2^{b}} mod(2^{N})\) where \(N\) is the numbers bits in the resulting value.</li>
+</ul>
+</blockquote>
+<h3 id="logical-operators"><a class="header" href="#logical-operators">Logical Operators</a></h3>
+<p>Logical operators operate on Boolean expressions statements. They only evaluate to another Boolean expression (ie. type <code>bool</code>).</p>
+<table><thead><tr><th align="center">Operator</th><th align="center">Name</th><th align="center">Description</th><th align="center">Example</th></tr></thead><tbody>
+<tr><td align="center"><code>!</code></td><td align="center">Not</td><td align="center">Negates the Boolean.</td><td align="center"><code>!a</code></td></tr>
+<tr><td align="center"><code>&amp;&amp;</code></td><td align="center">Logical And</td><td align="center">Both <code>a</code> and <code>b</code> must be true.</td><td align="center"><code>a &amp;&amp; b</code></td></tr>
+<tr><td align="center"><code>||</code></td><td align="center">Logical Or</td><td align="center">Either <code>a</code> or <code>b</code> must be true.</td><td align="center"><code>a || b</code></td></tr>
+<tr><td align="center"><code>==</code></td><td align="center">Equals</td><td align="center"><code>a</code> is equal to <code>b</code>.</td><td align="center"><code>a == b</code></td></tr>
+<tr><td align="center"><code>!=</code></td><td align="center">Not Equal</td><td align="center"><code>a</code> is not equal to <code>b</code>.</td><td align="center"><code>a != b</code></td></tr>
+<tr><td align="center"><code>&lt;</code></td><td align="center">Less</td><td align="center"><code>a</code> is less than <code>b</code>.</td><td align="center"><code>a &lt; b</code></td></tr>
+<tr><td align="center"><code>&gt;</code></td><td align="center">Greater</td><td align="center"><code>a</code> is greater than <code>b</code>.</td><td align="center"><code>a &gt; b</code></td></tr>
+<tr><td align="center"><code>&lt;=</code></td><td align="center">Less than or equal</td><td align="center"><code>a</code> is less than or equal to <code>b</code>.</td><td align="center"><code>a &lt;= b</code></td></tr>
+<tr><td align="center"><code>&gt;=</code></td><td align="center">Greater than or equal</td><td align="center"><code>a</code> is greater than or equal to <code>b</code>.</td><td align="center"><code>a &gt;= b</code></td></tr>
+</tbody></table>
+<h3 id="assignment-operators"><a class="header" href="#assignment-operators">Assignment Operators</a></h3>
+<p>Assignment operators will perform a binary operation between two values and assign the result to the left argument (excluding <code>=</code>).</p>
+<table><thead><tr><th align="center">Operator</th><th align="center">Name</th><th align="center">Description</th><th align="center">Example</th></tr></thead><tbody>
+<tr><td align="center"><code>=</code></td><td align="center">Assign</td><td align="center">Assigns the value of <code>b</code> to <code>a</code></td><td align="center"><code>a = b</code></td></tr>
+<tr><td align="center"><code>+=</code></td><td align="center">Add Assign</td><td align="center">Assigns the value of <code>a + b</code> to <code>a</code></td><td align="center"><code>a += b</code></td></tr>
+<tr><td align="center"><code>-=</code></td><td align="center">Subtract Assign</td><td align="center">Assigns the value of <code>a - b</code> to <code>a</code></td><td align="center"><code>a -= b</code></td></tr>
+<tr><td align="center"><code>*=</code></td><td align="center">Multiply Assign</td><td align="center">Assigns the value of <code>a * b</code> to <code>a</code></td><td align="center"><code>a *= b</code></td></tr>
+<tr><td align="center"><code>/=</code></td><td align="center">Divide Assign</td><td align="center">Assigns the value of <code>a / b</code> to <code>a</code></td><td align="center"><code>a /= b</code></td></tr>
+<tr><td align="center"><code>%=</code></td><td align="center">Modulo Divide Assign</td><td align="center">Assigns the value of <code>a % b</code> to <code>a</code></td><td align="center"><code>a %= b</code></td></tr>
+<tr><td align="center"><code>&amp;=</code></td><td align="center">And Assign</td><td align="center">Assigns the value of <code>a &amp; b</code> to <code>a</code></td><td align="center"><code>a &amp;= b</code></td></tr>
+<tr><td align="center"><code>|=</code></td><td align="center">Or Assign</td><td align="center">Assigns the value of <code>a | b</code> to <code>a</code></td><td align="center"><code>a |= b</code></td></tr>
+<tr><td align="center"><code>^=</code></td><td align="center">Xor Assign</td><td align="center">Assigns the value of <code>a ^ b</code> to <code>a</code></td><td align="center"><code>a ^= b</code></td></tr>
+<tr><td align="center"><code>&lt;&lt;=</code></td><td align="center">Left Shift Assign</td><td align="center">Assigns the value of <code>a &lt;&lt; b</code> to <code>a</code></td><td align="center"><code>a &lt;&lt;= b</code></td></tr>
+<tr><td align="center"><code>&gt;&gt;=</code></td><td align="center">Right Shift Assign</td><td align="center">Assigns the value of <code>a &gt;&gt; b</code> to <code>a</code></td><td align="center"><code>a &gt;&gt;= b</code></td></tr>
+</tbody></table>
+<p>The result of any expression containing operators can be assigned to a new or existing variable by simply using the expression as the right argument of <code>=</code>.</p>
+<pre><code class="language-c">/// The value of a is the result of the expression.
+double a = (6 + 7) / (5.0 * 4);  ///&lt; a == 0.650000
+</code></pre>
+<h3 id="sizeof"><a class="header" href="#sizeof"><code>sizeof</code></a></h3>
+<p>There is also one final operator called the <code>sizeof</code> operator which returns the number of bytes a particular piece of data occupies in memory. The <code>sizeof</code> operator uses a function call syntax with the argument being the data to be queried.</p>
+<pre><code class="language-c">int a = 4;
+double b = 3.154;
+
+int sz_a = sizeof(a);   //&lt; 4
+int sz_b = sizeof(b);   //&lt; 8
+</code></pre>
+<h2 id="enumerations"><a class="header" href="#enumerations">Enumerations</a></h2>
+<p>The last data type we will look at is the enum. Enums are another integral data type however, they have a limited number of possible states where each state is named by the user. For example consider a Boolean type <code>Bool</code>; although a builtin type can be represented by a enum with its possibles states being <code>False</code> and <code>True</code>. The states or enumerators of an enum are integral constants ie. each name has a particular integer value associated with it. Using the <code>Bool</code> example again, the value of <code>False</code> could be 0 and the value of <code>true</code> could be 1. This would restrict a <code>Bool</code> to only being <code>True</code> or <code>False</code> (1 or 0).</p>
+<pre><code class="language-c">enum Bool { False = 0, True = 1 };
+</code></pre>
+<p>Enums in C can be named (like <code>Bool</code>) or unnamed where the variants are simply generated as named integral constants (similar to just creating constant variables for each variants). Enum variants are accessible as long as the enum is in scope meaning I could use say <code>False</code> anywhere in the program that <code>Bool</code> is in scope without having to express in the language directly that <code>False</code> comes from <code>Bool</code>. The enumerators of an enum always have an underlying type of <code>int</code> meaning they can be used like constant integer value due to C's weak type system. Enumerators will always start with a value of 0 if no value is specified and increase for each subsequent variant however, it is possible to specify any value for variants as long as they are unique.</p>
+<h2 id="type-casting"><a class="header" href="#type-casting">Type Casting</a></h2>
+<p>Often it is useful to be able to convert data of one type to another. This can be done via type casting. This involve prefixing a variable (or function call return) with the desired type you want to cast to surrounded in parenthesis. This will cast the bits of the current variable to the new type which can then be save to a variable of the appropriate type or passed to a functions expecting that type.</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int i = 97;
+    printf(&quot;i = %d\n&quot;, i);
+
+    char ic = (char)i;  //&lt; Cast to char
+    printf(&quot;i = ic = '%c'\n&quot;, ic);
+
+    return 0;
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../chapter2/compilation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../chapter2/printing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../chapter2/compilation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../chapter2/printing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

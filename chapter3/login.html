@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Logging In - HPC Training</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Monash DeepNeuron&#x27;s HPC Training Content">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../home.html">Welcome</a></li><li class="chapter-item expanded "><a href="../chapter1/getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter1/github.html"><strong aria-hidden="true">1.1.</strong> GitHub</a></li><li class="chapter-item expanded "><a href="../chapter1/windows.html"><strong aria-hidden="true">1.2.</strong> Windows</a></li><li class="chapter-item expanded "><a href="../chapter1/mac.html"><strong aria-hidden="true">1.3.</strong> Mac</a></li><li class="chapter-item expanded "><a href="../chapter1/linux.html"><strong aria-hidden="true">1.4.</strong> Linux</a></li><li class="chapter-item expanded "><a href="../chapter1/wsl.html"><strong aria-hidden="true">1.5.</strong> WSL</a></li><li class="chapter-item expanded "><a href="../chapter1/challenges.html"><strong aria-hidden="true">1.6.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter2/intro-to-c.html"><strong aria-hidden="true">2.</strong> Brief Introduction to C</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter2/helloworld.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li><li class="chapter-item expanded "><a href="../chapter2/compilation.html"><strong aria-hidden="true">2.2.</strong> Compilation</a></li><li class="chapter-item expanded "><a href="../chapter2/vars.html"><strong aria-hidden="true">2.3.</strong> Types &amp; Variables</a></li><li class="chapter-item expanded "><a href="../chapter2/printing.html"><strong aria-hidden="true">2.4.</strong> Printing</a></li><li class="chapter-item expanded "><a href="../chapter2/array.html"><strong aria-hidden="true">2.5.</strong> Arrays &amp; Strings</a></li><li class="chapter-item expanded "><a href="../chapter2/ctrl-flow.html"><strong aria-hidden="true">2.6.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="../chapter2/loops.html"><strong aria-hidden="true">2.7.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../chapter2/functions.html"><strong aria-hidden="true">2.8.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../chapter2/pointers.html"><strong aria-hidden="true">2.9.</strong> Pointers</a></li><li class="chapter-item expanded "><a href="../chapter2/memory.html"><strong aria-hidden="true">2.10.</strong> Dynamic Memory</a></li><li class="chapter-item expanded "><a href="../chapter2/structs.html"><strong aria-hidden="true">2.11.</strong> Structures</a></li><li class="chapter-item expanded "><a href="../chapter2/macros.html"><strong aria-hidden="true">2.12.</strong> Macros &amp; The Preprocessor</a></li><li class="chapter-item expanded "><a href="../chapter2/challenges.html"><strong aria-hidden="true">2.13.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter3/chapter3.html"><strong aria-hidden="true">3.</strong> M3</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter3/start.html"><strong aria-hidden="true">3.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../chapter3/login.html" class="active"><strong aria-hidden="true">3.2.</strong> Logging In</a></li><li class="chapter-item expanded "><a href="../chapter3/linux-cmds.html"><strong aria-hidden="true">3.3.</strong> Linux Commands</a></li><li class="chapter-item expanded "><a href="../chapter3/shared-fs.html"><strong aria-hidden="true">3.4.</strong> M3's Shared Filesystem</a></li><li class="chapter-item expanded "><a href="../chapter3/software-tooling.html"><strong aria-hidden="true">3.5.</strong> Software and Tooling</a></li><li class="chapter-item expanded "><a href="../chapter3/bash.html"><strong aria-hidden="true">3.6.</strong> Bash Scripts</a></li><li class="chapter-item expanded "><a href="../chapter3/slurm.html"><strong aria-hidden="true">3.7.</strong> Job batching &amp; SLURM</a></li><li class="chapter-item expanded "><a href="../chapter3/strudel.html"><strong aria-hidden="true">3.8.</strong> Strudel</a></li><li class="chapter-item expanded "><a href="../chapter3/challenges.html"><strong aria-hidden="true">3.9.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter4/chapter4.html"><strong aria-hidden="true">4.</strong> Parallel Computing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter4/parallel-computing.html"><strong aria-hidden="true">4.1.</strong> What is Parallel Computing?</a></li><li class="chapter-item expanded "><a href="../chapter4/multithreading.html"><strong aria-hidden="true">4.2.</strong> Multithreading</a></li><li class="chapter-item expanded "><a href="../chapter4/openmp.html"><strong aria-hidden="true">4.3.</strong> OpenMP</a></li><li class="chapter-item expanded "><a href="../chapter4/challenges.html"><strong aria-hidden="true">4.4.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter5/chapter5.html"><strong aria-hidden="true">5.</strong> Distributed Computing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter5/parallel-refresher.html"><strong aria-hidden="true">5.1.</strong> Refresher on Parallelism</a></li><li class="chapter-item expanded "><a href="../chapter5/distributed-computing.html"><strong aria-hidden="true">5.2.</strong> What is Distributed Computing</a></li><li class="chapter-item expanded "><a href="../chapter5/message-passing.html"><strong aria-hidden="true">5.3.</strong> Message Passing</a></li><li class="chapter-item expanded "><a href="../chapter5/openmpi.html"><strong aria-hidden="true">5.4.</strong> OpenMPI</a></li><li class="chapter-item expanded "><a href="../chapter5/challenges.html"><strong aria-hidden="true">5.5.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../acknowledgements.html">Acknowledgements</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HPC Training</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/MonashDeepNeuron/HPC-Training" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="logging-in"><a class="header" href="#logging-in">Logging In</a></h1>
+<p>First you will need to ssh into a login node in the cluster. You do this by doing the following:</p>
+<h2 id="windows"><a class="header" href="#windows">Windows</a></h2>
+<p>If you are using windows, the best way to ssh into m3 is by using <a href="https://www.chiark.greenend.org.uk/%7Esgtatham/putty/latest.html">puTTY</a>.</p>
+<p>Once installed and opened, you will see a page like this:</p>
+<p><img src="./imgs/putty_start.png" alt="puTTY config page" /></p>
+<p>Type in your m3 username followed by <code>@m3.massive.org.au</code> and press enter or the Open button.</p>
+<p>If it the first time accessing M3 from this client then you may see something like this:</p>
+<p><img src="./imgs/putty_key_not_cached.png" alt="puTTY auth page" /></p>
+<p>Just click Accept, and puTTY will add the cluster's ssh fingerprint to cache.</p>
+<h2 id="mac--linux"><a class="header" href="#mac--linux">Mac / Linux</a></h2>
+<p>On macOS or linux, ssh is built into the terminal, so just copy the following into your shell, substituting username for your username.</p>
+<pre><code class="language-bash">ssh username@m3.massive.org.au
+</code></pre>
+<p>You may get a similar warning to the above image about the server identity, just type <code>yes</code> or <code>Y</code> to accept it and add the ssh key to cache.</p>
+<blockquote>
+<p><strong>Note</strong>:
+It is possible to use VSCode's built in terminal to ssh into M3, but it is not recommended. It puts unnecessary strain on the login nodes. M3 have a <a href="https://docs.massive.org.au/M3/connecting/strudel2/connecting-to-vscode.html">guide</a> on how to correctly connect to M3 using VSCode, however it is quite involved and not particularly necessary unless you want to do proper development on M3 and want to use VSCode to program in.</p>
+</blockquote>
+<p>Everything from now on will be the same across whatever computer you are using to access the cluster.</p>
+<p>The first thing to pop up will be a request for a password. Don't worry when you don't see your cursor moving when typing, this is just for security. Your password is still being recorded.</p>
+<p>Once you have logged in, you will come to a page that looks like this:</p>
+<pre><code class="language-txt">+----------------------------------------------------------------------------+
+|                            Welcome to MASSIVE M3                           |
+|                                                                            |
+|    For assistance please contact help@massive.org.au or (03) 9902 4845     |
+|     The MASSIVE User Guide          https://docs.massive.org.au            |
++----------------------------------------------------------------------------+
+
+  - Useful Slurm Commands:
+     squeue
+     sbatch &lt;slurm_script_file&gt;
+     scontrol show job &lt;JOBID&gt;
+     scancel &lt;JOBID&gt;
+
+  - Massive User Scripts:
+     show_job
+     show_job &lt;JOBID&gt;
+     show_cluster
+     user_info
+
+  - Slurm Sample Scripts are Here:
+     /usr/local/hpcusr/latest/training/samples/slurm/
+
+  - We recommend using smux to compile and test code on compute nodes.
+  - How to use smux: https://docs.massive.org.au/M3/slurm/interactive-jobs.html
+
+ For more details, please see:
+    https://docs.massive.org.au/M3/slurm/slurm-overview.html
+------------------------------------------------------------------------------
+
+Use MASSIVE Helpdesk to request assistance with MASSIVE related computing
+questions and problems. Email to help@massive.org.au and this will generate
+a ticket for your issue.
+
+------------------------------------------------------------------------------
+
+
+[jasparm@m3-login2 ~]$
+</code></pre>
+<p>Once you are done and want to logout, just type <code>exit</code>. This will close the connection.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../chapter3/start.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../chapter3/linux-cmds.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../chapter3/start.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../chapter3/linux-cmds.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

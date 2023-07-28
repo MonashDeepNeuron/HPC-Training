@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>OpenMP - HPC Training</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Monash DeepNeuron&#x27;s HPC Training Content">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../home.html">Welcome</a></li><li class="chapter-item expanded "><a href="../chapter1/getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter1/github.html"><strong aria-hidden="true">1.1.</strong> GitHub</a></li><li class="chapter-item expanded "><a href="../chapter1/windows.html"><strong aria-hidden="true">1.2.</strong> Windows</a></li><li class="chapter-item expanded "><a href="../chapter1/mac.html"><strong aria-hidden="true">1.3.</strong> Mac</a></li><li class="chapter-item expanded "><a href="../chapter1/linux.html"><strong aria-hidden="true">1.4.</strong> Linux</a></li><li class="chapter-item expanded "><a href="../chapter1/wsl.html"><strong aria-hidden="true">1.5.</strong> WSL</a></li><li class="chapter-item expanded "><a href="../chapter1/challenges.html"><strong aria-hidden="true">1.6.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter2/intro-to-c.html"><strong aria-hidden="true">2.</strong> Brief Introduction to C</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter2/helloworld.html"><strong aria-hidden="true">2.1.</strong> Hello World</a></li><li class="chapter-item expanded "><a href="../chapter2/compilation.html"><strong aria-hidden="true">2.2.</strong> Compilation</a></li><li class="chapter-item expanded "><a href="../chapter2/vars.html"><strong aria-hidden="true">2.3.</strong> Types &amp; Variables</a></li><li class="chapter-item expanded "><a href="../chapter2/printing.html"><strong aria-hidden="true">2.4.</strong> Printing</a></li><li class="chapter-item expanded "><a href="../chapter2/array.html"><strong aria-hidden="true">2.5.</strong> Arrays &amp; Strings</a></li><li class="chapter-item expanded "><a href="../chapter2/ctrl-flow.html"><strong aria-hidden="true">2.6.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="../chapter2/loops.html"><strong aria-hidden="true">2.7.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../chapter2/functions.html"><strong aria-hidden="true">2.8.</strong> Functions</a></li><li class="chapter-item expanded "><a href="../chapter2/pointers.html"><strong aria-hidden="true">2.9.</strong> Pointers</a></li><li class="chapter-item expanded "><a href="../chapter2/memory.html"><strong aria-hidden="true">2.10.</strong> Dynamic Memory</a></li><li class="chapter-item expanded "><a href="../chapter2/structs.html"><strong aria-hidden="true">2.11.</strong> Structures</a></li><li class="chapter-item expanded "><a href="../chapter2/macros.html"><strong aria-hidden="true">2.12.</strong> Macros &amp; The Preprocessor</a></li><li class="chapter-item expanded "><a href="../chapter2/challenges.html"><strong aria-hidden="true">2.13.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter3/chapter3.html"><strong aria-hidden="true">3.</strong> M3</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter3/start.html"><strong aria-hidden="true">3.1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../chapter3/login.html"><strong aria-hidden="true">3.2.</strong> Logging In</a></li><li class="chapter-item expanded "><a href="../chapter3/linux-cmds.html"><strong aria-hidden="true">3.3.</strong> Linux Commands</a></li><li class="chapter-item expanded "><a href="../chapter3/shared-fs.html"><strong aria-hidden="true">3.4.</strong> M3's Shared Filesystem</a></li><li class="chapter-item expanded "><a href="../chapter3/software-tooling.html"><strong aria-hidden="true">3.5.</strong> Software and Tooling</a></li><li class="chapter-item expanded "><a href="../chapter3/bash.html"><strong aria-hidden="true">3.6.</strong> Bash Scripts</a></li><li class="chapter-item expanded "><a href="../chapter3/slurm.html"><strong aria-hidden="true">3.7.</strong> Job batching &amp; SLURM</a></li><li class="chapter-item expanded "><a href="../chapter3/strudel.html"><strong aria-hidden="true">3.8.</strong> Strudel</a></li><li class="chapter-item expanded "><a href="../chapter3/challenges.html"><strong aria-hidden="true">3.9.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter4/chapter4.html"><strong aria-hidden="true">4.</strong> Parallel Computing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter4/parallel-computing.html"><strong aria-hidden="true">4.1.</strong> What is Parallel Computing?</a></li><li class="chapter-item expanded "><a href="../chapter4/multithreading.html"><strong aria-hidden="true">4.2.</strong> Multithreading</a></li><li class="chapter-item expanded "><a href="../chapter4/openmp.html" class="active"><strong aria-hidden="true">4.3.</strong> OpenMP</a></li><li class="chapter-item expanded "><a href="../chapter4/challenges.html"><strong aria-hidden="true">4.4.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../chapter5/chapter5.html"><strong aria-hidden="true">5.</strong> Distributed Computing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../chapter5/parallel-refresher.html"><strong aria-hidden="true">5.1.</strong> Refresher on Parallelism</a></li><li class="chapter-item expanded "><a href="../chapter5/distributed-computing.html"><strong aria-hidden="true">5.2.</strong> What is Distributed Computing</a></li><li class="chapter-item expanded "><a href="../chapter5/message-passing.html"><strong aria-hidden="true">5.3.</strong> Message Passing</a></li><li class="chapter-item expanded "><a href="../chapter5/openmpi.html"><strong aria-hidden="true">5.4.</strong> OpenMPI</a></li><li class="chapter-item expanded "><a href="../chapter5/challenges.html"><strong aria-hidden="true">5.5.</strong> Challenges</a></li></ol></li><li class="chapter-item expanded "><a href="../acknowledgements.html">Acknowledgements</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">HPC Training</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/MonashDeepNeuron/HPC-Training" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="parallel-computing-with-openmp"><a class="header" href="#parallel-computing-with-openmp">Parallel Computing with OpenMP</a></h1>
+<h2 id="what-is-openmp"><a class="header" href="#what-is-openmp">What is OpenMP</a></h2>
+<p>OpenMP, stand for open multi-processing is an API for writing multithreaded applications</p>
+<p>It has a set of compiler directives and library routines for parallel applications, and it greatly simplifies writing multi-threaded code in Fortran, C and C++.</p>
+<p>Just few lines of additional code can make your application parallel </p>
+<p>OpenMP uses shared memory architecture. It assumes all code runs on a single server</p>
+<h2 id="threads"><a class="header" href="#threads">Threads</a></h2>
+<p><img src="imgs/Threads%20Visualisation.png" alt="Threads Visualisation" /></p>
+<p>A thread of execution is the smallest instruction that can be managed independently by an operating system.</p>
+<p>In parallel region, multiple threads are spawned and utilises the cores on CPU</p>
+<blockquote>
+<p>Only one thread exists in a serial region</p>
+</blockquote>
+<h2 id="openmp-compiler-directives"><a class="header" href="#openmp-compiler-directives">OpenMP Compiler Directives</a></h2>
+<p>Recall compiler directives in C; particularly the <code>#pragma</code> directive. These can be used to create custom functionality for a compiler and enable specialized features in-code. </p>
+<p><code>#pragma</code> is a preprocessor directive that is used to provide additional information to the compiler beyond the standard language syntax. It allows programmers to give hints or directives to the compiler, which the compiler can use to optimize the code or to use specific compiler features or extensions.</p>
+<p>The <code>#pragma</code> directive is followed by a keyword that specifies the type of pragma and any additional parameters or options that are needed. For example, the <code>#pragma omp</code> directive is used in OpenMP parallel programming to provide hints to the compiler about how to parallelize code. Here are some examples of <code>#pragma</code> directives:</p>
+<ul>
+<li><code>#pragma once</code>: This is a commonly used pragma in C and C++ header files to ensure that the header file is included only once in a compilation unit. This can help to prevent errors that can occur when the same header file is included multiple times.</li>
+<li><code>#pragma message</code>: This pragma is used to emit a compiler message during compilation. This can be useful for providing additional information to the programmer or for debugging purposes.</li>
+<li><code>#pragma warning</code>: This pragma is used to control compiler warnings. It can be used to turn specific warnings on or off, or to change the severity of warnings.</li>
+<li><code>#pragma pack</code>: This pragma is used to control structure packing in C and C++. It can be used to specify the alignment of structure members, which can affect the size and layout of structures in memory.</li>
+<li><code>#pragma optimize</code>: This pragma is used to control code optimization. It can be used to specify the level of optimization, or to turn off specific optimizations that may be causing problems.</li>
+</ul>
+<p>It is important to note that <code>#pragma</code> directives are compiler-specific, meaning that different compilers may interpret them differently or may not support certain directives at all. It is important to check the documentation for a specific compiler to understand how it interprets <code>#pragma</code> directives.</p>
+<p>OpenMP provides a set of <code>#pragma</code> directives that can be used to specify the parallelization of a particular loop or section of code. For example, the <code>#pragma omp parallel</code> directive is used to start a parallel region, where multiple threads can execute the code concurrently. The <code>#pragma omp for</code> directive is used to parallelize a loop, with each iteration of the loop being executed by a different thread.</p>
+<p>Here's an example of how <code>#pragma</code> directives can be used with OpenMP to parallelize a simple loop:</p>
+<pre><code class="language-c">#include &lt;omp.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    int i;
+    #pragma omp parallel for
+    for (i = 0; i &lt; 10; i++) {
+        printf(&quot;Thread %d executing iteration %d\n&quot;, omp_get_thread_num(), i);
+    }
+    return 0;
+}
+</code></pre>
+<p>Use <code>gcc -fopenmp</code> to compile your code when you use <code>#pragma</code></p>
+<h2 id="compile-openmp"><a class="header" href="#compile-openmp">Compile OpenMP</a></h2>
+<ol>
+<li>Add <code>#include &lt;omp.h&gt; if you are using OpenMP function</code></li>
+<li>Run <code>gcc -fopenmp -o hello hello.c</code></li>
+</ol>
+<h2 id="how-it-works"><a class="header" href="#how-it-works">How it works</a></h2>
+<p><img src="imgs/OpenMP%20and%20Directive.png" alt="OpenMP and Directive" />
+<a href="https://www.researchgate.net/figure/OpenMP-API-The-master-thread-is-indicated-with-T-0-while-inside-the-parallel-region_fig3_329536624">Source</a></p>
+<p>Here is an example of <code>#pragma</code></p>
+<ul>
+<li>The function starts with serial region</li>
+<li>At the line <code>#pragma omp parallel</code>, a group of threads are spawned to create parallel region inside the bracket </li>
+<li>At the end of the bracket, the program goes back to serial computing </li>
+</ul>
+<h2 id="running-hello-world-on-multi-threads"><a class="header" href="#running-hello-world-on-multi-threads">Running &quot;Hello World&quot; on Multi-threads</a></h2>
+<blockquote>
+<p>If you're unsure about the difference between <strong>multi-threading</strong> and <strong>multi-processing</strong>, check the page <a href="multithreading.html">here</a></p>
+</blockquote>
+<p><strong>Drawing in Serial (Left) vs Parallel (Right)</strong>
+<img src="imgs/4%20Parallel%20Computing%20OpenMP.gif" alt="" /></p>
+<p>Drawing in serial versus drawing in parallel, you can see how we can place one pixel at a time and take a long time to make the drawing, but on the right hand side if we choose to load and place four pixels down simultaneously we can get the picture faster, however during the execution it can be hard to make out what the final image will be, given we don’t know what pixel will be placed where in each execution step.</p>
+<p>Now this is obviously a fairly abstract analogy compared to exactly what’s happening under the hood, however if we go back to the slide diagram containing zones of multiple threads and serial zones, some parts of a program must be serial as if this program went further and drew a happy face and then a frown face, drawing both at the same time is not useful to the program, yes it would be drawn faster but the final image won’t make sense or achieve the goal of the program.</p>
+<h2 id="how-many-threads-you-can-dynamically-change-it"><a class="header" href="#how-many-threads-you-can-dynamically-change-it">How many threads? You can dynamically change it</a></h2>
+<p><strong><code>omp_set_num_threads()</code> Library Function</strong>
+Value is set inside program. Need to recompile program to change</p>
+<p><strong><code>OMP_NUM_THREADS</code> Environment Variable</strong></p>
+<pre><code class="language-bash">export OMP_NUM_THREADS=4 
+./hello
+</code></pre>
+<p>The operating system maps the threads to available hardware. You would not normally want to exceed the number of cores/processors available to you.</p>
+<h2 id="measuring-performance"><a class="header" href="#measuring-performance">Measuring Performance</a></h2>
+<p>The command <code>top</code> or <code>htop</code> looks into a process. As you can see from the image on right, it shows the CPU usages.</p>
+<p><img src="imgs/Top%20Command.png" alt="Top Command" /></p>
+<p>The command <code>time</code> checks the overall performance of the code.</p>
+<p><img src="imgs/Time%20Command.png" alt="Time Command" /></p>
+<p>By running this command, you get real time, user time and system time.</p>
+<p><strong>Real</strong> is wall clock time - time from start to finish of the call. This includes the time of overhead</p>
+<p><strong>User</strong> is the amount of CPU time spent outside the kernel within the process</p>
+<p><strong>Sys</strong> is the amount of CPU time spent in the kernel within the process. 
+<strong>User</strong> time + <strong>Sys</strong> time will tell you how much actual CPU time your process used. </p>
+<h2 id="more-features-of-openmp"><a class="header" href="#more-features-of-openmp">More Features of OpenMP</a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=iPb6OLhDEmM&amp;list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG&amp;index=11">YouTube Video: Introduction to OpenMP</a></li>
+<li><a href="https://www.youtube.com/watch?v=dlrbD0mMMcQ&amp;list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG&amp;index=17">YouTube Video: Data environment -#pragma omp parallel private</a></li>
+<li><a href="https://www.youtube.com/watch?v=iPb6OLhDEmM&amp;list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG&amp;index=11">YouTube Video: Parallel Loops - #omp parallel for reduction()</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../chapter4/multithreading.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../chapter4/challenges.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../chapter4/multithreading.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../chapter4/challenges.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
