@@ -15,6 +15,7 @@
   - [Compilation](./chapter2/compilation.md)
   - [Types & Variables](./chapter2/vars.md)
   - [Printing](./chapter2/printing.md)
+  - [Input](./chapter2/input.md)
   - [Arrays & Strings](./chapter2/array.md)
   - [Control Flow](./chapter2/ctrl-flow.md)
   - [Loops](./chapter2/loops.md)

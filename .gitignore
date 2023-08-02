@@ -36,3 +36,8 @@ book
 
 # MacOS Meta Files
 .DS_Store
+
+# IDE Configs
+.vs
+.vscode
+.idea
