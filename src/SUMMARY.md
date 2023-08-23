@@ -49,4 +49,9 @@
   - [OpenMPI](./chapter5/openmpi.md)
   - [Challenges](./chapter5/challenges.md)
 
+- [Being a HPC Member](./chapter6/being-a-hpc-member.md)
+  - [Expectations](./chapter6/expectations.md)
+  - [Project Workflow](./chapter6/project-workflow.md)
+  - [Leadership](./chapter6/leadership.md)
+
 [Acknowledgements](./acknowledgements.md)
