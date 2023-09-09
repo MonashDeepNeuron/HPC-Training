@@ -37,4 +37,4 @@ $ mdbook serve --open
 
 ## Code of Conduct, License & Contributing
 
-Refer to the [Code of Conduct](/CODE_OF_CONDUCT.md) and the [License](/LICENSE) for this repository for the expected behavior of contributors and users of the repository.  If you have any concerns, open a discussion or contact the appropriate members of Monash DeepNeuron. If you wish to contribute, follow the [contributing guide](/CONTRIBUTING.md).
+Refer to the [Code of Conduct](/CODE_OF_CONDUCT.md) and the [License](/LICENSE) for this repository for the expected behavior of contributors and users of the repository. If you have any concerns, open a discussion or contact the appropriate members of Monash DeepNeuron. If you wish to contribute, follow the [contributing guide](/CONTRIBUTING.md).
