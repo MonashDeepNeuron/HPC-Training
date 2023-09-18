@@ -16,7 +16,7 @@ As we discussed in the previous section we use bash scripts to run jobs on M3. W
 #SBATCH --time=0-00:01:00
 #SBATCH --job-name=hello
 #SBATCH --partition=m3i
-#SBATCH --mail-user=jmar0066@student.monash.edu
+#SBATCH --mail-user=<username>@student.monash.edu
 #SBATCH --mail-type=BEGIN,END,FAIL
 
 echo "Hello World"
