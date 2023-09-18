@@ -17,7 +17,7 @@ printf(char* fmtstring, ...);
 > **Note:**
 >
 > - Ignore the use of `char*` for now.
-> - `printf()` is that it doesn't pad the end if the output string with a newline so you will have to manually provide it. The newline character is `'\n'`. The backslash is a special character that indicates the proceeding character is "escaped". Escaped characters have special meanings for string and character data.
+> - `printf()` is different to `puts()` in that it doesn't pad the end if the output string with a newline so you will have to manually provide it. The newline character is `'\n'`. The backslash is a special character that indicates the proceeding character is "escaped". Escaped characters have special meanings for string and character data.
 > If the format string doesn't have any positional arguments then `printf()` will just print the string like `puts()`.
 > `printf()` is not able to print data of any kind without a format string ie. `printf(10)` would fail to compile.
 
