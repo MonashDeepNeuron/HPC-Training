@@ -51,11 +51,11 @@
   - [Challenges](./chapter5/challenges.md)
 
 - [Apache Spark](./chapter6/chapter6.md)
-  - [What is Apache Spark](./chapter6/introduction.md)
-  - [Installation & Set-up Cluster](./chapter6/set-up.md)
+  - [Introduction](./chapter6/introduction.md)
+  - [Installation & Cluster Set-up](./chapter6/set-up.md)
   - [Spark SQL & DataFrames](./chapter6/dataframes.md)
   - [Spark Internals](./chapter6/internals.md)
-  - [Challenges](./chapter6/challenges.md)
   - [Resources](./chapter6/resources.md)
+  - [Challenges](./chapter6/challenges.md)
 
 [Acknowledgements](./acknowledgements.md)

@@ -1,8 +1,8 @@
 # Data Processing - Apache Spark
 
-- [What is Apache Spark](introduction.md)
+- [Introduction](introduction.md)
 - [Installation & Cluster Set-up](set-up.md)
 - [Spark SQL & DataFrames](dataframes.md)
 - [Spark Internals](internals.md)
+- [Resources](resources.md) 
 - [Challenges](challenges.md)
-- [Resources](resources.md)
