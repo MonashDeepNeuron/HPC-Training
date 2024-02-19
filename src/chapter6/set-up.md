@@ -1,7 +1,5 @@
 # Setting up a Spark cluster within M3 cluster
 
-The overall process can be demonstrated through this diagram: TODO
-
 ## Installation
 
 Different Spark version may have different version requirements for Python and Java. We will use Spark 3.5, Python 3.10 (JupyterLab Environment), and Java 8 (default in M3). There are 2 main things that we need to set up:
@@ -55,6 +53,8 @@ source /path/to/spark-3.5.0-bin-hadoop3/sbin/start-all.sh
 
 ## Connecting Jupyter Lab (STRUDEL) to the Cluster
 
+[Spark’s shell](https://spark.apache.org/docs/latest/quick-start.html#interactive-analysis-with-the-spark-shell) offers a straightforward approach to grasp the API and serves as a robust tool for interactive data analysis. However, incorporating a user-friendly interface facilitates more intricate operations and functionalities. In this context, we'll utilise Jupyter Lab, which is made available through STRUDEL.
+
 ### Requesting a notebook through STRUDEL
 
 When installing miniconda in M3, there will be a built-in environment named ```jupyterlab```. This environment will also be automatically added into STRUDEL and we can launch a JupyterLab session from this environment.
@@ -84,12 +84,13 @@ sys.path.append(PYSPARK_HOME)
 sys.path.append(f"{PYSPARK_HOME}/lib/py4j-0.10.9.7-src.zip")
 ```
 
-### Connecting to the spark master
+### Connecting to the Spark master
 
 ```python
 import pyspark
 from pyspark.sql import SparkSession
 
+# Initilize a Spark context from the Spark Cluster 
 spark = SparkSession \
     .builder \
     .master("spark://{master_node}.massive.org.au:7077") \
@@ -100,10 +101,18 @@ spark = SparkSession \
 
 ### SSH Tunnel SparkUI to Localhost
 
-We can use [ssh tunneling](https://www.ssh.com/academy/ssh/tunneling) to forward the Spark UI of the engine to our local machine, the UI will be available as a nice web interface at ```http://localhost:4040```.
+We can use [ssh tunneling](https://www.ssh.com/academy/ssh/tunneling) to forward the Spark UI of the engine to our local machine, the UI will be available as a web application at ```http://localhost:4040```.
 
 ```bash
 # The jupyterlab node will be the node that the jupyter lab is currently running on
 ssh -L 4040:{jupyterlab_node}.massive.org.au:4040 {username}@m3.massive.org.au
 ```
 
+## Overview of what we have just done
+
+The overall architecture can be demonstrated through this diagram:
+- Each circle is a computing node of M3.
+- A mini-cluster managed by Spark is running inside the big M3 cluster.
+- We also have a notebook (from STRUDEL) connecting to the master node of the Spark cluster.
+
+![Overview](imgs/spark-cluster-overview.png)

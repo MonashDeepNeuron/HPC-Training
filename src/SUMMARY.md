@@ -51,11 +51,10 @@
   - [Challenges](./chapter5/challenges.md)
 
 - [Apache Spark](./chapter6/chapter6.md)
-  - [Introduction](./chapter6/introduction.md)
   - [Installation & Cluster Set-up](./chapter6/set-up.md)
-  - [Spark SQL & DataFrames](./chapter6/dataframes.md)
-  - [Spark Internals](./chapter6/internals.md)
-  - [Resources](./chapter6/resources.md)
+  - [Internal Architecture](./chapter6/internals.md)
+  - [Spark Interactive Data Processing](./chapter6/data-processing.md)
+  - [Job Batching](./chapter6/job-batching.md)
   - [Challenges](./chapter6/challenges.md)
 
 [Acknowledgements](./acknowledgements.md)
