@@ -95,7 +95,7 @@ spark = SparkSession \
 ###### Monte Carlo Pi Estimation ######
 
 partitions = 4
-n = 100000000 * partitions
+n = 1000 * partitions
 data = range(1, n + 1)
 
 def point(_: int) -> float:

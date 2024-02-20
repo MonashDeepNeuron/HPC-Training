@@ -32,7 +32,9 @@ Write Bash Scripts to streamline the process of installing Spark and running the
 ## Task 3 - Spark and Slurm
 
 Submit [task 1](#task-1---calculate-pi-using-monte-carlo-algorithm-again) as a Spark job using Slurm. This should be similar to [subchapter: job batching](./job-batching.md)
-> Note: You will need to convert the notebook into a Python file
+> Hint:
+> - You will need to convert the notebook into a Python file.
+> - Compare the content of `$SPARK_HOME/examples/src/main/python/pi.py` and [our Monte Carlo Pi Estimation](./internals.md#monte-carlo-pi-estimation). They both solve the same problem, however, there are stuffs that we don't need to add when directly using `spark-submit`. Why?
 
 ## Task 4 - Data Processing
 

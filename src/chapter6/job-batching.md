@@ -11,7 +11,9 @@ source /path/to/spark-3.5.0-bin-hadoop3/bin/spark-submit \
     hello_world.py
 ```
 
-> Here is a comprehensive [documentation](https://spark.apache.org/docs/3.5.0/submitting-applications.html#launching-applications-with-spark-submit) of all `spark-submit` options. We will not look into the detail of it (If you need to find any command, it should be better to look directly into the documentation itself). Instead, we will focus on M3 and see how we can bundle and submit everything as Slurm jobs.
+> Here is a comprehensive [documentation](https://spark.apache.org/docs/3.5.0/submitting-applications.html#launching-applications-with-spark-submit) of all `spark-submit` options. We will not look into the detail of it (If you need to find any command, it should be better to look directly into the documentation itself).
+> 
+> We will focus on M3 and see how we can bundle and submit everything as Slurm jobs.
 
 ## Slurm and Spark
 
