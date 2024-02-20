@@ -53,7 +53,7 @@
 - [Apache Spark](./chapter6/chapter6.md)
   - [Installation & Cluster Set-up](./chapter6/set-up.md)
   - [Internal Architecture](./chapter6/internals.md)
-  - [Spark Interactive Data Processing](./chapter6/data-processing.md)
+  - [Data Processing](./chapter6/data-processing.md)
   - [Job Batching](./chapter6/job-batching.md)
   - [Challenges](./chapter6/challenges.md)
 

@@ -8,9 +8,9 @@ This book is part of Monash DeepNeurons collection of technical information and 
 - [Osman Haji](https://github.com/Ozzywap)
 - [Yuki Kume](https://github.com/UnciaBit)
 - [Jaspar Martin](https://github.com/jasparm)
+- [Duc Thanh Vinh Nguyen](https://github.com/VincentNguyenDuc)
 
 ## Contributors
 
 - [Mitchell Mibus](https://github.com/mmib0001)
 - [Ankita Gosavi](https://github.com/ankitaagosavi)
-- [Duc Thanh Vinh Nguyen](https://github.com/VincentNguyenDuc)

@@ -14,7 +14,7 @@ Spark is designed to smoothly scale from just one compute node to potentially th
 
 ### What is RDDs?
 
-An RDD is simply a immutable distributed collection of objects. Within Spark, all tasks involve either generating new RDDs, modifying existing ones, or executing operations on RDDs to produce an outcome. Behind the scenes, Spark seamlessly disperses the data stored within RDDs into multiple partitions across your cluster and parallelizes the tasks you execute on them. Moreover, RDD can accommodate Python, Java, or Scala objects of any type, including user-defined classes. RDDs enable users to explicitly `persist` intermediate outcomes in memory, `control their partitioning` to optimize data distribution, and manipulate them using a diverse `set of operators`.
+RDD is simply an `immutable` distributed collection of objects. Within Spark, all tasks involve either generating new RDDs, modifying existing ones, or executing operations on RDDs to produce an outcome. Behind the scenes, Spark seamlessly disperses the data stored within RDDs into multiple partitions across your cluster and parallelizes the tasks you execute on them. Moreover, RDD can accommodate Python, Java, or Scala objects of any type, including user-defined classes. RDDs enable users to explicitly `persist` intermediate outcomes in memory, `control their partitioning` to optimize data distribution, and manipulate them using a diverse `set of operators`.
 
 ### Initialize RDD
 
@@ -141,10 +141,35 @@ sortedCount: RDD[Tuple[int, int]] = lines \
     .flatMap(lambda x: x.split(' ')) \
     .map(lambda x: (int(x), 1)) \
     .sortByKey()
+```
 
-# This is just a demo on how to bring all the sorted data back to a single node.
-# In reality, we wouldn't want to collect all the data to the driver node.
-output = sortedCount.collect()
-for (num, unitcount) in output:
-    print(num)
+
+### Shared Variables
+
+Typically, when a function is passed to a Spark operation like map or reduce and executed on a remote cluster node, it operates on separate copies of all the variables used within the function. These variables are duplicated across each machine, and any updates made to these variables on the remote machine are `not` communicated back to the driver program. Fortunately, Spark does provide 2 types of shared variables: `Broadcast variables` and `Accumulators`
+
+#### Broadcast variables
+
+Broadcast variables allow the program to efficiently send a large, `read-only` value to all the worker nodes for use in one or more Spark operations exactly once. The broadcasted variable will stay in each node until one of these cases:
+- All tasks are finished.
+- A [`unpersist()`](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.unpersist.html) method is called. However, this method will only release the resources in the executor node (the variable will be re-broadcasted again when it is used).
+- A [`destroy()`](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.Broadcast.destroy.html) is called. This time, the variable can't be used again.
+
+> Note that these methods do not block by default! To block until resources are freed, specify `blocking=true` when calling them.
+
+```python
+broadcastVar = spark_context.broadcast([1, 2, 3])
+print(broadcastVar.value) # [1, 2, 3]
+```
+
+#### Accumulators
+
+Another type of shared variable, accumulators, provides a simple syntax for aggregating values from worker nodes back to the driver program.
+
+> Note that it is possible aggregate values from an entire RDD back to the driver program using actions (e.g: `reduce()`). However, in the case when we want a simpler way to calculate a metric at some point in the program (e.g: count the number of the word "Hello" in a distributed text data), accumulator will be a handly solution.
+
+```python
+accum = spark_context.accumulator(0)
+spark_context.parallelize([1, 2, 3, 4]).foreach(lambda x: accum.add(x))
+print(accum.value) # 10
 ```
