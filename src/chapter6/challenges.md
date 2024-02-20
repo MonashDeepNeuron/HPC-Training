@@ -6,7 +6,7 @@
   - [Overview](#overview)
   - [Task 1 - Classic Distributed Problem: Token Counting](#task-1---classic-distributed-problem-token-counting)
   - [Task 2 - Cluster Set-up Bash Scripts](#task-2---cluster-set-up-bash-scripts)
-  - [Task 3 - Spark and SLURM](#task-3---spark-and-slurm)
+  - [Task 3 - Spark and Slurm](#task-3---spark-and-slurm)
   - [Task 4 - Data Processing](#task-4---data-processing)
   - [Task 5 - Spark Machine Learning](#task-5---spark-machine-learning)
 
@@ -29,12 +29,10 @@ Given a string of tokens, count the number of times each token apprears. You sho
 Write Bash Scripts to streamline the process of installing Spark and running the cluster.
 > Hint: Try to combine the [subchapter: set up](./set-up.md)
 
-## Task 3 - Spark and SLURM
+## Task 3 - Spark and Slurm
 
-Submit [task 1](#task-1---calculate-pi-using-monte-carlo-algorithm-again) (you will need to convert the notebook into a Python file) as a Spark job using SLURM. This may include wrapping the following steps into 1 single SLURM script:
-- Set-up a Spark Cluster (which should be similar to [task 2](#task-2---cluster-set-up-bash-scripts))
-- Submit the job to the cluster using `spark-submit`
-> Hint: Try to combine [Task 2](#task-2---cluster-set-up-bash-scripts) and [subchapter: job batching](./job-batching.md)
+Submit [task 1](#task-1---calculate-pi-using-monte-carlo-algorithm-again) as a Spark job using Slurm. This should be similar to [subchapter: job batching](./job-batching.md)
+> Note: You will need to convert the notebook into a Python file
 
 ## Task 4 - Data Processing
 

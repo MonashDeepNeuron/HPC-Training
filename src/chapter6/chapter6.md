@@ -8,9 +8,9 @@ In this chapter, we will:
 - Set up a mini Spark cluster in M3. 
 - Take a closer look at the internal data structure, specifically Resilient Distributed Datasets (RDDs). 
 - Explore data processing in Spark and JupyterLab.
-- Submit batch jobs utilizing both Slurm and Spark
+- Submit batch jobs utilizing both Slurm and Spark.
 - Engage in some challenges.
 
 > Notes:
 > - The material covered in this chapter draws heavily from the [official documentation of Spark 3.5.0](https://spark.apache.org/docs/latest/index.html).
-> - [Setting up a Spark Cluster within M3 via Slurm](./set-up.md#setting-up-a-spark-cluster-within-m3-cluster) and [Submit Spark Job inside Slurm Job](./job-batching.md#job-batching) both involve a trial-and-error approach, as it doesn't adhere to any official documentation. Consequently, there's a likelihood that it may not be the best practice. Thus, if you've discovered alternative methods or more effective approaches or may be even security vulnerabilities, please don't hesitate to submit a pull request.
+> - Contents of [Setting up a Spark Cluster within M3 via Slurm](./set-up.md#setting-up-a-spark-cluster-within-m3-cluster) and [Submit Spark Job inside Slurm Job](./job-batching.md#job-batching) are both derived from a trial-and-error approach, and doesn't adhere to any official documentation. Consequently, there is a likelihood that it may not be the best practice. Thus, if you've discovered alternative methods or more effective approaches or may be even security vulnerabilities, please don't hesitate to submit a pull request.
