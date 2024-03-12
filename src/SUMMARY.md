@@ -2,15 +2,19 @@
 
 [Welcome](home.md)
 
-- [Getting Started](./chapter1/getting-started.md)
+- [Installation & Set-up](./chapter1/getting-started.md)
+
   - [GitHub](./chapter1/github.md)
   - [Windows](./chapter1/windows.md)
   - [Mac](./chapter1/mac.md)
   - [Linux](./chapter1/linux.md)
   - [WSL](./chapter1/wsl.md)
+  - [M3 MASSIVE]()
+  - [Nectar Cloud]()
   - [Challenges](./chapter1/challenges.md)
 
-- [Brief Introduction to C](./chapter2/intro-to-c.md)
+- [Intro to C](./chapter2/intro-to-c.md)
+
   - [Hello World](./chapter2/helloworld.md)
   - [Compilation](./chapter2/compilation.md)
   - [Types & Variables](./chapter2/vars.md)
@@ -20,34 +24,80 @@
   - [Control Flow](./chapter2/ctrl-flow.md)
   - [Loops](./chapter2/loops.md)
   - [Functions](./chapter2/functions.md)
+  - [Challenges]()
+
+- [Operating Systems]()
+
+  - [Components of Linux]()
+  - [Memory & IO]()
+  - [Processes & Scheduling]()
+  - [Threading & Concurrency]()
+  - [Inter-Process Communication]()
+
+- [More C]()
+
   - [Pointers](./chapter2/pointers.md)
   - [Dynamic Memory](./chapter2/memory.md)
   - [Structures](./chapter2/structs.md)
   - [Macros & The Preprocessor](./chapter2/macros.md)
+  - [System Calls]()
+  - [Spawning Processes & Threads]()
   - [Challenges](./chapter2/challenges.md)
 
-- [M3](./chapter3/chapter3.md)
-  - [Getting Started](./chapter3/start.md)
-  - [Logging In](./chapter3/login.md)
-  - [Linux Commands](./chapter3/linux-cmds.md)
-  - [M3's Shared Filesystem](./chapter3/shared-fs.md)
-  - [Software and Tooling](./chapter3/software-tooling.md)
-  - [Bash Scripts](./chapter3/bash.md)
-  - [Job batching & SLURM](./chapter3/slurm.md)
-  - [Strudel](./chapter3/strudel.md)
+- [M3 & SLURM](./chapter3/chapter3.md)
+
+  - [Login - SSH & Strudel](./chapter3/login.md)
+  - [Batch vs. Stream Processing]()
+  - [Cluster Architectures]()
+  - [Schedmd's SLURM]()
+  - [M3 Interface & Usage]()
+  - [Job Scripting]()
+  - [Advanced SLURM]()
   - [Challenges](./chapter3/challenges.md)
 
-- [Parallel Computing](./chapter4/chapter4.md)
-  - [What is Parallel Computing?](./chapter4/parallel-computing.md)
-  - [Multithreading](./chapter4/multithreading.md)
-  - [OpenMP](./chapter4/openmp.md)
-  - [Challenges](./chapter4/challenges.md)
+- [Virtualisation & DevOps]()
 
-- [Distributed Computing](./chapter5/chapter5.md)
-  - [Refresher on Parallelism](./chapter5/parallel-refresher.md)
-  - [What is Distributed Computing](./chapter5/distributed-computing.md)
-  - [Message Passing](./chapter5/message-passing.md)
-  - [OpenMPI](./chapter5/openmpi.md)
-  - [Challenges](./chapter5/challenges.md)
+  - [VMs & Hypervisors]()
+  - [Containers]()
+  - [Virtual Environments]()
+  - [Application Deployments]()
+  - [DevOps]()
+  - [Configuration Management]()
+
+- [Networking]()
+
+  - [TCP/IP Stack & OSI Model]()
+  - [Application Layer]()
+  - [Transport Layer]()
+  - [Internet & other Layers]()
+  - [Socket Programming]()
+  - [Cyber Security]()
+
+- [Intro to Parallel Computing]()
+
+  - [Concurrent Execution]()
+  - [Driver-Worker Architecture]()
+  - [Global & Local Phases]()
+  - [Data Parallelism]()
+  - [Model Parallelism]()
+  - [Pipeline Parallelism]()
+  - [Synchronisation Issues]()
+  - [Deadlocks]()
+  - [Mutexes & Semaphores]()
+  - [Thread Safety]()
+
+- [Parallellisation of Algorithms]()
+
+  - [Distributed Databases]()
+  - [Parallel Search]()
+  - [Parallel Sort]()
+  - [Other Parallel Algorithms]()
+  - [Parallel Machine Learning]()
+
+- [Being a HPC Member]()
+
+  - [Expectations & Leadership]()
+  - [Project Workflow]()
+  - [Academic Supervisors & Papers]()
 
 [Acknowledgements](./acknowledgements.md)
