@@ -92,7 +92,12 @@
   - [Parallel Search]()
   - [Parallel Sort]()
   - [Other Parallel Algorithms]()
-  - [Parallel Machine Learning]()
+  - [Machine Learning & HPC]()
+  - [Optimisation Algorithms]()
+
+- [Apache Spark]()
+
+  - 
 
 - [Being a HPC Member]()
 
