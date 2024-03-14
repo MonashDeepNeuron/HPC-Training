@@ -95,21 +95,17 @@
   - [Machine Learning & HPC]()
   - [Optimisation Algorithms]()
 
-- [Apache Spark]()
-
-  - 
+- [Apache Spark](./chapter10/chapter10.md)
+  - [Installation & Cluster Set-up](./chapter10/set-up.md)
+  - [Internal Architecture](./chapter10/internals.md)
+  - [Data Processing](./chapter10/data-processing.md)
+  - [Job Batching](./chapter10/job-batching.md)
+  - [Challenges](./chapter10/challenges.md)
 
 - [Being a HPC Member]()
 
   - [Expectations & Leadership]()
   - [Project Workflow]()
   - [Academic Supervisors & Papers]()
-
-- [Apache Spark](./chapter6/chapter6.md)
-  - [Installation & Cluster Set-up](./chapter6/set-up.md)
-  - [Internal Architecture](./chapter6/internals.md)
-  - [Data Processing](./chapter6/data-processing.md)
-  - [Job Batching](./chapter6/job-batching.md)
-  - [Challenges](./chapter6/challenges.md)
 
 [Acknowledgements](./acknowledgements.md)
