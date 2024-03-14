@@ -34,6 +34,7 @@ $ mdbook serve --open
 - Jaspar Martin
 - Yuki Kume
 - Osman Haji
+- Duc Thanh Vinh Nguyen
 
 ## Code of Conduct, License & Contributing
 

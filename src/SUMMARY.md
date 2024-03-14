@@ -105,4 +105,11 @@
   - [Project Workflow]()
   - [Academic Supervisors & Papers]()
 
+- [Apache Spark](./chapter6/chapter6.md)
+  - [Installation & Cluster Set-up](./chapter6/set-up.md)
+  - [Internal Architecture](./chapter6/internals.md)
+  - [Data Processing](./chapter6/data-processing.md)
+  - [Job Batching](./chapter6/job-batching.md)
+  - [Challenges](./chapter6/challenges.md)
+
 [Acknowledgements](./acknowledgements.md)
