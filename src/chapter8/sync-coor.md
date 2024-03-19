@@ -1,1 +1,1 @@
-# Synchronisation and Coordination
+# Synchronisation & Coordination
