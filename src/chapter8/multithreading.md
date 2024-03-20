@@ -1,18 +1,12 @@
 # Multithreading
 
-## What is Multithreading?
-
-### Motivation
-
-### Process vs Thread
-
-### Shared Memory
+We have all looked at the theory of threads and concurrent programming in the Operating System chapter. Now, we will shift our focus to OpenMP and its application for executing multithreaded operations in a declarative programming style.
 
 ## OpenMP
 
 OpenMP is an Application Program Interface (API) that is used to explicitly direct multi-threaded, shared memory parallelism in C/C++ programs. It is not intrusive on the original serial code in that the OpenMP instructions are made in pragmas interpreted by the compiler.
 
-> Further features of OpenMP will be introduced in conjunction with the concepts discussed in this chapter.
+> Further features of OpenMP will be introduced in conjunction with the concepts discussed in later sub-chapters.
 
 ### Fork - Join Model
 
@@ -42,8 +36,6 @@ We will now look at a simple example.
 
 > The code can be compiled with `gcc -fopenmp -o hello hello.c`.
 
-#### Parallel For Loops
-
 ```c
 #include <omp.h>
 #include <stdio.h>
@@ -59,3 +51,56 @@ int main() {
 ```
 
 ## Running on M3
+
+Here is a template script provided in the home directory in M3. Notice that we can dynamically change the number of threads using `export  OMP_NUM_THREADS=12`
+
+```bash
+#!/bin/bash
+# Usage: sbatch slurm-openmp-job-script
+# Prepared By: Kai Xi,  Apr 2015
+#              help@massive.org.au
+
+# NOTE: To activate a SLURM option, remove the whitespace between the '#' and 'SBATCH'
+
+# To give your job a name, replace "MyJob" with an appropriate name
+# SBATCH --job-name=MyJob
+
+
+# To set a project account for credit charging,
+# SBATCH --account=pmosp
+
+
+# Request CPU resource for a openmp job, suppose it is a 12-thread job
+# SBATCH --ntasks=1
+# SBATCH --ntasks-per-node=1
+# SBATCH --cpus-per-task=12
+
+# Memory usage (MB)
+# SBATCH --mem-per-cpu=4000
+
+# Set your minimum acceptable walltime, format: day-hours:minutes:seconds
+# SBATCH --time=0-06:00:00
+
+
+# To receive an email when job completes or fails
+# SBATCH --mail-user=<You Email Address>
+# SBATCH --mail-type=END
+# SBATCH --mail-type=FAIL
+
+
+# Set the file for output (stdout)
+# SBATCH --output=MyJob-%j.out
+
+# Set the file for error log (stderr)
+# SBATCH --error=MyJob-%j.err
+
+
+# Use reserved node to run job when a node reservation is made for you already
+# SBATCH --reservation=reservation_name
+
+
+# Command to run a openmp job
+# Set OMP_NUM_THREADS to the same value as: --cpus-per-task=12
+export OMP_NUM_THREADS=12
+./your_openmp_program
+```
