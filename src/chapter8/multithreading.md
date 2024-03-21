@@ -8,7 +8,7 @@ OpenMP is an Application Program Interface (API) that is used to explicitly dire
 
 > Further features of OpenMP will be introduced in conjunction with the concepts discussed in later sub-chapters.
 
-### Fork - Join Model
+### Fork-Join Parallel Execution Model
 
 OpenMP uses the `fork-join model` of parallel execution.
 

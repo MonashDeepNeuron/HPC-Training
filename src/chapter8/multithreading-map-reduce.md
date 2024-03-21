@@ -1,4 +1,4 @@
-# Map Reduce
+# Multithreading Map Reduce
 
 ## Overview
 
@@ -11,5 +11,3 @@
 ## Reduction
 
 ## Parallel Implementation
-
-## Distributed Implementation

@@ -67,12 +67,12 @@
   - [Cyber Security]()
 
 - [Intro to Parallel & Distributed Computing](./chapter8/chapter8.md)
-  - [Multi-threading](./chapter8/multithreading.md)
+  - [Multithreading](./chapter8/multithreading.md)
   - [Synchronisation](./chapter8/synchronisation.md)
+  - [Multithreading Map Reduce](./chapter8/multithreading-map-reduce.md)
   - [Distributed Computing](./chapter8/distributed-computing.md)
-  - [System Architecture](./chapter8/system-architecture.md)
-  - [Parallelism](./chapter8/parallelism.md)
-  - [Map Reduce](./chapter8/map-reduce.md)
+  - [Distributed System](./chapter8/distributed-systems.md)
+  - [Distributed Map Reduce](./chapter8/distributed-map-reduce.md)
   - [Challenges](./chapter8/challenges.md)
 
 - [Parallellisation of Algorithms]()
