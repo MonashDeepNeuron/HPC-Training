@@ -69,6 +69,8 @@
   - [Message Passing](./chapter8/message-passing.md)
   - [OpenMPI](./chapter8/openmpi.md)
   - [Distributed Systems](./chapter8/systems.md)
+  - [Distributed Map Reduce](./chapter8/distributed-map-reduce.md)
+  - [Challenges](./chapter8/challenges.md)
 
 - [Parallellisation of Algorithms]()
   - [Distributed Databases]()
