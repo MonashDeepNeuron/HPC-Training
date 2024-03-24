@@ -202,7 +202,7 @@ The answer lies in something called **Barrier Synchronisation**. Here are illust
 
 ### Implicit Barriers
 
-The barrier synchronisation implicitly (behind the scene) occur a lot at the end of constructs such as parallel construct ("`#pragma omp parallel`") and the end of worksharing constructs(loop, sections, single, and workshare constructs).
+The barrier synchronisation implicitly (behind the scene) occur at the end of constructs such as parallel construct ("`#pragma omp parallel`") and the end of worksharing constructs(loop, sections, single, and workshare constructs).
 
 ```c
 #include <stdio.h>
@@ -254,10 +254,4 @@ We don't need to know exactly how OpenMP implemented this feature, at least not 
 - We also need a mechanism to make a finished thread idle and **wait()** for other threads to finish.
 - The last thread to finish has the responsibility of **notify()** other threads (threads that you want to be executed after the barrier).
 
-Voila! we have a barrier. We will implement barrier as part of a mini-project using [Posix Thread](https://docs.oracle.com/cd/E26502_01/html/E35303/tlib-1.html) or [Java Threads](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html).
-
-## Join Synchronisation
-
-## Deadlocks
-
-## Livelocks
+Voila! we have a barrier. We will implement barrier as part of a mini-project using [Posix Thread](https://docs.oracle.com/cd/E26502_01/html/E35303/tlib-1.html).

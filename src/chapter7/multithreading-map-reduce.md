@@ -10,4 +10,6 @@
 
 ## Reduction
 
-## Parallel Implementation
+## Sequential Implementation
+
+## OpenMP Implementation
