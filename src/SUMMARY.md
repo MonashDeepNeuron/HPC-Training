@@ -62,14 +62,12 @@
   - [Multithreading](./chapter7/multithreading.md)
   - [Synchronisation](./chapter7/synchronisation.md)
   - [Locks](./chapter7/locks.md)
-  - [Multithreading Map Reduce](./chapter7/multithreading-map-reduce.md)
   - [Challenges](./chapter7/challenges.md)
 
 - [Introduction to Distributed Computing](./chapter8/chapter8.md)
   - [Message Passing](./chapter8/message-passing.md)
   - [OpenMPI](./chapter8/openmpi.md)
   - [Distributed Systems](./chapter8/systems.md)
-  - [Distributed Map Reduce](./chapter8/distributed-map-reduce.md)
   - [Challenges](./chapter8/challenges.md)
 
 - [Parallellisation of Algorithms]()
