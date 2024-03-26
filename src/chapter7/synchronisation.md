@@ -1,6 +1,6 @@
 # Synchronisation
 
-Synchronisation is the task of coordinating multiple of processes (or threads) to join up or handshake at a certain point, in order to reach an agreement or commit to a certain sequence of action.
+Definition: Synchronisation is the task of coordinating multiple of processes (or threads) to join up or handshake at a certain point, in order to reach an agreement or commit to a certain sequence of action.
 
 ## Race Condition
 
@@ -106,7 +106,7 @@ int main() {
 }
 ```
 
-* **Atomic construct**: This is quite similar to Critical construct, however, it only applies to memory read/write operations. It has a slightly better performance than the Critical construct. Let's look at another example:
+* **Atomic construct**: This is quite similar to Critical construct, however, it only applies to memory read/write operations. It has a better performance than the Critical construct by taking advantage on the hardware. There's no lock/unlock needed on entering/exiting the line of code, it just does the atomic operation which the hardware tells you can't be interfered with. Let's look at another example:
 
 > Run this program multiple times using multiple threads (before uncommenting the construct). Again, race condition!
 
@@ -139,7 +139,7 @@ int main() {
 }
 ```
 
-* **Reduction**: Based on the nature of the program, sometimes, the best solution will be to use `reduction`. Let's analyse what this code is doing:
+* **Reduction**: Based on the problem, sometimes, the best solution will be to use `reduction`. Let's analyse what this code is doing:
 
 > Using `reduction` here results in significantly better performance.
 > - A quick way to do some simple benchmarking is: `time a-command`
@@ -179,11 +179,11 @@ int main() {
 }
 ```
 
-> We will look into the theory of reduction more closely in the sub-chapters [Multithreading Map Reduce](./multithreading-map-reduce.md) and [Distributed Map Reduce](./distributed-map-reduce.md).
-
-
-
-
+> Notice that:
+> - The previous two approaches only allow 1 thread at a time to perform some operations.
+> - Reduction allows threads to access the same shared data at the same time, but in different parts of the data.
+>
+> The nature of the word **synchronisation** in these two examples is completely different from each other, while still adhering to our initial definition!
 
 ## Barrier Synchronisation
 
