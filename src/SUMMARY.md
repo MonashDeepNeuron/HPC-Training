@@ -3,7 +3,6 @@
 [Welcome](home.md)
 
 - [Installation & Set-up](./chapter1/getting-started.md)
-
   - [GitHub](./chapter1/github.md)
   - [Windows](./chapter1/windows.md)
   - [Mac](./chapter1/mac.md)
@@ -14,7 +13,6 @@
   - [Challenges](./chapter1/challenges.md)
 
 - [Intro to C](./chapter2/intro-to-c.md)
-
   - [Hello World](./chapter2/helloworld.md)
   - [Compilation](./chapter2/compilation.md)
   - [Types & Variables](./chapter2/vars.md)
@@ -27,7 +25,6 @@
   - [Challenges]()
 
 - [Operating Systems]()
-
   - [Components of Linux]()
   - [Memory & IO]()
   - [Processes & Scheduling]()
@@ -35,7 +32,6 @@
   - [Inter-Process Communication]()
 
 - [More C]()
-
   - [Pointers](./chapter2/pointers.md)
   - [Dynamic Memory](./chapter2/memory.md)
   - [Structures](./chapter2/structs.md)
@@ -45,7 +41,6 @@
   - [Challenges](./chapter2/challenges.md)
 
 - [M3 & SLURM](./chapter3/chapter3.md)
-
   - [Login - SSH & Strudel](./chapter3/login.md)
   - [Batch vs. Stream Processing]()
   - [Cluster Architectures]()
@@ -55,17 +50,7 @@
   - [Advanced SLURM]()
   - [Challenges](./chapter3/challenges.md)
 
-- [Virtualisation & DevOps]()
-
-  - [VMs & Hypervisors]()
-  - [Containers]()
-  - [Virtual Environments]()
-  - [Application Deployments]()
-  - [DevOps]()
-  - [Configuration Management]()
-
 - [Networking]()
-
   - [TCP/IP Stack & OSI Model]()
   - [Application Layer]()
   - [Transport Layer]()
@@ -73,21 +58,19 @@
   - [Socket Programming]()
   - [Cyber Security]()
 
-- [Intro to Parallel Computing]()
+- [Introduction to Parallel Computing](./chapter7/chapter7.md)
+  - [Multithreading](./chapter7/multithreading.md)
+  - [Synchronisation](./chapter7/synchronisation.md)
+  - [Locks](./chapter7/locks.md)
+  - [Challenges](./chapter7/challenges.md)
 
-  - [Concurrent Execution]()
-  - [Driver-Worker Architecture]()
-  - [Global & Local Phases]()
-  - [Data Parallelism]()
-  - [Model Parallelism]()
-  - [Pipeline Parallelism]()
-  - [Synchronisation Issues]()
-  - [Deadlocks]()
-  - [Mutexes & Semaphores]()
-  - [Thread Safety]()
+- [Introduction to Distributed Computing](./chapter8/chapter8.md)
+  - [Message Passing](./chapter8/message-passing.md)
+  - [OpenMPI](./chapter8/openmpi.md)
+  - [Distributed Systems](./chapter8/systems.md)
+  - [Challenges](./chapter8/challenges.md)
 
 - [Parallellisation of Algorithms]()
-
   - [Distributed Databases]()
   - [Parallel Search]()
   - [Parallel Sort]()
@@ -103,7 +86,6 @@
   - [Challenges](./chapter10/challenges.md)
 
 - [Being a HPC Member]()
-
   - [Expectations & Leadership]()
   - [Project Workflow]()
   - [Academic Supervisors & Papers]()
