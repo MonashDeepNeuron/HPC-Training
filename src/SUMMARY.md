@@ -102,10 +102,10 @@
   - [Job Batching](./chapter10/job-batching.md)
   - [Challenges](./chapter10/challenges.md)
 
-- [Being a HPC Member]()
+- [Being a HPC Member](./chapter11/chapter11.md)
 
-  - [Expectations & Leadership]()
-  - [Project Workflow]()
-  - [Academic Supervisors & Papers]()
+  - [Expectations & Leadership](./chapter11/expectations-leadership.md)
+  - [Project Workflow](./chapter11/project-workflow.md)
+  - [Academic Supervisors & Papers](./chapter11/supervisors-papers.md)
 
 [Acknowledgements](./acknowledgements.md)
