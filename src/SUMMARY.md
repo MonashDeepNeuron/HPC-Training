@@ -9,7 +9,7 @@
   - [Mac](./chapter1/mac.md)
   - [Linux](./chapter1/linux.md)
   - [WSL](./chapter1/wsl.md)
-  - [M3 MASSIVE]()
+  - [M3 MASSIVE](./chapter1/m3.md)
   - [Nectar Cloud]()
   - [Challenges](./chapter1/challenges.md)
 
