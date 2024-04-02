@@ -10,7 +10,7 @@
   - [Linux](./chapter1/linux.md)
   - [WSL](./chapter1/wsl.md)
   - [M3 MASSIVE](./chapter1/m3.md)
-  - [Nectar Cloud]()
+  - [Nectar Cloud](./chapter1/nectar.md)
   - [Challenges](./chapter1/challenges.md)
 
 - [Intro to C](./chapter2/intro-to-c.md)
