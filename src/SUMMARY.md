@@ -58,16 +58,12 @@
   - [Socket Programming]()
   - [Cyber Security]()
 
-- [Introduction to Parallel Computing](./chapter7/chapter7.md)
-  - [Multithreading](./chapter7/multithreading.md)
-  - [Synchronisation](./chapter7/synchronisation.md)
-  - [Locks](./chapter7/locks.md)
-  - [Challenges](./chapter7/challenges.md)
-
-- [Introduction to Distributed Computing](./chapter8/chapter8.md)
+- [Introduction to Parallel Computing](./chapter8/chapter8.md)
+  - [Multithreading](./chapter8/multithreading.md)
+  - [Synchronisation](./chapter8/synchronisation.md)
+  - [Locks](./chapter8/locks.md)
   - [Message Passing](./chapter8/message-passing.md)
-  - [OpenMPI](./chapter8/openmpi.md)
-  - [Distributed Systems](./chapter8/systems.md)
+  - [Types of Parallelism](./chapter8/parallelism.md)
   - [Challenges](./chapter8/challenges.md)
 
 - [Parallellisation of Algorithms]()
