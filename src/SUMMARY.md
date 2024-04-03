@@ -44,10 +44,10 @@
   - [Spawning Processes & Threads]()
   - [Challenges](./chapter2/challenges.md)
 
-- [M3 & SLURM](./chapter3/chapter3.md)
+- [M3 & SLURM](./chapter5/chapter5.md)
 
-  - [Login - SSH & Strudel](./chapter3/login.md)
-  - [Batch vs. Stream Processing]()
+  - [Batch Processing vs. Cloud Computing](./chapter5/batch-cloud.md)
+  - [Login - SSH & Strudel](./chapter5/login.md)
   - [Cluster Architectures]()
   - [Schedmd's SLURM]()
   - [M3 Interface & Usage]()
