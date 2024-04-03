@@ -47,13 +47,13 @@
 - [M3 & SLURM](./chapter5/chapter5.md)
 
   - [Batch Processing vs. Cloud Computing](./chapter5/batch-cloud.md)
-  - [Login - SSH & Strudel](./chapter5/login.md)
-  - [Cluster Architectures]()
-  - [Schedmd's SLURM]()
-  - [M3 Interface & Usage]()
-  - [Job Scripting]()
+  - [Cluster Architectures](./chapter5/cluster-architectures.md)
+  - [M3 Login - SSH & Strudel](./chapter5/login.md)
+  - [Schedmd's SLURM](./chapter5/slurm.md)
+  - [M3 Interface & Usage](./chapter5/m3-interface.md)
+  - [Job Scripting](./chapter5/job-scripting.md)
   - [Advanced SLURM]()
-  - [Challenges](./chapter3/challenges.md)
+  - [Challenges](./chapter5/challenges.md)
 
 - [Virtualisation & DevOps]()
 

@@ -1,4 +1,4 @@
-# What is Distributed Computing
+# Cluster Architectures
 
 **Distributed computing is parallel execution on distributed memory architecture.**
 
