@@ -27,8 +27,3 @@ __Interactive Processing:__
 - Interactive debugging.
 
 ![interactive-image](./imgs/interactive-processing.png)
-
-## Some Terminology
-
-Before we proceed, it's important that we define some key terms used throughout this training program.
-

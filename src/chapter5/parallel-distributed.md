@@ -1,4 +1,14 @@
-# Cluster Architectures
+# Parallel & Distributed Computing
+
+Nearly all modern computer systems utilise parallel computing to speed up the execution of algorithms. To see how this works in practice look at the diagram below.
+
+![parallel vs. distributed](imgs/parallel-distributed.png)
+
+As you can see, in a scenario where a program (job) takes 3 seconds and 3 independent jobs have to be executed by a system, doing it serially in a single computer takes a total of 9 seconds. But doing it simultaneously across 3 computers will only take 3 seconds thus achieving a 3x speedup through parallel computing. 
+
+This is the fundamental principle that High Performance Computing is based on.
+
+## What is Distributed Computing? 
 
 **Distributed computing is parallel execution on distributed memory architecture.**
 
@@ -6,7 +16,7 @@ This essentially means it is a form of parallel computing, where the processing 
 
 ![distributed memory architecture](imgs/distributed_memory_architecture.png)
 
-## Distributed Memory Architecture
+### Distributed Memory Architecture
 
 Lets have a look at the distributed memory architecture in more details.
 
@@ -15,13 +25,13 @@ Lets have a look at the distributed memory architecture in more details.
 
 ![Distributed Memory Architecture](imgs/distributed_memory_architecture_2.png)
 
-## Distributed vs Shared program execution
+### Distributed vs Shared program execution
 
 The following diagram provides another way of looking at the differences between distributed and shared memory architecture and their program execution.
 
 ![Distributed vs Shared](imgs/distributed_vs_shared.png)
 
-## Advantages of distributed computing
+### Advantages of distributed computing
 
 There are number of benefits to distributed computing in particular it addresses some shortcomings of shared memory architecture.
 
@@ -31,7 +41,7 @@ There are number of benefits to distributed computing in particular it addresses
 
 The benefits above do not come without some drawbacks including network overhead.
 
-## Disadvantages of distributed computing
+### Disadvantages of distributed computing
 
 - Network overload. Network can be overloaded by:
   - Multiple small messages

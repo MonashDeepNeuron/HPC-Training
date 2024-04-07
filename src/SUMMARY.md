@@ -47,7 +47,7 @@
 - [M3 & SLURM](./chapter5/chapter5.md)
 
   - [Batch Processing vs. Cloud Computing](./chapter5/batch-cloud.md)
-  - [Cluster Architectures](./chapter5/cluster-architectures.md)
+  - [Parallel & Distributed Computing](./chapter5/parallel-distributed.md)
   - [M3 Login - SSH & Strudel](./chapter5/login.md)
   - [Schedmd's SLURM](./chapter5/slurm.md)
   - [M3 Interface & Usage](./chapter5/m3-interface.md)
