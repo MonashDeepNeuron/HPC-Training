@@ -9,8 +9,8 @@
   - [Mac](./chapter1/mac.md)
   - [Linux](./chapter1/linux.md)
   - [WSL](./chapter1/wsl.md)
-  - [M3 MASSIVE]()
-  - [Nectar Cloud]()
+  - [M3 MASSIVE](./chapter1/m3.md)
+  - [Nectar Cloud](./chapter1/nectar.md)
   - [Challenges](./chapter1/challenges.md)
 
 - [Intro to C](./chapter2/intro-to-c.md)
@@ -44,16 +44,16 @@
   - [Spawning Processes & Threads]()
   - [Challenges](./chapter2/challenges.md)
 
-- [M3 & SLURM](./chapter3/chapter3.md)
+- [M3 & SLURM](./chapter5/chapter5.md)
 
-  - [Login - SSH & Strudel](./chapter3/login.md)
-  - [Batch vs. Stream Processing]()
-  - [Cluster Architectures]()
-  - [Schedmd's SLURM]()
-  - [M3 Interface & Usage]()
-  - [Job Scripting]()
+  - [Batch Processing vs. Cloud Computing](./chapter5/batch-cloud.md)
+  - [Parallel & Distributed Computing](./chapter5/parallel-distributed.md)
+  - [M3 Login - SSH & Strudel](./chapter5/login.md)
+  - [Schedmd's SLURM](./chapter5/slurm.md)
+  - [M3 Interface & Usage](./chapter5/m3-interface.md)
+  - [Job Scripting](./chapter5/job-scripting.md)
   - [Advanced SLURM]()
-  - [Challenges](./chapter3/challenges.md)
+  - [Challenges](./chapter5/challenges.md)
 
 - [Virtualisation & DevOps]()
 
@@ -102,10 +102,10 @@
   - [Job Batching](./chapter10/job-batching.md)
   - [Challenges](./chapter10/challenges.md)
 
-- [Being a HPC Member]()
+- [Being a HPC Member](./chapter11/chapter11.md)
 
-  - [Expectations & Leadership]()
-  - [Project Workflow]()
-  - [Academic Supervisors & Papers]()
+  - [Expectations & Leadership](./chapter11/expectations-leadership.md)
+  - [Project Workflow](./chapter11/project-workflow.md)
+  - [Academic Supervisors & Papers](./chapter11/supervisors-papers.md)
 
 [Acknowledgements](./acknowledgements.md)
