@@ -25,30 +25,8 @@ Lets have a look at the distributed memory architecture in more details.
 
 ![Distributed Memory Architecture](imgs/distributed_memory_architecture_2.png)
 
-### Distributed vs Shared program execution
+Each machine or **node** is connected to the HPC cluster via a network, typically one with high bandwidth and low latency. The fact that these are largely independent computers connected over a network rather than a set of CPU/GPU cores in the same computer (in parallel computing), presents a set of disadvantages.
 
-The following diagram provides another way of looking at the differences between distributed and shared memory architecture and their program execution.
-
-![Distributed vs Shared](imgs/distributed_vs_shared.png)
-
-### Advantages of distributed computing
-
-There are number of benefits to distributed computing in particular it addresses some shortcomings of shared memory architecture.
-
-- No contention for shared memory since each machine has its own memory. Compare this to shared memory architecture where all the cpu's are sharing the same memory.
-- Highly scalable as we can add more machines and are not limited by RAM.
-- Effectively resulting in being able to handle large-scale problems
-
-The benefits above do not come without some drawbacks including network overhead.
-
-### Disadvantages of distributed computing
-
-- Network overload. Network can be overloaded by:
-  - Multiple small messages
-  - Very large data throughput
-  - Multiple all-to-all messages ($N^2$ growth of messages)
-- Synchronization failures
-  - Deadlock (processes waiting for an input from another process that never comes)
-  - Livelock (even worse as it’s harder to detect. All processes shuffling data around but not progressing in the algorithm )
-- More complex software architecture design.
-  - Can also be combined with threading-technologies as openMP/pthreads for optimal performance.
+__Advantages of parallel & local computing:__
+- No **data transfer latency** & I/O throughput bottleneck. The system bus inside a machine has incredibly higher bandwidth and lower latency compared to even the fastest computer networks.
+- 
