@@ -3,7 +3,6 @@
 [Welcome](home.md)
 
 - [Installation & Set-up](./chapter1/getting-started.md)
-
   - [GitHub](./chapter1/github.md)
   - [Windows](./chapter1/windows.md)
   - [Mac](./chapter1/mac.md)
@@ -14,7 +13,6 @@
   - [Challenges](./chapter1/challenges.md)
 
 - [Intro to C](./chapter2/intro-to-c.md)
-
   - [Hello World](./chapter2/helloworld.md)
   - [Compilation](./chapter2/compilation.md)
   - [Types & Variables](./chapter2/vars.md)
@@ -27,7 +25,6 @@
   - [Challenges]()
 
 - [Operating Systems]()
-
   - [Components of Linux]()
   - [Memory & IO]()
   - [Processes & Scheduling]()
@@ -35,7 +32,6 @@
   - [Inter-Process Communication]()
 
 - [More C]()
-
   - [Pointers](./chapter2/pointers.md)
   - [Dynamic Memory](./chapter2/memory.md)
   - [Structures](./chapter2/structs.md)
@@ -55,39 +51,15 @@
   - [Advanced SLURM]()
   - [Challenges](./chapter5/challenges.md)
 
-- [Virtualisation & DevOps]()
-
-  - [VMs & Hypervisors]()
-  - [Containers]()
-  - [Virtual Environments]()
-  - [Application Deployments]()
-  - [DevOps]()
-  - [Configuration Management]()
-
-- [Networking]()
-
-  - [TCP/IP Stack & OSI Model]()
-  - [Application Layer]()
-  - [Transport Layer]()
-  - [Internet & other Layers]()
-  - [Socket Programming]()
-  - [Cyber Security]()
-
-- [Intro to Parallel Computing]()
-
-  - [Concurrent Execution]()
-  - [Driver-Worker Architecture]()
-  - [Global & Local Phases]()
-  - [Data Parallelism]()
-  - [Model Parallelism]()
-  - [Pipeline Parallelism]()
-  - [Synchronisation Issues]()
-  - [Deadlocks]()
-  - [Mutexes & Semaphores]()
-  - [Thread Safety]()
+- [Introduction to Parallel Computing](./chapter8/chapter8.md)
+  - [Multithreading](./chapter8/multithreading.md)
+  - [Synchronisation](./chapter8/synchronisation.md)
+  - [Locks](./chapter8/locks.md)
+  - [Message Passing](./chapter8/message-passing.md)
+  - [Types of Parallelism](./chapter8/parallelism.md)
+  - [Challenges](./chapter8/challenges.md)
 
 - [Parallellisation of Algorithms]()
-
   - [Distributed Databases]()
   - [Parallel Search]()
   - [Parallel Sort]()
