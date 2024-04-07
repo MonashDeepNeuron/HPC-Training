@@ -1,8 +1,16 @@
-# Logging In
+# Accessing M3 MASSIVE
 
-First you will need to ssh into a login node in the cluster. You do this by doing the following:
+The M3 MASSIVE supercomputer has a particular kind of distributed computing architecture called the [master-slave architecture](https://en.wikipedia.org/wiki/Master–slave_(technology)). The master (aka driver) node in SLURM & M3 is referred to as the **login node** while the slave nodes are the **compute nodes**.
 
-## Windows
+![login & compute nodes](./imgs/login-compute-nodes.jpeg)
+
+To access the M3 cluster's login node you have two options,
+- Use the SSH protocol in a terminal session.
+- Use Strudel (webapp built on top of SSH) to create a desktop session.
+
+## Login via SSH
+
+### Windows
 
 If you are using windows, the best way to ssh into m3 is by using [puTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
@@ -18,7 +26,7 @@ If it the first time accessing M3 from this client then you may see something li
 
 Just click Accept, and puTTY will add the cluster's ssh fingerprint to cache.
 
-## Mac / Linux
+### Mac / Linux
 
 On macOS or linux, ssh is built into the terminal, so just copy the following into your shell, substituting username for your username.
 
@@ -79,11 +87,11 @@ a ticket for your issue.
 
 Once you are done and want to logout, just type `exit`. This will close the connection.
 
-# Strudel
+## Login via Strudel
 
 STRUDEL is a web application used to connect to M3. There are two main benefits to this over regular ssh. Firstly, you are able to access a desktop session, so you can interact easier with M3, look at graphs, etc.. STRUDEL also enables the use of Jupyter notebooks, which are especially useful for data science and machine learning.
 
-## Accessing STRUDEL
+### Accessing STRUDEL
 
 First, go to the [STRUDEL](https://beta.desktop.cvl.org.au/) website. You should see something like this:
 
@@ -101,11 +109,11 @@ You will now be taken to the Monash login page. Once you have logged in, it will
 
 ![strudel home page](imgs/strudel_home.png)
 
-## Desktop Session
+### Desktop Session
 
 To start a desktop session using STRUDEL, click on the **Desktop** tab on the side, select your desired options, and click launch. Once the session has started, you will be able to attach to it by clicking on the connect button in the *Pending / Running Desktops* section.
 
-## Jupyter Notebooks
+### Jupyter Notebooks
 
 Similar to Desktops, if you want a basic Jupyter notebook, click on the **Jupyter Lab** tab, choose how much compute you want, and click launch.
 
