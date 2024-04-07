@@ -59,7 +59,7 @@
   - [Types of Parallelism](./chapter8/parallelism.md)
   - [Challenges](./chapter8/challenges.md)
 
-- [Parallellisation of Algorithms]()
+- [Parallellisation of Algorithms](./chapter7/parallellisation-of-algorithms.md)
   - [Distributed Databases]()
   - [Parallel Search]()
   - [Parallel Sort]()
