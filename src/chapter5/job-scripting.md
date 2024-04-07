@@ -1,4 +1,6 @@
-# Bash Scripts
+# Job Scripting
+
+## Bash Scripts
 
 Bash is both a command line interface and a scripting language. Linux commands are generally using Bash. Bash scripts are a series of commands that are executed in order. Bash scripts are useful for automating tasks that you do often, or for running a series of commands that you don't want to type out every time. In our case, Bash scripts are used for running jobs on M3.
 
