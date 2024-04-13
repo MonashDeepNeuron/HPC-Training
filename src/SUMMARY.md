@@ -45,10 +45,9 @@
   - [Batch Processing vs. Cloud Computing](./chapter5/batch-cloud.md)
   - [Parallel & Distributed Computing](./chapter5/parallel-distributed.md)
   - [M3 Login - SSH & Strudel](./chapter5/login.md)
-  - [Schedmd's SLURM](./chapter5/slurm.md)
+  - [Intro to SLURM](./chapter5/slurm_intro.md)
   - [M3 Interface & Usage](./chapter5/m3-interface.md)
-  - [Job Scripting](./chapter5/job-scripting.md)
-  - [Advanced SLURM]()
+  - [Software & Tooling](./chapter5/software-tooling.md)
   - [Challenges](./chapter5/challenges.md)
 
 - [Introduction to Parallel Computing](./chapter8/chapter8.md)
