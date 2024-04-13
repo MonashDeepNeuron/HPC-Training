@@ -63,7 +63,7 @@
   - [Parallel Search]()
   - [Parallel Sort]()
   - [Other Parallel Algorithms]()
-  - [Machine Learning & HPC]()
+  - [Machine Learning & HPC](./chapter7/machine-learning-and-hpc.md)
   - [Optimisation Algorithms]()
 
 - [Apache Spark](./chapter10/chapter10.md)
