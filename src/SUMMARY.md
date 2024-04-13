@@ -22,7 +22,7 @@
   - [Control Flow](./chapter2/ctrl-flow.md)
   - [Loops](./chapter2/loops.md)
   - [Functions](./chapter2/functions.md)
-  - [Challenges]()
+  - [Challenges](./chapter2/challenges.md)
 
 - [Operating Systems](./chapter3/chapter3.md)
   - [Components of Linux](./chapter3/linux-components.md)
@@ -39,7 +39,7 @@
   - [Macros & The Preprocessor](./chapter4/macros.md)
   - [System Calls]()
   - [Spawning Processes & Threads]()
-  - [Challenges](./chapter4/challenges.md)
+  - [Challenges]()
 
 - [M3 & SLURM](./chapter5/chapter5.md)
 
