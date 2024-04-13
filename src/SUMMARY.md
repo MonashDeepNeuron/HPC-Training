@@ -65,7 +65,7 @@
   - [Parallel Sort]()
   - [Other Parallel Algorithms]()
   - [Machine Learning & HPC](./chapter7/machine-learning-and-hpc.md)
-  - [Optimisation Algorithms]()
+  - [Optimisation Algorithms](./chapter7/optimisation-algorithms.md)
 
 - [Apache Spark](./chapter10/chapter10.md)
   - [Installation & Cluster Set-up](./chapter10/set-up.md)
