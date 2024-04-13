@@ -1,3 +1,3 @@
-# Parallel Search
+# Scheduling Algorithms
 
 ![under-const](../imgs/under-const.gif)

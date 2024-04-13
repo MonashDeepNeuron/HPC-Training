@@ -1,1 +1,0 @@
-# Parallellisation of Algorithms

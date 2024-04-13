@@ -35,6 +35,7 @@ $ mdbook serve --open
 - Yuki Kume
 - Osman Haji
 - Duc Thanh Vinh Nguyen
+- Linton Charles
 
 ## Code of Conduct, License & Contributing
 

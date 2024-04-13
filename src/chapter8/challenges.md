@@ -1,40 +1,47 @@
-# Parallel Computing Challenges
+# Apache Spark Challenges
 
-## Pre-Tasks
+## Overview
 
-Make sure to clone a copy of **your** challenges repo onto M3, ideally in a personal folder on vf38_scratch.
+- [Apache Spark Challenges](#apache-spark-challenges)
+  - [Overview](#overview)
+  - [Task 1 - Classic Distributed Problem: Token Counting](#task-1---classic-distributed-problem-token-counting)
+  - [Task 2 - Cluster Set-up Bash Scripts](#task-2---cluster-set-up-bash-scripts)
+  - [Task 3 - Spark and Slurm](#task-3---spark-and-slurm)
+  - [Task 4 - Data Processing](#task-4---data-processing)
+  - [Task 5 - Spark Machine Learning](#task-5---spark-machine-learning)
 
-> Note: For every challenge you will be running the programs as SLURM jobs. This is so we don't overload the login nodes. A template [SLURM job script](./job.slurm) is provided at the root of this directory which you can use to submit your own jobs to SLURM by copying it to each challenges sub-directory and filling in the missing details. You may need more than one for some challenges. This template will put the would-be-printed output in a file named `slurm-<job-name>.out`.
+> Note: Tasks 1, 2, and 3 closely resemble a **typical workflow** when working with Apache Spark:
+> - **Step 1**: Interactively work with a small sample of the problem
+> - **Step 2**: Solve and optimize the sample problem
+> - **Step 3**: Submit the entire larger problem as a batch job
+> - **Step 4**: Analyze the result and, if necessary, repeat steps 1 to 4
+> 
+> You should employ this workflow into task 4 and task 5
 
-## Task 1 - Single Cluster Job using OpenMP
+## Task 1 - Classic Distributed Problem: Token Counting
 
-Create a program in `hello.c` that prints 'Hello, world from thread: <thread-number>' to the output. Launch the job to a node SLURM. Next, extend the program to run on multi-nodes using OpenMPI.
+Given a string of tokens, count the number of times each token apprears. You should do this task in an interactive JupyterLab notebook connecting to a Spark cluster. This is a cananical problem of distributed data processing, and often served as an example for [MapReduce Programming Model](https://en.wikipedia.org/wiki/MapReduce).
 
-> Note:
->
-> - The output of a job is put in a slurm-<job-id>.out file by default.
-> - The template slurm job scripts will output the results to a `slurm-<job-name>.out` file.
+> Hint: Have a look at [map()](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.map.html) and [reduceByKey()](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.reduceByKey.html)
 
-## Task 2 - Parallel `for` Loop
+## Task 2 - Cluster Set-up Bash Scripts
 
-In `array-gen.c` implement a program that generates an array containing the numbers 0..10'000 elements (inclusive) using a `for` loop. Measure the execution time using the `time` Linux command. Now reimplement the program to utilise OpenMP's parallel `for` loop macros, measuring the execution time again. Is there any performance improvement? Are the elements still in the correct order and if not how can you fix this. Try experimenting with different sized arrays and element types. Again, extend the program to use multi-nodes.
+Write Bash Scripts to streamline the process of installing Spark and running the cluster.
+> Hint: Try to combine the [subchapter: set up](./set-up.md)
 
-> Hint: You will likely need to allocate memory from the heap.
+## Task 3 - Spark and Slurm
 
-## Task 3 - Parallel Reductions
+Submit [task 1](#task-1---calculate-pi-using-monte-carlo-algorithm-again) as a Spark job using Slurm. This should be similar to [subchapter: job batching](./job-batching.md)
+> Hint:
+> - You will need to convert the notebook into a Python file.
+> - Compare the content of `$SPARK_HOME/examples/src/main/python/pi.py` and [our Monte Carlo Pi Estimation](./internals.md#monte-carlo-pi-estimation). They both solve the same problem, however, there are stuffs that we don't need to add when directly using `spark-submit`. Why?
 
-In the C chapter we created a sum program that summed the elements of an array together. Using this as a base, create a new program that again computes the sum of the elements of an array but using OpenMP, comparing the execution time between the sequential and parallel versions. Is there any performance improvement? How would using a different binary operator change our ability to parallelize the the reduction?
+## Task 4 - Data Processing
 
-If you have time, implement the sum but at each iteration, raise the current value to the power of the current accumulation divide by 100, adding this to the accumulation. Test a serial and parallel version. Is the parallel any faster?
+In this task, we will start working witha dataframe and try to process a given real-world dataset.
 
-> Note: `module load gcc` to use newer version of gcc if you have error with something like `-std=c99`.
+> The dataset, at around ~100MB, is considered small and not well-suited for Spark utilization (opting for Pandas might be more efficient). Nevertheless, working with this dataset serves as an exercise to understand more about Spark concepts and its capabilities.
 
-## Task 4 - Laplace Equation for Calculating the Temperature of a Square Plane
+## Task 5 - Spark Machine Learning
 
-For this challenge you will attempt to parallelize an existing implementation of the Laplace Equation. Throughout the source files of this project there are various loops you can try and make faster by utilizing OpenMP macros. See if you can make a faster version in the `laplace2d-parallel.c`. To build these files make sure you're in that directory and use the command `make`. The executables will be in the same directory.
-
-## Task 5 - Calculate Pi using "Monte Carlo Algorithm"
-
-For this challenge you will have to try and implement the Monte Carlo algorithm with no framework or template and using everything you've learnt so far. Good luck.
-
-[Short explanation of Monte Carlo algorithm](https://www.youtube.com/watch?v=7ESK5SaP-bc&ab_channel=MarbleScience)
+We will use the data from task 4 to build an intro-to-Machine-Learning model, [Linear Regression](https://en.wikipedia.org/wiki/Linear_regression), with [MLlib](https://spark.apache.org/mllib/)
