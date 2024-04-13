@@ -1,54 +1,45 @@
-# Distributed Computing Challenges
+# M3 Challenges
 
-## Overview
+## Challenge 1
 
-- [Distributed Computing Challenges](#distributed-computing-challenges)
-  - [Overview](#overview)
-  - [Pre-Tasks](#pre-tasks)
-  - [Task 1 - Multinode 'Hello, world!'](#task-1---multinode-hello-world)
-  - [Task 2 - Ping Pong](#task-2---ping-pong)
-  - [Task 3 - Multinode Sum](#task-3---multinode-sum)
-  - [Task 4 - Multinode Mergesort](#task-4---multinode-mergesort)
+Navigate to your scratch directory and, using vim (or your chosen in-terminal editor) create a file called `hello.txt` that contains the text "Hello World". Once you have created the file, use the `cat` command to print the contents of the file to the screen.
 
-## Pre-Tasks
+## Challenge 2
 
-For each task you will need to load MPICH using Spack from within your SLURM job script. There is a shared installation of Spack and MPICH within `vf38_scratch`. To load Spack and MPICH use the following to commands within you SLURM job script before any other command.
+Write a bash script that prints the contents of the above hello.txt file to the screen and run it locally (on your login node).
 
-```sh
-. ~/vf38_scratch/spack/share/spack/setup-env.sh
-spack load mpich
-```
+## Challenge 3
 
-A template SLURM job file is given at the root of the distributed challenges directory. Copy this for each challenge into their respective sub-directories as every challenge will require running a SLURM job. If want to do some more experimenting, create multiple job scripts that use different amounts of nodes and test the execution time.
+Submit the above script to the queue by writing another SLURM bash script. Check the status of the job using `squeue`. Once the job has finished, check the output using `cat`. You can find the output file in the directory you submitted the job from.
 
-You will also need to generate some input for the sum and mergesort challenges. This can be done by compiling and running the program in `generate.cpp`. Run the following commands to build an generate the inputs for your challenges.
+## Challenge 4
 
-```sh
-module load gcc/10.2.0
-g++ -std=c++20 -o bin/generate generate.cpp
-bin/generate 1000000000
-```
+Request an interactive node and attach to it. Once you have done this, install python 3.7 using conda.
 
-> Note:
->
-> - You do not have to worry about how to read the numbers from the file, this is handled for you already but it is recommended to look at the read function in `read.h` and understand what it is doing.
-> - The expected output of the 'sum' challenge is found in the generated `output.txt` file within the challenges directory.
-> The expected output of the 'mergesort' challenge is found in the generated `sorted.txt` file within the challenges directory however this will contain a lot of values so a check function is provided that compares a resorted version of your input to your sorted output.
-> The sum and mergesort programs you will develop take a number as input. This is the size of the input data that you are performing your programs on. This should be the same number as the one used with the generator program. In the template programs for this challenge they are maked as an pointer to data called `input`.
-> Given the above setup and configuration, the input data will contain ~8GB of data or ~8.0e9 bytes so make sure to allocate enough resources both in the programs an in the SLURM job scripts.
+## Challenge 5
 
-## Task 1 - Multinode 'Hello, world!'
+Clone and run [this](./dl_on_m3/alexnet_stl10.py) script. You will need to first install the dependencies for it. You don't need to wait for it to finish, just make sure it is working. You will know its working if it starts listing out the loss and accuracy for each epoch. You can stop it by pressing `ctrl + c`.
 
-Your first task is to say 'Hello, world!' from different nodes on M3. This involves printing the nodes name, rank (ID) and the total number of nodes in the MPI environment.
+Once you have confirmed that it is working, deactivate and delete the conda environment, and then end the interactive session.
 
-## Task 2 - Ping Pong
+> Hint: I have included the dependencies and their versions (make sure you install the right version) in the `requirements.txt` file. You will need python 3.7 to run this script.
 
-For this next task you will play a Ping-Pong game of sorts between two nodes. This will involve passing a count between the two nodes and incrementing the count for each send and receive. This should increment the count to 10 in the end.
+## Challenge 6
 
-## Task 3 - Multinode Sum
+Go back to the login node. Now you are going to put it all together. Write a bash script that does the following:
 
-Your next task is to sum the numbers in the generated `input.txt` file together across ten nodes. This will involve summing 1,000,000,000 floats together. The rough expected output is contained in the `output.txt` file. Remember the input array is already given in the template file.
+- (1) requests a compute node
+- (2) installs python using conda
+- (3) clones and runs the above script
 
-## Task 4 - Multinode Mergesort
+Let this run fully. Check the output of the script to make sure it ran correctly. Does it match the output of the script you ran in challenge 5?
+> Hint: You can check the output of the script at any time by `cat`ing the output file. The script does not need to have finished running for you to do this.
 
-Your final task is to sort the numbers from the input file `unsorted.txt` using a distributed version of mergesort. This will involve ten nodes running their won mergesorts on chunks of the input data individually and then a final mergesort of the intermediate results. Remember the input array is already given in the template file.
+## Challenge 7
+
+Edit your submission script so that you get a gpu node, and run the script using the gpu.
+> Hint: Use the m3h partition
+
+## Challenge 8
+
+Now you want to clean up your working directory. First, push your solutions to your challenges repo. Then, delete the challenges directory, as well as the conda environment you created in challenge 6.

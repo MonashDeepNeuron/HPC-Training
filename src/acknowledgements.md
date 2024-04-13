@@ -8,6 +8,8 @@ This book is part of Monash DeepNeurons collection of technical information and 
 - [Osman Haji](https://github.com/Ozzywap)
 - [Yuki Kume](https://github.com/UnciaBit)
 - [Jaspar Martin](https://github.com/jasparm)
+- [Duc Thanh Vinh Nguyen](https://github.com/VincentNguyenDuc)
+- [Linton Charles](https://github.com/linton2000)
 
 ## Contributors
 

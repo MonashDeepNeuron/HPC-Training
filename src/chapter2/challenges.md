@@ -16,8 +16,6 @@ The challenges for this chapter can found in the [HPC Training Challenges](https
   - [Challenge 4 - GCD \& LCM](#challenge-4---gcd--lcm)
   - [Challenge 5 - Bitwise Add](#challenge-5---bitwise-add)
   - [Challenge 6 - Bitwise Multiply](#challenge-6---bitwise-multiply)
-  - [Challenge 7 - Sum and Product Algorithms](#challenge-7---sum-and-product-algorithms)
-  - [Challenge 8 - Array Concatenation](#challenge-8---array-concatenation)
 
 ## Challenge 1 - Hello World
 
@@ -44,13 +42,3 @@ For this challenge you have to implement a function called `bitwise_add()` which
 This challenge is similar to the last but instead of implementing `+` you must implement `*` (product). Your implementation should be contained in a function called `bitwise_multiply()`. You can use any bitwise or conditional operators.
 
 > Note: If you need `+` you can reimplement it internally in `bitwise_multiply` based on your solution from the previous challenge, import it to a header in this challenges folder and include it or copy it to this folder. Ask a trainer if you get stuck with this.
-
-## Challenge 7 - Sum and Product Algorithms
-
-This challenge involves implementing the sum and product reductions on an array or memory block of integers. As a bonus challenge, try and make the algorithms more generic and work with any binary operator.
-
-## Challenge 8 - Array Concatenation
-
-In this challenge you have to implement an array concatenation function. This should join two arrays of the same type into a single array, similar to `strcat()`. You will need to allocate a new block of memory and in order to store the concatenated arrays which will requires the sizes of the two input arrays to be known by the function. This function should return a pointer to the resulting array.
-
-> Note: The type of the array this function concatenates can be any type except `char`.

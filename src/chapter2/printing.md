@@ -42,8 +42,21 @@ int main()
 
 > Question: Notice how we used `double` for the type of `sum`. What would happen if `sum` type was `int`?
 
-If you want to have a play with `printf()`, copy the following code snippet run it on your own device. The command will be identically to 'Hello World!'.
+If you want to have a play with `printf()`, copy the following code snippet run it on your own device. The command line will output different varieties of 'Hello World!'.
 
+```c
+#include <stdio.h>
+
+int main() {
+    printf("%30s\n", "Hello World!"); // Padding added
+    printf("%40s%10s%20s%15s\n", "Hell", "o", "World", "!"); 
+    printf("%10.7s\n", "Hello World!"); // Print only the first 7 characters with padding
+    printf("%100c%c%c%c%c %c%c%c%c%c%c%c\n", 
+         72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 33, '\n'); // Hex values
+    return 0;
+}
+
+```
 ### Formatting Specification
 
 You'll notice we used a different character after the `%` for each argument. This is because `printf()` needs to know the type of the incoming arguments so that it can format the string appropriately. For example floating point types have to use a decimal point when transformed into a text format while integers do not.
