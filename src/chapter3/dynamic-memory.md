@@ -48,6 +48,8 @@ int main()
 }
 ```
 
+> If you recall the previous subchapter, `calloc()` allocates memory in the BSS segment instead of the heap/stack.
+
 ## Reallocated Memory
 
 We can also reallocate data to fit a larger or smaller amount. The elements from the old block will be copied to the new location until the new array is full or there are no more elements to copy. `realloc()` my not actual allocate memory in a new locating if there is free space next to the existing array. `realloc()` also works like `malloc()` where the new memory is left uninitialised. `realloc()` takes two parameters, the old pointer address and the new size.
