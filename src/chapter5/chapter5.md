@@ -1,7 +1,7 @@
-# M3 & SLURM
+# Parallel Computing
 
-[M3](https://docs.massive.org.au/M3/index.html) is part of [MASSIVE](https://https://www.massive.org.au/), which is a High Performance Computing facility for Australian scientists and researchers. Monash University is a partner of MASSIVE, and provides a majority of the funding for it. M3 is made up of multiple different types of servers, with a total of 5673 cores, 63.2TB of RAM, 5.6PB of storage, and 1.7 million CUDA cores.
+In this chapter, we will discuss the abstraction of parallel computing. To facilitate our exploration, we will employ a API within the C Programming Language: OpenMP. This tool will serve as a means to concretely illustrate the underlying language-independent theory.
 
-M3 utilises the [Slurm](https://slurm.schedmd.com/) workload manager, which is a job scheduler that allows users to submit jobs to the cluster. We will learn a bit more about this later on.
+**Parallel computing is about executing the instructions of the program simultaneously.**
 
-This book will introduce the theory behind HPC clusters and how parallel & distributed computing works on these systems. After this, you will learn how to connect to and use M3 along with how SLURM works and how to submit jobs and take advantage of the massive computational capability that M3 provides.
+One of the core values of computing is the breaking down of a big problem into smaller easier to solve problems, or at least smaller problems. In some cases, the steps required to solve the problem can be executed simultaneously (in parallel) rather than sequentially (in order).
