@@ -58,7 +58,16 @@ The process of saving the context of one process and loading the context of anot
 3. User and kernel-mode switch.
 4. Preemptive CPU scheduling is used (context switches at regular time intervals).
 
+There is a lot more involved in how compute is managed by the OS (eg. process scheduling, threading, etc...) which will be covered in a later chapter.
 
 ### Storage
+If you recall chapter 3.1, this area can be further subdivided into two - temporary storage (main memory i.e. RAM) and permenant storage (hard drives and SSDs). 
+
+#### Linux File Systems
+As you all know, computers manage the permenant storage of information using a system of files and directories. The Linux file system is a multifaceted structure comprised of three essential layers. At its foundation, the **Logical File System** serves as the interface between user applications and the file system, managing operations like opening, reading, and closing files. Below this layer, the **Virtual File System** facilitates the concurrent operation of multiple physical file systems, providing a standardized interface for compatibility. Finally, the **Physical File System** is responsible for the tangible management and storage of physical memory blocks on the disk, ensuring efficient data allocation and retrieval. Together, these layers form a cohesive architecture, orchestrating the organized and efficient handling of data in the Linux operating system.
+
+![linux-file-sys](./imgs/linux-file-sys)
+
+
 
 ### Networking
