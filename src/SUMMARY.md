@@ -33,9 +33,7 @@
   - [Dynamic Memory](./chapter3/dynamic-memory.md)
   - [Structures & Macros](./chapter3/structs-macros.md)
   - [Intro to Linux](./chapter3/linux-intro.md)
-  - [Threading & Concurrency](./chapter3/threads-concurrency.md)
-  - [Processes](./chapter3/processes.md)
-  - [Scheduling Algorithms](./chapter3/scheduling.md)
+  - [VMs & Containers](./chapter3/vms-containers.md)
   - [Challenges](./chapter3/challenges.md)
 
 - [M3 & SLURM](./chapter4/chapter4.md)
