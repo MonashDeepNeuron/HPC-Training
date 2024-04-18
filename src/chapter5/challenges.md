@@ -1,45 +1,40 @@
-# M3 Challenges
+# Parallel Computing Challenges
 
-## Challenge 1
+## Pre-Tasks
 
-Navigate to your scratch directory and, using vim (or your chosen in-terminal editor) create a file called `hello.txt` that contains the text "Hello World". Once you have created the file, use the `cat` command to print the contents of the file to the screen.
+Make sure to clone a copy of **your** challenges repo onto M3, ideally in a personal folder on vf38_scratch.
 
-## Challenge 2
+> Note: For every challenge you will be running the programs as SLURM jobs. This is so we don't overload the login nodes. A template [SLURM job script](./job.slurm) is provided at the root of this directory which you can use to submit your own jobs to SLURM by copying it to each challenges sub-directory and filling in the missing details. You may need more than one for some challenges. This template will put the would-be-printed output in a file named `slurm-<job-name>.out`.
 
-Write a bash script that prints the contents of the above hello.txt file to the screen and run it locally (on your login node).
+## Task 1 - Single Cluster Job using OpenMP
 
-## Challenge 3
+Create a program in `hello.c` that prints 'Hello, world from thread: <thread-number>' to the output. Launch the job to a node SLURM. Next, extend the program to run on multi-nodes using OpenMPI.
 
-Submit the above script to the queue by writing another SLURM bash script. Check the status of the job using `squeue`. Once the job has finished, check the output using `cat`. You can find the output file in the directory you submitted the job from.
+> Note:
+>
+> - The output of a job is put in a slurm-<job-id>.out file by default.
+> - The template slurm job scripts will output the results to a `slurm-<job-name>.out` file.
 
-## Challenge 4
+## Task 2 - Parallel `for` Loop
 
-Request an interactive node and attach to it. Once you have done this, install python 3.7 using conda.
+In `array-gen.c` implement a program that generates an array containing the numbers 0..10'000 elements (inclusive) using a `for` loop. Measure the execution time using the `time` Linux command. Now reimplement the program to utilise OpenMP's parallel `for` loop macros, measuring the execution time again. Is there any performance improvement? Are the elements still in the correct order and if not how can you fix this. Try experimenting with different sized arrays and element types. Again, extend the program to use multi-nodes.
 
-## Challenge 5
+> Hint: You will likely need to allocate memory from the heap.
 
-Clone and run [this](./dl_on_m3/alexnet_stl10.py) script. You will need to first install the dependencies for it. You don't need to wait for it to finish, just make sure it is working. You will know its working if it starts listing out the loss and accuracy for each epoch. You can stop it by pressing `ctrl + c`.
+## Task 3 - Parallel Reductions
 
-Once you have confirmed that it is working, deactivate and delete the conda environment, and then end the interactive session.
+In the C chapter we created a sum program that summed the elements of an array together. Using this as a base, create a new program that again computes the sum of the elements of an array but using OpenMP, comparing the execution time between the sequential and parallel versions. Is there any performance improvement? How would using a different binary operator change our ability to parallelize the the reduction?
 
-> Hint: I have included the dependencies and their versions (make sure you install the right version) in the `requirements.txt` file. You will need python 3.7 to run this script.
+If you have time, implement the sum but at each iteration, raise the current value to the power of the current accumulation divide by 100, adding this to the accumulation. Test a serial and parallel version. Is the parallel any faster?
 
-## Challenge 6
+> Note: `module load gcc` to use newer version of gcc if you have error with something like `-std=c99`.
 
-Go back to the login node. Now you are going to put it all together. Write a bash script that does the following:
+## Task 4 - Laplace Equation for Calculating the Temperature of a Square Plane
 
-- (1) requests a compute node
-- (2) installs python using conda
-- (3) clones and runs the above script
+For this challenge you will attempt to parallelize an existing implementation of the Laplace Equation. Throughout the source files of this project there are various loops you can try and make faster by utilizing OpenMP macros. See if you can make a faster version in the `laplace2d-parallel.c`. To build these files make sure you're in that directory and use the command `make`. The executables will be in the same directory.
 
-Let this run fully. Check the output of the script to make sure it ran correctly. Does it match the output of the script you ran in challenge 5?
-> Hint: You can check the output of the script at any time by `cat`ing the output file. The script does not need to have finished running for you to do this.
+## Task 5 - Calculate Pi using "Monte Carlo Algorithm"
 
-## Challenge 7
+For this challenge you will have to try and implement the Monte Carlo algorithm with no framework or template and using everything you've learnt so far. Good luck.
 
-Edit your submission script so that you get a gpu node, and run the script using the gpu.
-> Hint: Use the m3h partition
-
-## Challenge 8
-
-Now you want to clean up your working directory. First, push your solutions to your challenges repo. Then, delete the challenges directory, as well as the conda environment you created in challenge 6.
+[Short explanation of Monte Carlo algorithm](https://www.youtube.com/watch?v=7ESK5SaP-bc&ab_channel=MarbleScience)

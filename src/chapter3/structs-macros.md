@@ -1,8 +1,42 @@
-# Macros & The Preprocessor
+# Structures & Macros
+Now let's cover some more advanced C language features before delving into operating system concepts.
+ 
+## Structures
+
+So far we have only been able to to manipulate primitive data types and collections of a single type but what if we want to manipulate and store data that is of different types. This is where structures come in. Structures are used to hold data of different types in a compact format. Structures are created using the `struct` keyword paired with a unique name followed by a brace scope of variable declarations. To then create a variable of the structure type you again use the `struct` keyword and the structures type name followed by a variable name. You can then initialise the fields using a comma separated list, enclosed in braces where each element is the desired value for initialising the field of the structure. The fields are then accessed using the variable and the member access operator (`.`) paired with the field's name.
+
+```c
+#include <stdio.h>
+
+struct A
+{
+    int i;
+    double d;
+    char* c;
+};
+
+int main()
+{
+    struct A a = { 5, 576.658, "Hello" };
+    printf("%d\n", a.i);
+    printf("%f\n", a.d);
+    printf("%s\n", a.c);
+
+    return 0;
+}
+```
+
+> **Note:**
+>
+> - Structures do not support methods.
+> - Elements in a structure a layed out contiguously ie. each element is right next to each other.
+> - The size of a structure can be obtained normally using `sizeof`.
+
+## Macros & The Preprocessor
 
 Sometimes we need to control how source code is compiled, enable certain parts of the source code while disabling other parts. How do you do this? This is done using macros in C. Macros are compile time expressions that are executed by a part of the compiler called the preprocessor.
 
-## What is a macro?
+### What is a macro?
 
 Macros are expressions that are evaluated and removed from the final source code. They are created using a `#` followed by a macro identifier. One macro we have used consistently throughout this book is the `#include` macro which is used to copy the source code from header files into other source and header files. Macros in C mostly perform in-source text replacement.
 
@@ -34,7 +68,7 @@ int main()
 
 > Note: Even though you can define function-like entities using macros I would highly recommend against it in 99% of cases as it is nearly impossible to debug as the macros are expanded and removed very early on in the compilation of a program.
 
-#### Include Guards
+### Include Guards
 
 One common use of macros is for include guards. These are valueless macros that are defined once for a header file and only expose the contents of the header file if the macro is not defined. This prevents headers from being included twice and causing a redefinition or duplication error. How does this work? Essentially, when a header is first encountered, a macro is checked. If it is **_not_** defined we then define it and define the rest of the contents of the header. If it was already defined then the header is 'empty'. This stops the contents of headers being imported multiple times or as a transitive dependency.
 
@@ -47,7 +81,7 @@ One common use of macros is for include guards. These are valueless macros that 
 #endif  /// HEADER
 ```
 
-#### Defining Macros from the Command Line
+### Defining Macros from the Command Line
 
 Macros are able to be defined from the command line through the compiler. Many compilers support a `-D` and `-U` fag which can define and undefine macros in source code respectively. These are typically used to control macros similar to header guards which control which parts of a codebase are defined eg. for different OS or graphical backends.
 
