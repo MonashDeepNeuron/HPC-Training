@@ -1,5 +1,7 @@
 # VMs & Containers
 
+In order to succeed in HPC, you will need to know how distributed computing works. Virtual machines and containers are a way of doing distributed computing and we'll give a decent introduction to them here. They help in a lot of scenarios both in your MDN work and in the real-world by allowing you to manage dependencies (eg. for a custom benchmarking script) and deploy an application into a server (eg. for a public HPC visualisation website).
+
 ## What is a virtual machine (VM)?
 
 A virtual machine is not a physical machine. It’s a file that replicates the computing environment of a physical machine. It’s similar to how virtual reality (VR) environments replicate the real world. VR isn’t a physical space; it’s a virtual imitation. Still, we can perform real-world functions in VR, such as exploring and interacting with objects. Instead of imitating video game functions, virtual machine software emulates computer system functions i.e. the operating system. To achieve this VMs use a technology called **virtualisation** as shown below.
