@@ -6,7 +6,7 @@ Nearly all modern computer systems utilise parallel computing to speed up the ex
 
 As you can see, in a scenario where a program (job) takes 3 seconds and 3 independent jobs have to be executed by a system, doing it serially in a single computer takes a total of 9 seconds. But doing it simultaneously across 3 computers will only take 3 seconds thus achieving a 3x speedup through parallel computing. 
 
-This is the fundamental principle that High Performance Computing is based on.
+This is the fundamental principle that High Performance Computing is based on. The trouble (or fun) is when your tasks have dependencies on each other which is gonna be the case for the vast majority of algorithms. That's when things like synchronisation issues, data sharing and all of that comes into play - which we'll explore in later chapters.
 
 ## What is Distributed Computing? 
 
@@ -53,3 +53,18 @@ And finally, not everything needs to be done on a parallel or distributed system
 - **More simple** to design & implement algorithms. Parallel algorithms can get quite complex, especially when dealing with more complicated instructions with dependencies.
 - **Less overhead** involved in managing a parallel & distributed job. No need to manage data sharing between threads, processes, nodes, etc...
 - **No synchronisation issues** & headaches involved in concurrent computing. Don't have to deal with race conditions, deadlocks, livelocks, etc...
+
+## Parallel Scalability
+The speed up achieved from parallelism is dictated by your algorithm. Notably the serial parts of your algorithm can not be sped up by increasing the number of processors. The diagram below looks at the benefits we can achieve from writing parallel code as the number of processes increases.
+
+![amdahl](./imgs/parallel_scalability.jpg)
+
+Amdahl's Law, formulated by computer architect Gene Amdahl in 1967, is a principle used to analyze the potential speedup of parallel computing. It states that the speedup of a program from parallelization is limited by the proportion of the program that must be executed serially. In other words, it helps to determine the maximum performance improvement that can be achieved by using parallel processing.
+
+The implications of Amdahl's Law for HPC is very significant:
+
+- **Limitation of Speedup:** Amdahl's Law highlights that even with an increase in the number of processors (parallelization), the overall speedup is limited by the sequential portion of the code. Thus, if a significant portion of the code is inherently serial, the potential speedup achievable through parallelization is restricted.
+- **Importance of Identifying Serial Sections:** In HPC, it's crucial to identify the sections of code that are inherently serial and cannot be parallelized. Optimizing these sections can lead to better overall performance. Conversely, focusing solely on parallelizing code without addressing these serial bottlenecks can result in suboptimal speedup.
+- **Efficiency vs. Scalability:** Amdahl's Law emphasizes the importance of balancing efficiency and scalability in parallel computing. While increasing the number of processors can improve performance to a certain extent, beyond a certain point, diminishing returns occur due to the overhead of synchronization, communication, and managing parallel tasks.
+- **Architectural Considerations:** HPC system architects must consider Amdahl's Law when designing hardware and software architectures. Designing systems that minimize the impact of serial portions of code and optimize parallel execution can lead to better overall performance.
+- **Algorithm Selection:** When choosing algorithms for HPC applications, it's essential to consider their parallelizability. Algorithms that can be efficiently parallelized are more suitable for HPC environments, as they can leverage the potential for speedup provided by parallel computing resources more effectively.

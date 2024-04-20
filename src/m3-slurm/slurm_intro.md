@@ -7,68 +7,9 @@ Slurm has three key functions.
 2. It provides a framework to start, execute, and check the work on the set of allocated compute nodes. 
 3. It manages the queue of pending jobs based on the availability of resources.
 
-## Basic Linux Commands
+The below diagram shows how Slurm works in the context of M3 MASSIVE.
 
-Since Slurm and M3 nodes are implemented on Linux, it's necessary to know some basic Linux commands. You will have to be comfortable using these commands, writing Bash scripts and navigating the Linux environment in order to be successful in a lot of our HPC projects.
-
-| Command | Function |
-| --- | --- |
-| `pwd` | prints current directory |
-| `ls` | prints list of files / directories in current directory (add a `-a` to list everything, including hidden files/directories |
-| `mkdir` | makes a directory |
-| `rm <filename>` | deletes *filename*. add `-r` to delete directory. add `-f` to force deletion (be really careful with that one) |
-| `cd <directory>` | move directory.  |
-| `vim` or `nano` | bring up a text editor |
-| `cat <filename>` | prints contents of file to terminal |
-| `echo` | prints whatever you put after it |
-| `chmod <filename>` | changes permissions of file |
-| `cp` | copy a file or directory|
-| `mv <filename>` | move or rename file or directory |
-
-> Note: `.` and `..` are special directories. `.` is the current directory, and `..` is the parent directory. These can be used when using any command that takes a directory as an argument. Similar to these, `~` is the home directory, and `/` is the root directory. For example, if you wanted to copy something from the parent directory to the home directory, you could do `cp ../<filename> ~/`, without having to navigate anywhere.
-
-## Bash Scripts
-
-Bash is both a command line interface and a scripting language. Linux commands are generally using Bash. Bash scripts are a series of commands that are executed in order. Bash scripts are useful for automating tasks that you do often, or for running a series of commands that you don't want to type out every time. In our case, Bash scripts are used for running jobs on M3.
-
-In terms of use, Bash can encapsulate any command you would normally run in the terminal into a script that can be easily reused. For example you could have a script that automatically navigates to a directory and activates a virtual environment, or a script that compiles and runs a C program.
-
-The basic syntax of a bash file is as follows:
-
-```bash
-#!/bin/bash
-
-# This is a comment
-
-echo "Hello World"
-```
-
-We can save this file as `hello.sh` and run it using the following command: `source hello.sh`. This will print `Hello World` to the terminal.
-
-Let's walk through the file. The first line is `#!/bin/bash`. This is called a shebang, and it tells the system that this file is a bash script. The second line is a comment, and is ignored by the system. The third line is the actual command that we want to run. In this case, we are using the `echo` command to print `Hello World` to the terminal.
-
-Bash can do a lot more, including basic arithmetic, if statements, loops, and functions, however these are not really necesary for what we are doing. If you want to learn more about bash, you can find a good tutorial [here](https://linuxconfig.org/bash-scripting-tutorial).
-
-For our use, the main things we need to be able to do are to run executables and files. We do this the exact same way as if manually running them in the terminal. For example, if we want to run a python script, we can do the following:
-
-```bash
-#!/bin/bash
-
-# This will run hello.py using the python3 executable
-python3 hello.py
-```
-
-If we want to compile and then run a C program, we can do the following:
-
-```bash
-#!/bin/bash
-
-# This will compile hello.c and then run it
-gcc hello.c -o hello
-./hello
-```
-
-Using bash scripts not only saves a lot of time and effort, but it also makes it easier to run jobs on M3 using SLURM. We will go over how to do this in the next section.
+![slurm-on-m3](./imgs/slurm-on-m3.png)
 
 ## Slurm Architecture
 Slurm has a centralized manager, slurmctld, to monitor resources and work. Each compute server (node) has a slurmd daemon, which can be compared to a remote shell: it waits for work, executes that work, returns status, and waits for more work. There is an optional slurmdbd (Slurm DataBase Daemon) which can be used to record job accounting information in a database.
@@ -108,6 +49,22 @@ In creating a Slurm script, there are **4 main parts** that are mandatory in ord
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=500M
 ```
+
+Some of the various resource request parameters available for you on Slurm are below:
+
+- `ntasks`: The number of tasks or processes to run.
+- `mem`: The amount of memory to allocate to the job.
+- `time`: The maximum amount of time the job can run for.
+- `job-name`: The name of the job. Up to 15 characters.
+- `partition`: The partition to run the job on.
+- `mail-user`: The email address to send job status emails to.
+- `mail-type`: The types of emails to send.
+
+> Note: In the case of M3, a task is essentially the same as a process. This is **not** the same as a cpu core. You can have a task that uses one or multiple cores. You can also have multiple tasks comprising the same job, each with one or multiple cores being utilised. It can get quite confusing, so if you are unsure about what you need, just ask. There is also more information in the M3 docs.
+
+There are a lot more options that you can use, and you can find a more complete list [here](https://docs.massive.org.au/M3/slurm/simple-batch-jobs.html).
+
+In particular, if you want to run multithreading or multiprocessing jobs, or you need a gpu, there are more options you need to configure.
 
 3. **Dependencies:** Load all the software that the project depends on to execute. For example, if you are working on a python project, you’d definitely require the python software or module to interpret and run your code. Go to Chapter 5.6 for more info on this.
 
@@ -151,3 +108,26 @@ In the script above, 1 Node with 1 CPU, 500MB of memory per CPU, 10 minutes of W
 The first job step will run the Linux echo command and output Start process. The next job step(2) will echo the Hostname of the compute node that executed the job. Then, the next job step will execute the Linux sleep command for 30 seconds. The final job step will just echo out End process. Note that these job steps executed sequentially and not in parallel.
 
 It’s important to set a limit on the total run time of the job allocation, this helps the Slurm manager to handle prioritization and queuing efficiently. The above example is a very simple script which takes less than a second. Hence, it’s important to specify the run time limit so that Slurm doesn’t see the job as one that requires a lot of time to execute.
+
+## Interactive jobs
+
+Sometimes you might want to actually connect to the node that you are running your job on, in order to see what is happening or to set it up before running the job. You can do this using the `smux` command. Similar to regular batch jobs, you can set options when you start the interactive session. An example of this is:
+
+`smux new-session --ntasks=1 --time=0-00:01:00 --partition=m3i --mem=4GB`
+
+This will start an interactive session on a node with 1 cpu, 1 minute of time, and 4GB of memory. There are again other options available, and you can find a more complete explanation [here](https://docs.massive.org.au/M3/slurm/interactive-jobs.html).
+
+### Connecting to interactive jobs
+
+Typically when you start an interactive job it will not start immediately. Instead, it will be queued up once it has started you will need to connect to it. You can do this by running `smux a`, which will reconnect you to the session. If you want to disconnect from the session but leave it running, you can press `Ctrl + b` followed by `d`. This will disconnect you from the session, but leave it running. You can reconnect to it later using `smux a`. If you want to kill the session, if you are connected just run `exit`, otherwise if you are in a login node run `scancel <jobid>`. You can find the job id using `show_job`.
+
+## Checking the status of jobs, finding out job IDs, and killing jobs
+
+A couple of useful commands for general housekeeping are:
+
+- `squeue`: This will show you the status of all jobs currently running on M3.
+- `show_job`: This will show you the status of all jobs you have submitted.
+- `squeue -u <username>`: This will show you the status of all jobs submitted by a particular user currently running.
+- `scancel <jobid>`: This will kill a job with a particular job id.
+- `scancel -u <username>`: This will kill all jobs submitted by a particular user.
+- `show_cluster`: This will show you the status of the cluster, including any nodes that are offline or in maintenance.
