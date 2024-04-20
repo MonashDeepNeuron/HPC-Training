@@ -12,8 +12,20 @@ In this challenge you have to implement an array concatenation function. This sh
 
 ## Challenge 3 - Doing it in Docker
 
-Pull an Ubuntu image from the Docker registry, install any required dependencies and execute the same C code that you wrote for challenge 2 within that running container instance. You will have to consult the Docker documentation and be resourceful in learning and completing this task.
+Pull an Ubuntu image from the Docker registry, install any required dependencies and execute the same C code that you wrote for challenge 2 within that running container instance.
 
-## Challenge 4 - Launch a VM instance on Nectar Cloud
+## Challenge 4 - Bash Process Dump
 
-This is an extension challenge in which you will have to go through the [ARDC's cloud starter tutorial series](https://tutorials.rc.nectar.org.au/cloud-starter/01-overview) in order to launch a VM instance and connect to it.
+Write and execute a Bash script that captures the process id, process (cmd) name and Nice score and outputs it all into a text file.
+
+## Challenge 5 - Scheduler evaluation
+
+Write a C program that computes the average turnaround time based on these process stats:
+
+| Process | Arrival Time | Burst Time |
+|---------|--------------|------------|
+|   P1    |      0       |     3      |
+|   P2    |      1       |     5      |
+|   P3    |      2       |     2      |
+|   P4    |      3       |     4      |
+|   P5    |      4       |     6      | 

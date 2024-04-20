@@ -29,6 +29,8 @@ There are several commands in Bash for process management. Following are some co
 
 As you might have noticed if you ran `ps` or `top`, each Bash command spawns (creates) a process. That's because all of these commands are just executable binary files that are software programs (exactly the same as compiled C code) that you can find in one of your system directories.
 
+> **Pro-Tip:** The `-o` flag with the `ps` command allows you to specify the columns to list for processes. For example, to list the process ID, nice score and command name for each process use `ps -o pid,ni,cmd`. 
+
 ### Signals
 In Linux, a signal is a notification sent to a process to indicate an event. Typically it is triggered by the operating system, hardware, or other processes in order to signify various events, including process termination, user interrupts, errors, and system events. A unique identifier represents each signal and has predefined behaviors associated with it.
 
@@ -61,6 +63,3 @@ The nice command starts a process with a specified priority level. It assigns a 
 The renice command modifies and adjusts the priority of a process that is already running. This command either increases or decreases the priority of a process based on the specific value. The syntax to use the renice command is `renice <priority> -p <pid>`.
 
 > Decreasing priority can be done by any user in the system but the priority can only be increased by the process owner or the super user (root).
-
-## Threading & Concurrency
-

@@ -36,7 +36,7 @@
   - [VMs & Containers](./operating-systems/vms-containers.md)
   - [Bash CMDs & Scripts](./operating-systems/bash-cmds-scripts.md)
   - [Processes & Threads](./operating-systems/processes-threads.md)
-  - [POSIX System Calls](./operating-systems/posix-calls.md)
+  - [Scheduling Algorithms](./operating-systems/scheduling.md)
   - [Challenges](./operating-systems/challenges.md)
 
 - [M3 & SLURM](./m3-slurm/m3-slurm.md)
