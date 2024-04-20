@@ -97,4 +97,6 @@ The aim is to store data that any given process is likely to access in the futur
 
 ### Accessing the Kernel's API
 
-As mentioned earlier, user space programs (code that a programmer writes for an application/script) will need to use a system library to access the kernel and it's lower-level functionality. For Linux, the main library is `unistd.h` which only runs on POSIX-compatible (Unix-like) operating systems and unfortunately Windows is not one of them. To get around this, we will be using a Docker container with an Ubuntu image. But first let's finish this chapter by learning about Virtual Machines and Containers.
+As mentioned earlier, user space programs (code that a programmer writes for an application/script) will need to use a system library to access the kernel and it's lower-level functionality. For Linux, the main library is `unistd.h` which only runs on POSIX-compatible (Unix-like) operating systems and unfortunately Windows is not one of them. To get around this, we will be using a Docker container with an Ubuntu image.
+
+> **Note:** You can also use WSL or launch an Ubuntu VM to get `unistd.h` working. But it's useful to know Docker in case you ever need to replicate the same environment and avoid dependency-related bugs while working in teams or if you need to do [container-based deployments](https://cloudkul.com/blog/how-to-host-website-on-docker-container/). 

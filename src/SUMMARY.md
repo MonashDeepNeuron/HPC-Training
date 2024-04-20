@@ -34,6 +34,8 @@
   - [Structures & Macros](./operating-systems/structs-macros.md)
   - [Intro to Linux](./operating-systems/linux-intro.md)
   - [VMs & Containers](./operating-systems/vms-containers.md)
+  - [Bash CMDs & Scripts](./operating-systems/bash-cmds-scripts.md)
+  - [POSIX System Calls](./operating-systems/posix-calls.md)
   - [Challenges](./operating-systems/challenges.md)
 
 - [M3 & SLURM](./m3-slurm/m3-slurm.md)
