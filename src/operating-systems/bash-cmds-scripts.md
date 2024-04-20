@@ -22,8 +22,18 @@ These commands will be your bread and better whenever you can't access the GUI o
 | `chmod <filename>` | changes permissions of file |
 | `cp` | copy a file or directory|
 | `mv <filename>` | move or rename file or directory |
+| `grep` | Search for a pattern in files |
+| `touch <filename>` | Create an empty file in current dir |
 
 > Note: `.` and `..` are special directories. `.` is the current directory, and `..` is the parent directory. These can be used when using any command that takes a directory as an argument. Similar to these, `~` is the home directory, and `/` is the root directory. For example, if you wanted to copy something from the parent directory to the home directory, you could do `cp ../<filename> ~/`, without having to navigate anywhere.
+
+### Piping
+
+If you want to use the output of one command as input to another, you can simply "pipe" it to the other command. For example, if you want to search your directory to find a file named `somefile.someextension` you can do this:
+
+```bash
+ls | grep somefile.someextension
+```
 
 ## Bash Scripts
 

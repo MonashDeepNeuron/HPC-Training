@@ -7,6 +7,10 @@ Slurm has three key functions.
 2. It provides a framework to start, execute, and check the work on the set of allocated compute nodes. 
 3. It manages the queue of pending jobs based on the availability of resources.
 
+The below diagram shows how Slurm works in the context of M3 MASSIVE.
+
+![slurm-on-m3](./imgs/slurm-on-m3.png)
+
 ## Slurm Architecture
 Slurm has a centralized manager, slurmctld, to monitor resources and work. Each compute server (node) has a slurmd daemon, which can be compared to a remote shell: it waits for work, executes that work, returns status, and waits for more work. There is an optional slurmdbd (Slurm DataBase Daemon) which can be used to record job accounting information in a database.
 
