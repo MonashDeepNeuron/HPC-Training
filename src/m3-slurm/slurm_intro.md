@@ -50,6 +50,22 @@ In creating a Slurm script, there are **4 main parts** that are mandatory in ord
 #SBATCH --mem-per-cpu=500M
 ```
 
+Some of the various resource request parameters available for you on Slurm are below:
+
+- `ntasks`: The number of tasks or processes to run.
+- `mem`: The amount of memory to allocate to the job.
+- `time`: The maximum amount of time the job can run for.
+- `job-name`: The name of the job. Up to 15 characters.
+- `partition`: The partition to run the job on.
+- `mail-user`: The email address to send job status emails to.
+- `mail-type`: The types of emails to send.
+
+> Note: In the case of M3, a task is essentially the same as a process. This is **not** the same as a cpu core. You can have a task that uses one or multiple cores. You can also have multiple tasks comprising the same job, each with one or multiple cores being utilised. It can get quite confusing, so if you are unsure about what you need, just ask. There is also more information in the M3 docs.
+
+There are a lot more options that you can use, and you can find a more complete list [here](https://docs.massive.org.au/M3/slurm/simple-batch-jobs.html).
+
+In particular, if you want to run multithreading or multiprocessing jobs, or you need a gpu, there are more options you need to configure.
+
 3. **Dependencies:** Load all the software that the project depends on to execute. For example, if you are working on a python project, you’d definitely require the python software or module to interpret and run your code. Go to Chapter 5.6 for more info on this.
 
 ```
@@ -92,3 +108,26 @@ In the script above, 1 Node with 1 CPU, 500MB of memory per CPU, 10 minutes of W
 The first job step will run the Linux echo command and output Start process. The next job step(2) will echo the Hostname of the compute node that executed the job. Then, the next job step will execute the Linux sleep command for 30 seconds. The final job step will just echo out End process. Note that these job steps executed sequentially and not in parallel.
 
 It’s important to set a limit on the total run time of the job allocation, this helps the Slurm manager to handle prioritization and queuing efficiently. The above example is a very simple script which takes less than a second. Hence, it’s important to specify the run time limit so that Slurm doesn’t see the job as one that requires a lot of time to execute.
+
+## Interactive jobs
+
+Sometimes you might want to actually connect to the node that you are running your job on, in order to see what is happening or to set it up before running the job. You can do this using the `smux` command. Similar to regular batch jobs, you can set options when you start the interactive session. An example of this is:
+
+`smux new-session --ntasks=1 --time=0-00:01:00 --partition=m3i --mem=4GB`
+
+This will start an interactive session on a node with 1 cpu, 1 minute of time, and 4GB of memory. There are again other options available, and you can find a more complete explanation [here](https://docs.massive.org.au/M3/slurm/interactive-jobs.html).
+
+### Connecting to interactive jobs
+
+Typically when you start an interactive job it will not start immediately. Instead, it will be queued up once it has started you will need to connect to it. You can do this by running `smux a`, which will reconnect you to the session. If you want to disconnect from the session but leave it running, you can press `Ctrl + b` followed by `d`. This will disconnect you from the session, but leave it running. You can reconnect to it later using `smux a`. If you want to kill the session, if you are connected just run `exit`, otherwise if you are in a login node run `scancel <jobid>`. You can find the job id using `show_job`.
+
+## Checking the status of jobs, finding out job IDs, and killing jobs
+
+A couple of useful commands for general housekeeping are:
+
+- `squeue`: This will show you the status of all jobs currently running on M3.
+- `show_job`: This will show you the status of all jobs you have submitted.
+- `squeue -u <username>`: This will show you the status of all jobs submitted by a particular user currently running.
+- `scancel <jobid>`: This will kill a job with a particular job id.
+- `scancel -u <username>`: This will kill all jobs submitted by a particular user.
+- `show_cluster`: This will show you the status of the cluster, including any nodes that are offline or in maintenance.
