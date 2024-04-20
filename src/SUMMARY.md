@@ -49,12 +49,12 @@
   - [Software & Tooling](./m3-slurm/software-tooling.md)
   - [Challenges](./m3-slurm/challenges.md)
 
-- [Introduction to Parallel Computing](./intro-to-parallel-comp/intro-to-parallel-comp.md)
+- [Intro to Parallel Computing](./intro-to-parallel-comp/intro-to-parallel-comp.md)
 
-  - [Multithreading](./intro-to-parallel-comp/multithreading.md)
-  - [Synchronisation](./intro-to-parallel-comp/synchronisation.md)
-  - [Locks](./intro-to-parallel-comp/locks.md)
-  - [Message Passing](./intro-to-parallel-comp/message-passing.md)
+  - [OpenMP: Multithreading](./intro-to-parallel-comp/multithreading.md)
+  - [Synchronisation Issues](./intro-to-parallel-comp/synchronisation.md)
+  - [Dead & Live Locks](./intro-to-parallel-comp/locks.md)
+  - [MPI: Message Passing](./intro-to-parallel-comp/message-passing.md)
   - [Challenges](./intro-to-parallel-comp/challenges.md)
 
 - [Parallellisation of Algorithms](./parallel-algos/parallel-algos.md)
