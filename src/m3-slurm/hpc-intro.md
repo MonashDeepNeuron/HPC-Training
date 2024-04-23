@@ -1,10 +1,42 @@
-# Parallel & Distributed Computing
+# What is HPC really?
+
+You are all likely familiar with the definition of High Performance Computing. Here is one from IBM,
+
+> High-performance computing (HPC) is technology that uses clusters of powerful processors that work in parallel to process massive multi-dimensional data sets, also known as big data, and solve complex problems at extremely high speeds. HPC solves some of today’s most complex computing problems in real time.
+
+But the term HPC is not really used much outside the scientific research community. A lot of cloud systems involve similar scale of hardware, parallel & distributed computing, similar computational workload, data processing capacity and low latency/high throughput capability as HPC clusters. *So what exactly is the difference between a cloud system and a HPC cluster?* 
+
+At the end of the day this comes down to semantics but a key difference is that a HPC cluster implies a system primarily used for **batch processing** whereas a cloud system would involve **interactive processing**.
+
+### Batch Processing vs. Cloud Computing
+
+The vast majority of computer systems and nearly 100% of the ones that the average person uses is a cloud-based interactive system. Due to the nature of use cases specific to researchers, batch processing is a much more suitable choice for them.
+
+__Batch Processing:__
+- Jobs (code scripts) submitted are executed at a later time.
+- User can't interact (or only limited interaction).
+- Performance measure is **throughput**.
+- Snapshot of output is used for debugging.
+
+![batch-image](./imgs/batch-processing.jpeg)
+
+__Interactive Processing:__
+- Jobs submitted are executed immediately.
+- User can interact.
+- Performance measure is **response time**.
+- Interactive debugging.
+
+![interactive-image](./imgs/interactive-processing.png)
+
+## Parallel & Distributed Computing
 
 Nearly all modern computer systems utilise parallel computing to speed up the execution of algorithms. To see how this works in practice look at the diagram below.
 
 ![parallel vs. distributed](imgs/parallel-distributed.png)
 
-As you can see, in a scenario where a program (job) takes 3 seconds and 3 independent jobs have to be executed by a system, doing it serially in a single computer takes a total of 9 seconds. But doing it simultaneously across 3 computers will only take 3 seconds thus achieving a 3x speedup through parallel computing. 
+As you can see, in a scenario where a program (job) takes 3 seconds and 3 independent jobs have to be executed by a system, doing it serially in a single processor (computer) takes a total of 9 seconds. But doing it simultaneously across 3 processors will only take 3 seconds thus achieving a 3x speedup through parallel computing. This parallel computing is performed locally in a **multi-processing** systems with more than 1 CPU core (processor).
+
+![multi-processing](imgs/Multiprocessor-System.png)
 
 This is the fundamental principle that High Performance Computing is based on. The trouble (or fun) is when your tasks have dependencies on each other which is gonna be the case for the vast majority of algorithms. That's when things like synchronisation issues, data sharing and all of that comes into play - which we'll explore in later chapters.
 
@@ -53,18 +85,3 @@ And finally, not everything needs to be done on a parallel or distributed system
 - **More simple** to design & implement algorithms. Parallel algorithms can get quite complex, especially when dealing with more complicated instructions with dependencies.
 - **Less overhead** involved in managing a parallel & distributed job. No need to manage data sharing between threads, processes, nodes, etc...
 - **No synchronisation issues** & headaches involved in concurrent computing. Don't have to deal with race conditions, deadlocks, livelocks, etc...
-
-## Parallel Scalability
-The speed up achieved from parallelism is dictated by your algorithm. Notably the serial parts of your algorithm can not be sped up by increasing the number of processors. The diagram below looks at the benefits we can achieve from writing parallel code as the number of processes increases.
-
-![amdahl](./imgs/parallel_scalability.jpg)
-
-Amdahl's Law, formulated by computer architect Gene Amdahl in 1967, is a principle used to analyze the potential speedup of parallel computing. It states that the speedup of a program from parallelization is limited by the proportion of the program that must be executed serially. In other words, it helps to determine the maximum performance improvement that can be achieved by using parallel processing.
-
-The implications of Amdahl's Law for HPC is very significant:
-
-- **Limitation of Speedup:** Amdahl's Law highlights that even with an increase in the number of processors (parallelization), the overall speedup is limited by the sequential portion of the code. Thus, if a significant portion of the code is inherently serial, the potential speedup achievable through parallelization is restricted.
-- **Importance of Identifying Serial Sections:** In HPC, it's crucial to identify the sections of code that are inherently serial and cannot be parallelized. Optimizing these sections can lead to better overall performance. Conversely, focusing solely on parallelizing code without addressing these serial bottlenecks can result in suboptimal speedup.
-- **Efficiency vs. Scalability:** Amdahl's Law emphasizes the importance of balancing efficiency and scalability in parallel computing. While increasing the number of processors can improve performance to a certain extent, beyond a certain point, diminishing returns occur due to the overhead of synchronization, communication, and managing parallel tasks.
-- **Architectural Considerations:** HPC system architects must consider Amdahl's Law when designing hardware and software architectures. Designing systems that minimize the impact of serial portions of code and optimize parallel execution can lead to better overall performance.
-- **Algorithm Selection:** When choosing algorithms for HPC applications, it's essential to consider their parallelizability. Algorithms that can be efficiently parallelized are more suitable for HPC environments, as they can leverage the potential for speedup provided by parallel computing resources more effectively.

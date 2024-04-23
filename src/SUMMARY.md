@@ -41,8 +41,7 @@
 
 - [M3 & SLURM](./m3-slurm/m3-slurm.md)
 
-  - [Batch Processing vs. Cloud Computing](./m3-slurm/batch-cloud.md)
-  - [Parallel & Distributed Computing](./m3-slurm/parallel-distributed.md)
+  - [What is HPC really?](./m3-slurm/hpc-intro.md)
   - [M3 Login - SSH & Strudel](./m3-slurm/login.md)
   - [Intro to SLURM](./m3-slurm/slurm_intro.md)
   - [M3 Interface & Usage](./m3-slurm/m3-interface.md)
