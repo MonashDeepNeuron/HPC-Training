@@ -1,7 +1,9 @@
 # Parallel Computing
 
-In this chapter, we will discuss the abstraction of parallel computing. To facilitate our exploration, we will employ a API within the C Programming Language: OpenMP. This tool will serve as a means to concretely illustrate the underlying language-independent theory.
+As introduced in chapter 5, parallel computing is all about running instructions simultaneously on multiple computers rather than doing it all sequentially/serially on the same computer. This is relatively straightforward if we have multiple, completely independent tasks that don't need to share resources or data i.e. inter-query parallelism.
 
-**Parallel computing is about executing the instructions of the program simultaneously.**
+![query-parallelism](./imgs/query-parallelism.png)
 
-One of the core values of computing is the breaking down of a big problem into smaller easier to solve problems, or at least smaller problems. In some cases, the steps required to solve the problem can be executed simultaneously (in parallel) rather than sequentially (in order).
+In this context, you can consider a query to be a job that carries out a series of steps on a particular dataset in order to achieve something e.g. a SORT query on a table. It's fairly straightforward to execute multiple queries at the same time using a parallel/distributed system but what if we want to parallelise and speed up the individual operations within a query?
+
+This is where things like synchronisation, data/workload distribution and aggregation needs to be considered. In this chapter we will provide some theoretical context before learning how to implement parallelism using OpenMP & MPI.
