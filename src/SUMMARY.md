@@ -50,20 +50,12 @@
 
 - [Intro to Parallel Computing](./intro-to-parallel-comp/intro-to-parallel-comp.md)
 
+  - [Parallel Algorithms](./intro-to-parallel-comp/parallel-algos.md)
   - [OpenMP: Multithreading](./intro-to-parallel-comp/multithreading.md)
   - [Synchronisation Issues](./intro-to-parallel-comp/synchronisation.md)
   - [Dead & Live Locks](./intro-to-parallel-comp/locks.md)
   - [MPI: Message Passing](./intro-to-parallel-comp/message-passing.md)
   - [Challenges](./intro-to-parallel-comp/challenges.md)
-
-- [Parallellisation of Algorithms](./parallel-algos/parallel-algos.md)
-
-  - [Parallel Search](./parallel-algos/parallel-search.md)
-  - [Parallel Sort](./parallel-algos/parallel-sort.md)
-  - [Other Parallel Algorithms](./parallel-algos/other-parallel-algos.md)
-  - [Machine Learning & HPC](./parallel-algos/machine-learning-and-hpc.md)
-  - [Optimisation Algorithms](./parallel-algos/optim-algos.md)
-  - [Challenges](./parallel-algos/challenges.md)
 
 - [Apache Spark](./apache-spark/apache-spark.md)
   - [Installation & Cluster Set-up](./apache-spark/set-up.md)
