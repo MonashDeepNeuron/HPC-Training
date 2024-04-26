@@ -38,7 +38,7 @@ Let this run fully. Check the output of the script to make sure it ran correctly
 ## Challenge 7
 
 Edit your submission script so that you get a gpu node, and run the script using the gpu.
-> Hint: Use the m3h partition
+> Hint: Use the m3g partition
 
 ## Challenge 8
 
