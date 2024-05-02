@@ -1,13 +1,13 @@
 # Locks
 
 Ealier, we have learnt about how to write concurrent programs, as well as a few constructs to achieve **synchronisation** in OpenMP. We know that:
-- `reduction construct` partitions shared data and uses barrier to achieve synchronisation
+- `reduction construct` partitions shared data and used a barrier to achieve synchronisation
 - `atomic construct` utilises hardware ability to achieve thread-safe small memory read/write operations.
 
 What about `critical construct`? We said that it uses locks, but what are locks?
 
 > Notes that the direct use of locks is **not recommended** (at least in OpenMP):
-> - It is very easy to cause deadlock or hard-to-debug livelock (more on these at the end of this sub-chapter).
+> - It is very easy to cause a deadlock or hard-to-debug livelock (more on these at the end of this sub-chapter).
 > - It can often cause very poor performance or worse.
 > - It generally indicates that the program design is wrong.
 >

@@ -1,32 +1,32 @@
 # Multithreading
 
-We have all looked at the theory of threads and concurrent programming in the Operating System chapter. Now, we will shift our focus to OpenMP and its application for executing multithreaded operations in a declarative programming style.
+Hopefully by now you are all familiar with multi-threading and how parallel computing works. We'll now go through how to implement parallel computing using OpenMP in order to speed up the execution of our C programs.
 
 ## OpenMP
 
-OpenMP is an Application Program Interface (API) that is used to explicitly direct multi-threaded, shared memory parallelism in C/C++ programs. It is not intrusive on the original serial code in that the OpenMP instructions are made in pragmas interpreted by the compiler.
-
-> Further features of OpenMP will be introduced in conjunction with the concepts discussed in later sub-chapters.
+OpenMP is an Application Program Interface (API) that is used to implement multi-threaded, shared memory parallelism in C/C++ programs. It's designed to be a very minimal add-on to serial C code when it comes to implementation. All you have to do is use the `#pragma` (C preprocessor directives) mechanism to wrap the parallel regions of your code.
 
 ### Fork-Join Parallel Execution Model
 
-OpenMP uses the `fork-join model` of parallel execution.
+OpenMP uses the *fork-join model* of parallel execution.
 
-* **FORK**: All OpenMP programs begin with a `single master thread` which executes sequentially until a `parallel region` is encountered, when it creates a team of parallel threads.
+* **FORK**: All OpenMP programs begin with a *single master thread* which executes sequentially until a *parallel region* is encountered. After that, it spawns a *team of threads* to carry out the multi-threaded parallel computing.
 
-The OpenMP runtime library maintains a pool of threads that can be added to the threads team in parallel regions. When a thread encounters a parallel construct and needs to create a team of more than one thread, the thread will check the pool and grab idle threads from the pool, making them part of the team.
+The OpenMP runtime library maintains a pool of potential OS threads that can be added to the thread team during parallel region execution. When a thread encounters a parallel construct (pragma directive) and needs to create a team of more than one thread, the thread will check the pool and grab idle threads from the pool, making them part of the team. 
 
-* **JOIN**: Once the team threads complete the parallel region, they `synchronise` and return to the pool, leaving only the master thread that executes sequentially.
+This speeds up the process of thread spawning by using a *warm start* mechanism to minimise overhead associated with the kernel scheduler context switching needed to conduct thread spawning.
+
+> If you're unclear how the kernel scheduler context switching works, revisit the operating systems chapter and explore/lookup the topics introduced there.
+
+* **JOIN**: Once the team of threads complete the parallel region, they **synchronise** and return to the pool, leaving only the master thread that executes sequentially.
 
 ![Fork - Join Model](./imgs/fork-join.png)
 
-> We will look a bit more into what is synchronisation as well as synchronisation techniques in the next sub-chapter.
-
 ### Imperative vs Declarative
 
-Imperative programming specifies and directs the control flow of the program. On the other hand, declarative programming specifies the expected result and core logic without directing the program's control flow.
+Imperative programming specifies and directs the control flow of the program. On the other hand, declarative programming specifies the expected result and core logic without directing the program's control flow i.e. you tell the computer what to do instead of *how to do it*.
 
-OpenMP follows a declarative programming style. Instead of manually creating, managing, synchronizing, and terminating threads, we can achieve the desired outcome by simply declaring it using pragma.
+OpenMP follows a declarative programming style. Instead of manually creating, managing, synchronizing, and terminating threads, we can achieve the desired outcome by simply declaring pragma directives in our code.
 
 ![Structure Overview](./imgs/program-structure.png)
 
@@ -52,23 +52,21 @@ int main() {
 
 ## Running on M3
 
-Here is a template script provided in the home directory in M3. Notice that we can dynamically change the number of threads using `export  OMP_NUM_THREADS=12`
+Here is a template script provided in the home directory in M3. Notice that we can dynamically change the number of threads using `export OMP_NUM_THREADS=12`.
+
+> The `export` statement is a bash command you can type into a WSL/Linux terminal. It allows you to set environment variables in order to manage runtime configuration.
 
 ```bash
 #!/bin/bash
 # Usage: sbatch slurm-openmp-job-script
 # Prepared By: Kai Xi,  Apr 2015
-#              help@massive.org.au
-
 # NOTE: To activate a SLURM option, remove the whitespace between the '#' and 'SBATCH'
 
 # To give your job a name, replace "MyJob" with an appropriate name
 # SBATCH --job-name=MyJob
 
-
 # To set a project account for credit charging,
 # SBATCH --account=pmosp
-
 
 # Request CPU resource for a openmp job, suppose it is a 12-thread job
 # SBATCH --ntasks=1
@@ -81,12 +79,10 @@ Here is a template script provided in the home directory in M3. Notice that we c
 # Set your minimum acceptable walltime, format: day-hours:minutes:seconds
 # SBATCH --time=0-06:00:00
 
-
 # To receive an email when job completes or fails
 # SBATCH --mail-user=<You Email Address>
 # SBATCH --mail-type=END
 # SBATCH --mail-type=FAIL
-
 
 # Set the file for output (stdout)
 # SBATCH --output=MyJob-%j.out
@@ -94,10 +90,8 @@ Here is a template script provided in the home directory in M3. Notice that we c
 # Set the file for error log (stderr)
 # SBATCH --error=MyJob-%j.err
 
-
 # Use reserved node to run job when a node reservation is made for you already
 # SBATCH --reservation=reservation_name
-
 
 # Command to run a openmp job
 # Set OMP_NUM_THREADS to the same value as: --cpus-per-task=12
