@@ -1,8 +1,11 @@
 # Synchronisation
 
-Definition: Synchronisation is the task of coordinating multiple of processes (or threads) to join up or handshake at a certain point, in order to reach an agreement or commit to a certain sequence of action.
+Synchronisation is the task of coordinating multiple processes (or threads) to join up or handshake at a certain point, in order to reach an agreement or commit to a certain sequence of action. This is important so that the different threads/processes you spawn in the parallel region don't contradict each other and corrupt your code. 
 
 ## Race Condition
+A race condition is one of the most popular forms of this synchronisation corruption. It's essentially when your threads are in a "race" against each other to access a particular resource (eg. an int variable's value) and the loser's access/update to that resource is lost. 
+
+> Instead of your threads fighting each other, you want them to work together perfectly synchronised i.e. more like an F1 pitstop crew than a toxic office place.
 
 Let's start with this simple program:
 
@@ -64,9 +67,9 @@ The output should look something like this:
 
 ![1 thread counter](./imgs/one-thread-counter.png)
 
-The output coordinates with what we expected.
+The program works great. No corruption at all.
 - This is because we only used 1 single thread.
-- The program is just a sequential program without any parallism. 
+- The program is just a serial program without any parallelism.
 - `sleep()` calls simply put the thread to sleep, that same thread will go to sleep, wake up, and continue the execution.
 
 ### Multiple Threads
@@ -76,7 +79,9 @@ export OMP_NUM_THREADS=2
 ./counter
 ```
 
-Running the program using 2 threads may give us this output (this is just 1 **possible** output):
+Running the program using 2 threads may give us this output:
+
+> Note: This is just one possible output.
 
 ![alt text](./imgs/two-threads-counter.png)
 
@@ -86,13 +91,13 @@ What is happening here?
 - During the time when 1 thread is sleeping, the other thread may increment the shared counter.
 - The 2 threads simply go on their way and not coordinate with each other.
 
-> What we are having here is `Race Condition`. A race condition occurs when two or more threads can access `shared data` and they try to `change it at the same time`.
+> This is what a **Race Condition** is. A race condition occurs when two or more threads can access **shared data** and they try to **change it at the same time**.
 
-### How to resolve the problem?
+### How to prevent race conditions in OpenMP?
 
-There are a few ways we can resolve the race condition in OpenMP:
+There are a few approaches we can take:
 
-* **Critical construct**: This restricts the code so that only one thread can do something at a time (in our example, only 1 thread can increment the counter at a time). However, it is `bad for performance` and possibly destroy a lot of the gains from running code in parallel in the first place.
+* **Critical construct**: This restricts the code so that only one thread can do something at a time (in our example, only 1 thread can increment the counter at a time). It's used to specify a **critical region** which is another term for serial execution.
 
 ```c
 int main() {
@@ -106,7 +111,9 @@ int main() {
 }
 ```
 
-* **Atomic construct**: This is quite similar to Critical construct, however, it only applies to memory read/write operations. It has a better performance than the Critical construct by taking advantage on the hardware. There's no lock/unlock needed on entering/exiting the line of code, it just does the atomic operation which the hardware tells you can't be interfered with. Let's look at another example:
+This is unfortunatley not appropriate for some situations since it is bad for performance and destroys a lot of the speed-up we're trying to acheive in the first place.
+
+* **Atomic construct**: This is quite similar to the critical construct, however it only applies to memory read/write operations. It has a better performance than the critical construct by taking advantage of the hardware. There's no lock/unlock needed on entering/exiting the line of code, it just does the atomic operation which the hardware tells you can't be interfered with. Let's look at another example:
 
 > Run this program multiple times using multiple threads (before uncommenting the construct). Again, race condition!
 
@@ -187,7 +194,7 @@ int main() {
 
 ## Barrier Synchronisation
 
-In the last sub-chapter, we have talked about the [Fork - Join Model](./multithreading.md#fork-join-parallel-execution-model). We know that **"Once the team threads complete the parallel region, they `synchronise` and return to the pool, leaving only the master thread that executes sequentially."**. However, there are a few important aspects that we have left out:
+In the last sub-chapter, we have talked about the [Fork - Join Model](./multithreading.md#fork-join-parallel-execution-model). We know that **"Once the team of threads complete the parallel region, they `synchronise` and return to the pool, leaving only the master thread that executes serially."**. However, there are a few important aspects that we have left out:
 - The time taken to finish the assigned task is **different** for each thread.
 - How can OpenMP know/identify **when** a thread has completed its own task.
 - How can OpenMP know/identify **when** all threads have finished all the tasks.
@@ -202,7 +209,7 @@ The answer lies in something called **Barrier Synchronisation**. Here are illust
 
 ### Implicit Barriers
 
-The barrier synchronisation implicitly (behind the scene) occur at the end of constructs such as parallel construct ("`#pragma omp parallel`") and the end of worksharing constructs(loop, sections, single, and workshare constructs).
+The barrier synchronisation implicitly (behind the scenes) occur at the end of constructs (regions of code) such as parallel constructs ("`#pragma omp parallel`") and the end of worksharing constructs(loop, sections, single, and workshare constructs).
 
 ```c
 #include <stdio.h>
@@ -254,4 +261,4 @@ We don't need to know exactly how OpenMP implemented this feature, at least not 
 - We also need a mechanism to make a finished thread idle and **wait()** for other threads to finish.
 - The last thread to finish has the responsibility of **notify()** other threads (threads that you want to be executed after the barrier).
 
-Voila! we have a barrier. We will implement barrier as part of a mini-project using [Posix Thread](https://docs.oracle.com/cd/E26502_01/html/E35303/tlib-1.html).
+Voila! we have a barrier.
