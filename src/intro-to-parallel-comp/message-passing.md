@@ -1,8 +1,8 @@
 # Message Passing
 
-As each processor has its own local memory with its own address space in distributed computing, we need a way to communicate between the processes and share data. Message passing is the mechanism of exchanging data across processes. Each process can communicate with one or more other processes by sending messages over a network.
+As each processor has its own local memory with its own address space in distributed computing, we need a way to implement communication between the distributed processes and allow data sharing. Message passing is the mechanism of exchanging data between processes. Each process can communicate with one or more other processes by sending messages over a network.
 
-The MPI (message passing interface) in OpenMPI is a communication protocol standard defining message passing between processors in distributed environments and are implemented by different groups with the main goals being high performance, scalability, and portability.
+The MPI (message passing interface) in OpenMPI is a communication protocol standard defining message passing between processors in distributed environments. The main goals of this protocol standard is high performance, scalability, and portability.
 
 OpenMPI is one implementation of the MPI standard. It consists of a set of headers library functions that you call from your program. i.e. C, C++, Fortran etc.
 
@@ -125,9 +125,13 @@ int MPI_Finalize(void);
 
 ```
 
-Use man pages to find out more about each routine
+Terminology:
+- **World Size**: The total no. of processes involved in your distributed computing job.
+- **Rank**: A unique ID for a particular process.
 
-When sending a Process it packs up all of its necessary data into a buffer for the receiving process. These buffers are often referred to as envelopes since the data is being packed into a single message before transmission (similar to how letters are packed into envelopes before transmission to the post office)
+> Use OpenMPI man pages to find out more about each routine
+
+When sending data to a process, it packs up all of its necessary data into a buffer for the receiving process. These buffers are often referred to as envelopes since the data is being packed into a single message before transmission (similar to how letters are packed into envelopes before transmission to the post office)
 
 ### Elementary MPI Data types
 
@@ -257,8 +261,9 @@ The command top or htop looks into a process. As you can see from the image belo
 - The command ```time``` checks the overall performance of the code
   - By running this command, you get real time, user time and system time.
   - Real is wall clock time - time from start to finish of the call. This includes the time of overhead
-- User is the amount of CPU time spent outside the kernel within the process
-- Sys is the amount of CPU time spent in the kernel within the process.
+  - User is the amount of CPU time spent outside the kernel within the process
+  - Sys is the amount of CPU time spent in the kernel within the process.
   - User time +Sys time will tell you how much actual CPU time your process used.
+
 
 ![time](imgs/time.png)
