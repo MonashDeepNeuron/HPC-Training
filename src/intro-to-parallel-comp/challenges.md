@@ -4,7 +4,7 @@
 
 Make sure to clone a copy of **your** challenges repo onto M3, ideally in a personal folder on vf38_scratch.
 
-> Note: For every challenge you will be running the programs as SLURM jobs. This is so we don't overload the login nodes. A template [SLURM job script](./job.slurm) is provided at the root of this directory which you can use to submit your own jobs to SLURM by copying it to each challenges sub-directory and filling in the missing details. You may need more than one for some challenges. This template will put the would-be-printed output in a file named `slurm-<job-name>.out`.
+> Note: For every challenge you will be running the programs as SLURM jobs. This is so we don't overload the login nodes. A template [SLURM job script](https://github.com/MonashDeepNeuron/HPC-Training-Challenges/blob/main/challenges/distributed-computing/job.slurm) is provided at the root of this directory which you can use to submit your own jobs to SLURM by copying it to each challenges sub-directory and filling in the missing details. You may need more than one for some challenges. This template will put the would-be-printed output in a file named `slurm-<job-name>.out`.
 
 ## Task 1 - Single Cluster Job using OpenMP
 
