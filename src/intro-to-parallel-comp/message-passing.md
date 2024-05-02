@@ -265,4 +265,5 @@ The command top or htop looks into a process. As you can see from the image belo
   - Sys is the amount of CPU time spent in the kernel within the process.
   - User time +Sys time will tell you how much actual CPU time your process used.
 
+
 ![time](imgs/time.png)
