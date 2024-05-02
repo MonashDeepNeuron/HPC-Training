@@ -37,4 +37,4 @@ This is how one of the simplest parallel algorithms - **parallel sum** works. Al
 
 ![parallel-sum](./imgs/parallel-sum-diagram.png)
 
-Besides the difference between serial & parallel regions another important concept to note here is **partitioning** aka. chunking. Often when you're parallelising your serial algorithm you will have to define local, parallel tasks that will execute on different parts of your dataset simultaneously in order to acheive a speedup. This can be anything from a sum operation in this case, to a local/serial sort or even as complex as the training of a CNN model on a particular batch of images.
+Besides the difference between serial & parallel regions another important concept to note here is **partitioning** aka. chunking. Often when you're parallelising your serial algorithm you will have to define local, parallel tasks that will execute on different parts of your input simultaneously in order to acheive a speedup. This can be anything from a sum operation in this case, to a local/serial sort or even as complex as the training of a CNN model on a particular batch of images.
