@@ -85,19 +85,3 @@ Here's some images of the output of functions
 These are the Beale Contour,  Rastrigin Contour, and the Rosenbrock Contour respectively.
 Notice that it is not immediately obvious how a computer should determine the minima (or maxima) of these functions.
 Checking every single point becomes radically exhaustive extremely quickly.
-
-# Algorithms
-
-personally, I view these algorithms as the *definition* of machine learning.
-As in, training an artificial intelligence model is essentially a quest to find the right numbers to put into a model,
-such that said model performs optimally.
-
-## Gradient Descent
-
-*differentiable* functions
-
-## Genetic Algorithm
-
-## Constraint programming
-
-# Relation to HPC
