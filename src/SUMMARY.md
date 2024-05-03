@@ -64,4 +64,6 @@
   - [Job Batching](./apache-spark/job-batching.md)
   - [Challenges](./apache-spark/challenges.md)
 
+
+[Applying HPC](./apache-spark/applying-hpc.md)
 [Acknowledgements](./acknowledgements.md)

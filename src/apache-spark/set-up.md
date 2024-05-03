@@ -6,7 +6,7 @@ Different Spark version may have different version requirements for Python and J
 
 - **Miniconda**
 
-Conda can be installed using the conda-install module from M3. The JupyterLab environment currently uses Python 3.10, meeting the prerequisite for Spark 3.5. This environment will also be utilized for running a notebook in STRUDEL. For those interested in customizing their own conda environment on M3, detailed instructions can be found in [this instruction](https://docs.massive.org.au/M3/connecting/strudel2/connecting-to-byo-jupyter.html).
+Conda can be installed using the conda-install module from M3. The JupyterLab environment currently uses Python 3.10, meeting the prerequisite for Spark 3.5. This environment will also be utilized for running a notebook in STRUDEL. For those interested in customizing their own conda environment on M3, detailed instructions can be found in [this page](https://docs.massive.org.au/M3/connecting/strudel2/connecting-to-byo-jupyter.html).
 
 ```bash
 module load conda-install
